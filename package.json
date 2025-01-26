@@ -1,5 +1,26 @@
 {
-	"devDependencies": {
-		"vitest": "^3.0.4"
-	}
+  "name": "js-training",
+  "version": "1.0.0",
+  "description": "A training project for learning and practicing JavaScript with best practices.",
+  "main": "js/index.js",
+  "scripts": {
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "start": "echo 'Starting JS Training project...' && open html/index.html",
+    "build": "echo 'Build process not defined for this project yet!'"
+  },
+  "keywords": ["javascript", "training", "stack", "vanilla-js", "learning"],
+  "author": "Morteza Bakhshandeh @BCFCODE",
+  "license": "MIT",
+  "devDependencies": {
+    "vitest": "^3.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BCFCODE/JST"
+  },
+  "bugs": {
+    "url": "https://github.com/BCFCODE/JST/issues"
+  },
+  "homepage": "https://github.com/BCFCODE/JST#readme"
 }

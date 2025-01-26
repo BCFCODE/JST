@@ -50,10 +50,6 @@ For questions or suggestions, feel free to reach out or open an issue.
 
 ### Ready to make an impact? Join BCFCODE and start coding!
 
-# Our Developers:
-
-### Team Members:
-
 Author ✨
 Developed with ❤️ by [Morteza Bakhshandeh](https://bakhshandehmorteza.ir/)
 
