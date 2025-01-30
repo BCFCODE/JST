@@ -1,5 +1,17 @@
+class Node {
+  constructor(value) {
+    this.value = value
+    this.next = null
+  }
+}
+
 class LinkedList {
-  // constructor(value) { }
+  constructor(value) {
+    const newNode = new Node(value)
+    this.head = newNode
+    this.tail = this.head
+    this.length = 1
+  }
   // push(value) {}
   // unshift(value) {}
   // insert(index, value) {}
@@ -8,16 +20,4 @@ class LinkedList {
   // shift() {}
 }
 
-// Pointer Description
-export let obj1 = { value: 23 }
-let obj2 = obj1
-obj2.value = 10
-
-obj2 = { value: 109 }
-obj2 = obj1
-obj2.value = 10
-
-let obj3 = { value: 98 }
-obj2 = obj3
-obj1 = obj2
-obj3.value = 10
+export { LinkedList, Node }
