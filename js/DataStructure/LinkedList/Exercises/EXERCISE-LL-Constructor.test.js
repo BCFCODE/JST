@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import LinkedList from "./EXERCISE-LL-Constructor";
-const J = (value) => JSON.stringify(value)
+import { J } from "../LinkedList.test";
 
 describe(`EXERCISE-LL-Constructor\n\tconst myLinkedList = new LinkedList(4);`, () => {
   const myLinkedList = new LinkedList(4)
@@ -25,4 +25,4 @@ describe(`EXERCISE-LL-Constructor\n\tconst myLinkedList = new LinkedList(4);`, (
     })
   })
  
-})
+}) 
