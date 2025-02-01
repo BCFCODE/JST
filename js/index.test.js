@@ -1,7 +1,7 @@
 
 import { describe, it } from "vitest";
 import { expect } from "vitest";
-import Stack from "./Stack";
+import Stack from ".";
 
 describe(`Stack`, () => {
   it(`Test 1\n\tstack.push('a'); \n\tstack.push('b'); \n\tstack.push('c'); \n\t stack.count; >> 3`, () => {
