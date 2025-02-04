@@ -60,7 +60,13 @@ class LinkedList {
         return this;
     }
 
-
+	/// WRITE POP METHOD HERE ///
+	//                         //
+	//                         //
+	//                         //
+	//                         //
+	/////////////////////////////
+    
 }
 
 
