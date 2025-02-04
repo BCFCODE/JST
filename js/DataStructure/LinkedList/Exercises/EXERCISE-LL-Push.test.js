@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import LinkedList from "./EXERCISE-LL-Push";
-import { J } from "../LinkedList.test";
+import { J } from "../../../utils";
 
 describe(`EXERCISE-LL-Push\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.makeEmpty();\n\tmyLinkedList.push(1);\n\tmyLinkedList.push(2);`, () => {
   let myLinkedList = new LinkedList(1);
