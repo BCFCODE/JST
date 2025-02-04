@@ -60,13 +60,24 @@ class LinkedList {
         return this;
     }
 
-	/// WRITE POP METHOD HERE ///
-	//                         //
-	//                         //
-	//                         //
-	//                         //
-	/////////////////////////////
-    
+    pop() {
+        if (this.length === 0) return undefined;
+        let temp = this.head;
+        let pre = this.head;
+        while (temp.next) {
+            pre = temp;
+            temp = temp.next;
+        }
+        this.tail = pre;
+        this.tail.next = null;
+        this.length--;
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return temp;
+    }
+
 }
 
 
