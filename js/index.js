@@ -1,3 +1,38 @@
+class Circle {
+  draw() {
+    console.log(this)
+  }
+}
+
+const c = new Circle()
+const draw = c.draw
+draw()
+
+/* 
+  'use strict'
+
+  const Circle = function () {
+    this.draw = function () {
+      console.log(this)
+    }
+  } 
+
+  const c = new Circle()
+  // Method Call
+  c.draw()
+
+  // Function Call
+  const draw = c.draw
+  draw()
+*/
+
+
+
+
+
+
+
+
 const _items = new WeakMap()
 
 class Stack {
