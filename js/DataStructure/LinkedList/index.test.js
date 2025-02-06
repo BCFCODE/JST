@@ -246,7 +246,7 @@ suite(`LinkedList`, () => {
   })
 
   suite(`unshift()`, () => {
-    describe('\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\t', () => {
+    describe('Before unshift()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\t', () => {
       let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
       myLinkedList.push(23)
@@ -301,7 +301,7 @@ suite(`LinkedList`, () => {
       })
     })
 
-    describe('\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\t', () => {
+    describe('After unshift()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\tmyLinkedList.unshift(4)\n\t', () => {
       let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
       myLinkedList.push(23)

@@ -58,11 +58,5 @@ class LinkedList {
     return this
   }
 }
-let myLinkedList = new LinkedList(1)
-myLinkedList.push(2)
-myLinkedList.push(3)
-myLinkedList.pop()
-myLinkedList.pop()
-myLinkedList.pop()
-console.log(myLinkedList)
+
 export { LinkedList, Node }
