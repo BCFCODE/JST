@@ -1,7 +1,7 @@
 import { suite } from "vitest";
 import { LinkedList, Node } from ".";
 import { describe, it, expect } from "vitest";
-export const J = (value) => JSON.stringify(value)
+import { J } from "../../utils";
 
 suite(`LinkedList`, () => {
 
@@ -243,6 +243,126 @@ suite(`LinkedList`, () => {
         });
       })
     })
+  })
+
+  suite(`unshift()`, () => {
+    describe('Before unshift()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\t', () => {
+      let myLinkedList = new LinkedList(11)
+      myLinkedList.push(3)
+      myLinkedList.push(23)
+      myLinkedList.push(7)
+
+      const tests = [
+        [
+          'myLinkedList.head', myLinkedList.head, 'toEqual', {
+            value: 11,
+            next: {
+              value: 3,
+              next: {
+                value: 23,
+                next: {
+                  value: 7,
+                  next: null
+                }
+              }
+            }
+          }
+        ],
+        [
+          'myLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
+            value: 3,
+            next: {
+              value: 23,
+              next: {
+                value: 7,
+                next: null
+              }
+            }
+          }
+        ],
+        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 11],
+        ['myLinkedList.head.next.next.next.next', myLinkedList.head.next.next.next.next, 'toBeNull', null],
+        ['myLinkedList.head.next.next.next === myLinkedList.tail', myLinkedList.head.next.next.next === myLinkedList.tail, 'toBe', true],
+        [
+          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+            value: 7,
+            next: null
+          }
+        ],
+        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 7],
+        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+        ['myLinkedList.length', myLinkedList.length, 'toEqual', 4],
+      ]
+
+      tests.forEach(([message, result, testMethod, expectedResult]) => {
+        it(`${message} >> ${J(expectedResult)}`, () => {
+          expect(result)[testMethod](expectedResult);
+        });
+      })
+    })
+
+    describe('After unshift()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\tmyLinkedList.unshift(4)\n\t', () => {
+      let myLinkedList = new LinkedList(11)
+      myLinkedList.push(3)
+      myLinkedList.push(23)
+      myLinkedList.push(7)
+      myLinkedList.unshift(4)
+
+      const tests = [
+        [
+          'myLinkedList.head', myLinkedList.head, 'toEqual', {
+            value: 4,
+            next: {
+              value: 11,
+              next: {
+                value: 3,
+                next: {
+                  value: 23,
+                  next: {
+                    value: 7,
+                    next: null
+                  }
+                }
+              }
+            }
+          }
+        ],
+        [
+          'myLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
+            value: 11,
+            next: {
+              value: 3,
+              next: {
+                value: 23,
+                next: {
+                  value: 7,
+                  next: null
+                }
+              }
+            }
+          }
+        ],
+        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 4],
+        ['myLinkedList.head.next.next.next.next.next', myLinkedList.head.next.next.next.next.next, 'toBeNull', null],
+        ['myLinkedList.head.next.next.next.next === myLinkedList.tail', myLinkedList.head.next.next.next.next === myLinkedList.tail, 'toBe', true],
+        [
+          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+            value: 7,
+            next: null
+          }
+        ],
+        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 7],
+        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+        ['myLinkedList.length', myLinkedList.length, 'toEqual', 5],
+      ]
+
+      tests.forEach(([message, result, testMethod, expectedResult]) => {
+        it(`${message} >> ${J(expectedResult)}`, () => {
+          expect(result)[testMethod](expectedResult);
+        });
+      })
+    })
+
   })
 
 })

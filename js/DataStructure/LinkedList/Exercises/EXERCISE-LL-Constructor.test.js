@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import LinkedList from "./EXERCISE-LL-Constructor";
-import { J } from "../LinkedList.test";
+import { J } from "../../../utils";
 
 describe(`EXERCISE-LL-Constructor\n\tconst myLinkedList = new LinkedList(4);`, () => {
   const myLinkedList = new LinkedList(4)
