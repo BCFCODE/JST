@@ -1,7 +1,7 @@
 
 import { describe, it } from "vitest";
 import { expect } from "vitest";
-import Stack from ".";
+import {Stack, Circle} from ".";
 
 describe(`Stack`, () => {
   it(`Test 1\n\tstack.push('a'); \n\tstack.push('b'); \n\tstack.push('c'); \n\t stack.count; >> 3`, () => {
@@ -77,4 +77,38 @@ describe(`Stack`, () => {
     expect(result).toThrowError('Stack is empty.')
   })
  
+})
+
+
+describe(`Private Members Using WeakMaps`, () => {
+  it(`\n\tconst c = new Circle(1)\n\tc._radius >> undefined`, () => {
+    const c = new Circle(1)
+    const result = c._radius
+    expect(result).toBeUndefined()
+  })
+  it(`\n\tconst c = new Circle(1)\n\tc._move >> undefined`, () => {
+    const c = new Circle(1)
+    const result = c._move
+    expect(result).toBeUndefined()
+  })
+  it(`\n\tconst c = new Circle(1)\n\tc.privateProps >> undefined`, () => {
+    const c = new Circle(1)
+    const result = c.privateProps
+    expect(result).toBeUndefined()
+  })
+  it(`\n\tconst c = new Circle(1)\n\tc.privateProps.radius >> undefined`, () => {
+    const c = new Circle(1)
+    const result = c.privateProps?.radius
+    expect(result).toBeUndefined()
+  })
+  it(`\n\tconst c = new Circle(1)\n\tc.privateProps.move >> undefined`, () => {
+    const c = new Circle(1)
+    const result = c.privateProps?.move
+    expect(result).toBeUndefined()
+  })
+  it(`\n\tconst c = new Circle(1)\n\tc.radius >> undefined`, () => {
+    const c = new Circle(1)
+    const result = c.radius
+    expect(result).toBeUndefined()
+  })
 })
