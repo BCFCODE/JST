@@ -1,3 +1,36 @@
+function HtmlElement() {
+  this.click = function () {
+    console.log('clicked')
+  }
+}
+
+HtmlElement.prototype.focus = function () {
+  console.log('focused')
+}
+
+function HtmlSelectElement(items = []) {
+  this.items = items
+  this.addItem = function (item) {
+    this.items = [...this.items, item]
+  }
+  this.removeItem = function(item) {
+    this.items = this.items.filter(it => it !== item)
+  }
+}
+
+HtmlSelectElement.prototype = new HtmlElement()
+HtmlSelectElement.prototype.constructor = HtmlSelectElement
+console.log(new HtmlSelectElement())
+export { HtmlElement, HtmlSelectElement }
+
+
+
+
+
+
+
+
+/* 
 const _radius = new WeakMap()
 const _move = new WeakMap()
 const privateProps = new WeakMap()
@@ -14,20 +47,20 @@ export class Circle {
     _move.set(this, () => {
       const { radius } = privateProps.get(this)
       this.radius = radius
-      console.log('move()', this, 'radius >', radius, 'this.radius >', this.radius)
+      // console.log('move()', this, 'radius >', radius, 'this.radius >', this.radius)
     })
   }
 
   draw() {
     const move = _move.get(this);
     move()
-    console.log('draw()', 'this.radius >', this.radius)
+    // console.log('draw()', 'this.radius >', this.radius)
   }
 }
 
-const c = new Circle(1)
-console.log(c.draw())
-
+// const c = new Circle(1)
+// console.log(c.draw())
+ */
 
 /* 
   class Circle {
@@ -64,7 +97,7 @@ console.log(c.draw())
 
 
 
-
+/* 
 const _items = new WeakMap()
 
 export class Stack {
@@ -97,4 +130,4 @@ export class Stack {
     return _items.get(this).length
   }
 }
-
+ */
