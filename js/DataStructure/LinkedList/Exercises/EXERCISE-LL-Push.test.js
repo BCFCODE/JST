@@ -6,7 +6,7 @@ describe(`EXERCISE-LL-Push`, () => {
   suite(`push()`, () => {
     describe('\n\tlet myLinkedList = new LinkedList(7)\n\tmyLinkedList.push(4)\n\t', () => {
       let myLinkedList = new LinkedList(7)
-      myLinkedList.push(4)
+      const pushValue = myLinkedList.push(4)
 
       const tests = [
         [
@@ -36,7 +36,7 @@ describe(`EXERCISE-LL-Push`, () => {
         ],
         ['myLinkedList.tail.value', myLinkedList.tail.value, 'toEqual', 4],
         ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
-        ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
+        ['myLinkedList.push(4) should return myLinkedList', pushValue, 'toEqual', myLinkedList],
       ]
 
       tests.forEach(([message, result, testMethod, expectedResult]) => {
