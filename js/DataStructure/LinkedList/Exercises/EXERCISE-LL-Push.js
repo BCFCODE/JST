@@ -47,12 +47,18 @@ class LinkedList {
         this.length = 0;
     }
 
-    /// WRITE PUSH METHOD HERE ///
-    //                          //
-    //                          //
-    //                          //
-    //                          //
-    //////////////////////////////
+    push(value) {
+        const newNode = new Node(value);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+        return this;
+    }
 
 }
 
@@ -87,5 +93,9 @@ test();
     2
 
 */
+
+let myLinkedList = new LinkedList(7)
+const pushValue = myLinkedList.push(4)
+console.log(pushValue)
 
 export default LinkedList
