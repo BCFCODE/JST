@@ -1,68 +1,66 @@
-class Node {
-  constructor(value) {
-    this.value = value
-    this.next = null
+function HtmlElement() {
+  this.click = function () {
+    console.log('clicked')
   }
 }
 
-class LinkedList {
-  constructor(value) {
-    const newNode = new Node(value)
-    this.head = newNode
-    this.tail = this.head
-    this.length = 1
+HtmlElement.prototype.focus = function () {
+  console.log('focused')
+}
+
+function HtmlSelectElement(items = []) {
+  this.items = items
+  this.addItem = function (item) {
+    this.items = [...this.items, item]
   }
-
-  push(value) {
-    const newNode = new Node(value)
-    if (!this.head) {
-      this.head = newNode
-      this.tail = newNode
-    } else {
-      this.tail.next = newNode
-      this.tail = newNode
-    }
-    this.length++
-    return this
-  }
-
-
-  pop() {
-    if (!this.head) return undefined
-    let temp = this.head
-    let pre = this.head
-    while (temp.next) {
-      pre = temp
-      temp = temp.next
-    }
-    this.tail = pre
-    this.tail.next = null
-    this.length--
-    if (this.length === 0) {
-      this.head = null
-      this.tail = null
-    }
-    return temp
-  }
-
-  unshift(value) {
-    const newNode = new Node(value)
-    if (!this.head) {
-      this.head = newNode
-      this.tail = newNode
-    } else {
-      newNode.next = this.head
-      this.head = newNode
-    }
-    this.length++
-    return this
+  this.removeItem = function(item) {
+    this.items = this.items.filter(it => it !== item)
   }
 }
-let myLinkedList = new LinkedList(11)
-myLinkedList.push(3)
-myLinkedList.push(23)
-myLinkedList.push(7)
-console.log(myLinkedList)
+
+HtmlSelectElement.prototype = new HtmlElement()
+HtmlSelectElement.prototype.constructor = HtmlSelectElement
+console.log(new HtmlSelectElement())
+export { HtmlElement, HtmlSelectElement }
+
+
+
+
+
+
+
+
+/* 
+const _radius = new WeakMap()
+const _move = new WeakMap()
+const privateProps = new WeakMap()
+
+export class Circle {
+  constructor(radius) {
+    privateProps.set(this, {
+      radius,
+      move: () => {
+
+      }
+    })
+    _radius.set(this, radius)
+    _move.set(this, () => {
+      const { radius } = privateProps.get(this)
+      this.radius = radius
+      // console.log('move()', this, 'radius >', radius, 'this.radius >', this.radius)
+    })
+  }
+
+  draw() {
+    const move = _move.get(this);
+    move()
+    // console.log('draw()', 'this.radius >', this.radius)
+  }
+}
+
+// const c = new Circle(1)
+// console.log(c.draw())
+ */
 
 /* 
   class Circle {
@@ -99,10 +97,10 @@ console.log(myLinkedList)
 
 
 
-
+/* 
 const _items = new WeakMap()
 
-class Stack {
+export class Stack {
   constructor() {
     _items.set(this, [])
   }
@@ -132,5 +130,4 @@ class Stack {
     return _items.get(this).length
   }
 }
-
-export default Stack
+ */

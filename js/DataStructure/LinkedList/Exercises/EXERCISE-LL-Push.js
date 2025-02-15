@@ -94,4 +94,8 @@ test();
 
 */
 
+let myLinkedList = new LinkedList(7)
+const pushValue = myLinkedList.push(4)
+console.log(pushValue)
+
 export default LinkedList

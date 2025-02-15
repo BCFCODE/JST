@@ -4,8 +4,8 @@
   "description": "A training project for learning and practicing JavaScript with best practices.",
   "main": "js/index.js",
   "scripts": {
-    "test": "vitest --run",
-    "test:watch": "vitest",
+    "test": "vitest --run --verbose",
+    "test:watch": "vitest ",
     "start": "echo 'Starting JS Training project...' && open html/index.html",
     "build": "echo 'Build process not defined for this project yet!'"
   },
