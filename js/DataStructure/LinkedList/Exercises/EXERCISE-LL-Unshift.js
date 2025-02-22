@@ -79,16 +79,16 @@ class LinkedList {
   }
 
   unshift(value) {
-    const newNode = new Node(value);
+    const newNode = new Node(value)
     if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
+      this.head = newNode
+      this.tail = newNode
     } else {
-      newNode.next = this.head;
-      this.head = newNode;
+      newNode.next = this.head
+      this.head = newNode
     }
-    this.length++;
-    return this;
+    this.length++
+    return this
   }
 
 }
