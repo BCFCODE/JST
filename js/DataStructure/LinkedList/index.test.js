@@ -1,17 +1,8 @@
 import { LinkedList } from ".";
 import { describe, it, expect, suite } from "vitest";
-import { J } from "../../utils";
+import { J, runTests } from "../../utils";
 
 suite(`LinkedList`, () => {
-
-  // Helper function for cleaner test structure
-  const runTests = (tests) => {
-    tests.forEach(([message, result, assertionMethod, expected]) => {
-      it(`${message} >> ${J(expected)}`, () => {
-        expect(result)[assertionMethod](expected);
-      });
-    });
-  };
 
   suite(`constructor`, () => {
     describe(`\n\tlet myLinkedList = new LinkedList(4)`, () => {
