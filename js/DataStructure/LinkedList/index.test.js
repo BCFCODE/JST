@@ -615,4 +615,89 @@ suite(`LinkedList`, () => {
 
   })
 
+  suite(`insert(index, value)`, () => {
+    describe('Before insert(index, value)\n\tlet myLinkedList = new LinkedList(0);\n\tmyLinkedList.push(2);', () => {
+      let myLinkedList = new LinkedList(0)
+      myLinkedList.push(2)
+
+      const tests = [
+        [
+          'myLinkedList.head', myLinkedList.head, 'toEqual', {
+            value: 0,
+            next: {
+              value: 2,
+              next: null
+            }
+          }
+        ],
+        [
+          'myLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
+            value: 2,
+            next: null
+          }
+        ],
+        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 0],
+        ['myLinkedList.head.next.next', myLinkedList.head.next.next, 'toBeNull', null],
+        ['myLinkedList.head.next === myLinkedList.tail', myLinkedList.head.next === myLinkedList.tail, 'toBe', true],
+        [
+          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+            value: 2,
+            next: null
+          }
+        ],
+        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 2],
+        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+        ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
+      ]
+
+      runTests(tests)
+    })
+
+    describe('After set()\n\tlet myLinkedList = new LinkedList(0);\n\tmyLinkedList.push(2);\n\tmyLinkedList.insert(1, 1);', () => {
+      let myLinkedList = new LinkedList(0)
+      myLinkedList.push(2)
+      const insertValue = myLinkedList.insert(1, 1)
+
+      const tests = [
+        [
+          'myLinkedList.head', myLinkedList.head, 'toEqual', {
+            value: 0,
+            next: {
+              value: 1,
+              next: {
+                value: 2,
+                next: null
+              }
+            }
+          }
+        ],
+        [
+          'myLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
+            value: 1,
+            next: {
+              value: 2,
+              next: null
+            }
+          }
+        ],
+        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 0],
+        ['myLinkedList.head.next.next.next', myLinkedList.head.next.next.next, 'toBeNull', null],
+        ['myLinkedList.head.next.next.next === myLinkedList.tail', myLinkedList.head.next.next === myLinkedList.tail, 'toBe', true],
+        [
+          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+            value: 2,
+            next: null
+          }
+        ],
+        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 2],
+        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+        ['myLinkedList.length', myLinkedList.length, 'toEqual', 3],
+        ['\n\tconst insertValue = myLinkedList.insert(1, 1);\n\tinsertValue === myLinkedList', insertValue === true, 'toBe', true],
+      ]
+
+      runTests(tests)
+    })
+
+  })
+
 })
