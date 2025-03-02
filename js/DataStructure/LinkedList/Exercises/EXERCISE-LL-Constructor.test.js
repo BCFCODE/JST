@@ -1,28 +1,35 @@
-import { describe, it, expect, vi } from "vitest";
+import { describe, suite } from "vitest";
+import { runTests } from "../../../utils";
 import LinkedList from "./EXERCISE-LL-Constructor";
-import { J } from "../../../utils";
 
-describe(`EXERCISE-LL-Constructor\n\tconst myLinkedList = new LinkedList(4);`, () => {
-  const myLinkedList = new LinkedList(4)
-  const tests = [
-    ['getHead', "Head: 4"],
-    ['getTail', "Tail: 4"],
-    ['getLength', "Length: 1"],
-    ['printList', 4]
-  ]
+describe('EXERCISE-LL-Constructor', () => {
+  suite(`constructor()`, () => {
+    describe('\n\tlet myLinkedList = new LinkedList(4);', () => {
+      let myLinkedList = new LinkedList(4);
 
-  tests.forEach(([method, expectedResult]) => {
-    it(`\n\tmyLinkedList.${method}(); >> ${J(expectedResult)}`, () => {
-      // Mock console.log
-      const consoleLogMock = vi.fn()
-      global.console.log = consoleLogMock
+      const tests = [
+        [
+          'myLinkedList.head', myLinkedList.head, 'toEqual', {
+            value: 4,
+            next: null
+          }
+        ],
+        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 4],
+        ['myLinkedList.head.next', myLinkedList.head.next, 'toBeNull', null],
+        ['myLinkedList.head === myLinkedList.tail', myLinkedList.head === myLinkedList.tail, 'toBe', true],
+        [
+          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+            value: 4,
+            next: null
+          }
+        ],
+        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 4],
+        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+        ['myLinkedList.length', myLinkedList.length, 'toEqual', 1],
+      ]
 
-      // Call the printList method
-      myLinkedList[method]();
-
-      // Check if console.log was called with the expected result
-      expect(consoleLogMock).toHaveBeenCalledWith(expectedResult)
+      runTests(tests)
     })
+
   })
- 
-}) 
+})

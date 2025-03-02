@@ -1,5 +1,5 @@
 import { describe, it, expect, suite } from "vitest";
-import LinkedList from "./EXERCISE-LL-Get";
+import LinkedList from "./EXERCISE-LL-Get"; 
 import { J } from "../../../utils";
 
 describe('EXERCISE-LL-Get', () => {
@@ -56,7 +56,7 @@ describe('EXERCISE-LL-Get', () => {
           }
         ],
         [
-          'myLinkedList.get(1)\n\t', myLinkedList.get(1), 'toEqual', {
+          'myLinkedList.get(1)', myLinkedList.get(1), 'toEqual', {
             value: 1,
             next: {
               value: 2,
