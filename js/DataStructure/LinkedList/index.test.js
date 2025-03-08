@@ -1,10 +1,10 @@
 import { LinkedList } from ".";
-import { describe, it, expect, suite } from "vitest";
+import { describe, it, expect, describe } from "vitest";
 import { J, runTests } from "../../utils";
 
-suite(`LinkedList`, () => {
+describe(`LinkedList`, () => {
 
-  suite(`constructor`, () => {
+  describe(`constructor`, () => {
     describe(`\n\tlet myLinkedList = new LinkedList(4)`, () => {
       let myLinkedList = new LinkedList(4)
       it(`myLinkedList.length > 1`, () => {
@@ -45,7 +45,7 @@ suite(`LinkedList`, () => {
     })
   })
 
-  suite(`push()`, () => {
+  describe(`push()`, () => {
     describe('\n\tlet myLinkedList = new LinkedList(7)\n\tmyLinkedList.push(4)', () => {
       let myLinkedList = new LinkedList(7)
       myLinkedList.push(4)
@@ -86,7 +86,7 @@ suite(`LinkedList`, () => {
 
   })
 
-  suite(`pop()`, () => {
+  describe(`pop()`, () => {
     describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\t', () => {
       let myLinkedList = new LinkedList(1)
       myLinkedList.push(2)
@@ -224,7 +224,7 @@ suite(`LinkedList`, () => {
     })
   })
 
-  suite(`unshift()`, () => {
+  describe(`unshift()`, () => {
     describe('Before unshift()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);', () => {
       let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
@@ -336,7 +336,7 @@ suite(`LinkedList`, () => {
 
   })
 
-  suite(`shift()`, () => {
+  describe(`shift()`, () => {
     describe('Before shift()\n\tlet myLinkedList = new LinkedList(2);\n\tmyLinkedList.push(1);', () => {
       let myLinkedList = new LinkedList(2)
       myLinkedList.push(1)
@@ -421,7 +421,7 @@ suite(`LinkedList`, () => {
 
   })
 
-  suite(`get()`, () => {
+  describe(`get()`, () => {
     describe('\n\tlet myLinkedList = new LinkedList(0);\n\tmyLinkedList.push(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);', () => {
       let myLinkedList = new LinkedList(0)
       myLinkedList.push(1)
@@ -508,7 +508,7 @@ suite(`LinkedList`, () => {
 
   })
 
-  suite(`set()`, () => {
+  describe(`set()`, () => {
     describe('Before set()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);', () => {
       let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
@@ -615,7 +615,7 @@ suite(`LinkedList`, () => {
 
   })
 
-  suite(`insert(index, value)`, () => {
+  describe(`insert(index, value)`, () => {
     describe('Before insert(index, value)\n\tlet myLinkedList = new LinkedList(0);\n\tmyLinkedList.push(2);', () => {
       let myLinkedList = new LinkedList(0)
       myLinkedList.push(2)
@@ -653,7 +653,7 @@ suite(`LinkedList`, () => {
       runTests(tests)
     })
 
-    describe('After set()\n\tlet myLinkedList = new LinkedList(0);\n\tmyLinkedList.push(2);\n\tmyLinkedList.insert(1, 1);', () => {
+    describe('After insert(index, value)\n\tlet myLinkedList = new LinkedList(0);\n\tmyLinkedList.push(2);\n\tmyLinkedList.insert(1, 1);', () => {
       let myLinkedList = new LinkedList(0)
       myLinkedList.push(2)
       const insertValue = myLinkedList.insert(1, 1)
