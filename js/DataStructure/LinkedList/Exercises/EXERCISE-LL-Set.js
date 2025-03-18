@@ -112,14 +112,12 @@ class LinkedList {
         return temp;
     }
 
-    set(index, value) {
-        let temp = this.get(index);
-        if (temp) {
-            temp.value = value;
-            return true;
-        }
-        return false;
-    }
+    /// WRITE SET METHOD HERE ///
+    //                         //
+    //                         //
+    //                         //
+    //                         //
+    /////////////////////////////
 
 }
 
@@ -159,7 +157,5 @@ test();
     3
 
 */
-
-
 
 export default LinkedList
