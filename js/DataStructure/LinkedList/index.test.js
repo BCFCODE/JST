@@ -508,8 +508,8 @@ describe(`LinkedList`, () => {
 
   })
 
-  describe(`set()`, () => {
-    describe('Before set()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);', () => {
+  describe(`set(index, value)`, () => {
+    describe('Before set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);', () => {
       let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
       myLinkedList.push(23)
@@ -560,7 +560,7 @@ describe(`LinkedList`, () => {
       runTests(tests)
     })
 
-    describe('After set()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\tmyLinkedList.set(1, 4)', () => {
+    describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\tmyLinkedList.set(1, 4)', () => {
       let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
       myLinkedList.push(23)
@@ -608,6 +608,30 @@ describe(`LinkedList`, () => {
         ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 4],
         ['\n\tconst setValue = myLinkedList.set(1, 4);\n\tsetValue === true >> true', setValue === true, 'toBe', true],
+      ]
+
+      runTests(tests)
+    })
+
+    describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.set(-1, 4)', () => {
+      let myLinkedList = new LinkedList(11)
+      myLinkedList.push(3)
+      const setValue = myLinkedList.set(-1, 4)
+
+      const tests = [
+        ['\n\tconst setValue = myLinkedList.set(-1, 4);\n\tsetValue === false >> true', setValue === false, 'toBe', true],
+      ]
+
+      runTests(tests)
+    })
+
+    describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.set(5, 4)', () => {
+      let myLinkedList = new LinkedList(11)
+      myLinkedList.push(3)
+      const setValue = myLinkedList.set(5, 4)
+
+      const tests = [
+        ['\n\tconst setValue = myLinkedList.set(-1, 4);\n\tsetValue === false >> true', setValue === false, 'toBe', true],
       ]
 
       runTests(tests)
