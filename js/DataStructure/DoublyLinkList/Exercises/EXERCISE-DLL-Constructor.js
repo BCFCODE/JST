@@ -1,17 +1,18 @@
-// WRITE NODE CLASS HERE //
-//                       //
-//                       //
-//                       //
-//                       //
-///////////////////////////
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+    this.prev = null;
+  }
+}
 
 class DoublyLinkedList {
-  // WRITE DLL CONSTRUCTOR HERE //
-  //                            //
-  //                            //
-  //                            //
-  //                            //
-  ////////////////////////////////
+  constructor(value) {
+    const newNode = new Node(value);
+    this.head = newNode;
+    this.tail = newNode;
+    this.length = 1;
+  }
 
   printList() {
     let temp = this.head;
@@ -60,14 +61,14 @@ test();
 
 
 /*
-    EXPECTED OUTPUT:
-    ----------------
-    Head: 7
-    Tail: 7
-    Length: 1
+  EXPECTED OUTPUT:
+  ----------------
+  Head: 7
+  Tail: 7
+  Length: 1
 
-    Doubly Linked List:
-    7
+  Doubly Linked List:
+  7
 
 */
 
