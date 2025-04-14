@@ -30,7 +30,7 @@ class DoublyLinkedList {
 
   pop() {
     if (this.length === 0) return undefined
-    let temp = this.tail
+    const temp = this.tail
     if (this.length === 1) {
       this.head = null
       this.tail = null
@@ -42,7 +42,6 @@ class DoublyLinkedList {
     this.length--
     return temp
   }
-
 }
 
 export { DoublyLinkedList, Node }

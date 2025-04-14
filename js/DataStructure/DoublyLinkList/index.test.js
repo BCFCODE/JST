@@ -121,11 +121,10 @@ describe(`DoublyLinkedList`, () => {
       runTests(tests)
     })
 
-    describe('After pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tconst popValue = myDoublyLinkedList.pop()', () => {
+    describe('After first pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tconst popValue = myDoublyLinkedList.pop()', () => {
       let myDoublyLinkedList = new DoublyLinkedList(1)
       myDoublyLinkedList.push(2)
       const popValue = myDoublyLinkedList.pop()
-      // console.log(myDoublyLinkedList)
 
       const tests = [
         ...propertyTests(myDoublyLinkedList),
@@ -136,6 +135,40 @@ describe(`DoublyLinkedList`, () => {
         ['\n\tmyDoublyLinkedList.tail.next', myDoublyLinkedList.tail.next, 'toBeNull', null],
         ['\n\tmyDoublyLinkedList.tail.prev', myDoublyLinkedList.tail.prev, 'toBeNull', null],
         ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 1],
+        ['\n\tpopValue', popValue, 'toEqual', { value: 2, next: null, prev: null }],
+      ]
+
+      runTests(tests)
+    })
+
+    describe('After second pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(1)
+      myDoublyLinkedList.push(2)
+      myDoublyLinkedList.pop()
+      const popValue = myDoublyLinkedList.pop()
+
+      const tests = [
+        ['\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toBeNull', null],
+        ['\n\tmyDoublyLinkedList.tail', myDoublyLinkedList.tail, 'toBeNull', null],
+        ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 0],
+        ['\n\tpopValue', popValue, 'toEqual', { value: 1, next: null, prev: null }],
+      ]
+
+      runTests(tests)
+    })
+
+    describe('After third pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(1)
+      myDoublyLinkedList.push(2)
+      myDoublyLinkedList.pop()
+      myDoublyLinkedList.pop()
+      const popValue = myDoublyLinkedList.pop()
+
+      const tests = [
+        ['\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toBeNull', null],
+        ['\n\tmyDoublyLinkedList.tail', myDoublyLinkedList.tail, 'toBeNull', null],
+        ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 0],
+        ['\n\tpopValue', popValue, 'toBeUndefined', undefined],
       ]
 
       runTests(tests)
