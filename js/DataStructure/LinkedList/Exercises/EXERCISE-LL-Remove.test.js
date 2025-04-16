@@ -1,5 +1,5 @@
 import { describe, describe } from "vitest";
-import { runTests } from "../../../utils";
+import { executeTestCases } from "../../../utils";
 import LinkedList from "./EXERCISE-LL-Remove";
 
 describe(`EXERCISE-LL-Remove`, () => {
@@ -63,7 +63,7 @@ describe(`EXERCISE-LL-Remove`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 5],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing an element with index less than 0: remove(-1)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(-1)', () => {
@@ -128,7 +128,7 @@ describe(`EXERCISE-LL-Remove`, () => {
         ['removedNode', removedNode, 'toBeUndefined', undefined],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing an element with index greater than myLinkedList.length: remove(5)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(-1)', () => {
@@ -193,7 +193,7 @@ describe(`EXERCISE-LL-Remove`, () => {
         ['removedNode', removedNode, 'toBeUndefined', undefined],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing first element: remove(0)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(0)', () => {
@@ -240,7 +240,7 @@ describe(`EXERCISE-LL-Remove`, () => {
         ['typeof removedNode', removedNode.next, 'toBeTypeOf', 'object'],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing last element: remove(4)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(4)', () => {
@@ -287,7 +287,7 @@ describe(`EXERCISE-LL-Remove`, () => {
         ['typeof removedNode', removedNode.next, 'toBeTypeOf', 'object'],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing middle element: remove(2)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(2)', () => {
@@ -334,7 +334,7 @@ describe(`EXERCISE-LL-Remove`, () => {
         ['typeof removedNode', removedNode.next, 'toBeTypeOf', 'object'],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })

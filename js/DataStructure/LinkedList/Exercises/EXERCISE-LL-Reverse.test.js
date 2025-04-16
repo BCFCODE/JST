@@ -1,5 +1,5 @@
 import { describe } from "vitest";
-import { runTests } from "../../../utils";
+import { executeTestCases } from "../../../utils";
 import LinkedList from "./EXERCISE-LL-Reverse";
 
 describe(`EXERCISE-LL-Reverse`, () => {
@@ -67,7 +67,7 @@ describe(`EXERCISE-LL-Reverse`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 4],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After reverse()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);', () => {
@@ -135,7 +135,7 @@ describe(`EXERCISE-LL-Reverse`, () => {
         ['reverseValue === myLinkedList', reverseValue === myLinkedList, 'toBe', true],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })

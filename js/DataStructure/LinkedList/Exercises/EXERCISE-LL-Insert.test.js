@@ -1,5 +1,5 @@
 import { describe, suite } from "vitest";
-import { runTests } from "../../../utils";
+import { executeTestCases } from "../../../utils";
 import LinkedList from "./EXERCISE-LL-Insert";
 
 describe(`EXERCISE-LL-Insert`, () => {
@@ -38,7 +38,7 @@ describe(`EXERCISE-LL-Insert`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After insert(index, value)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(3);\n\tmyLinkedList.insert(1, 2);', () => {
@@ -83,8 +83,8 @@ describe(`EXERCISE-LL-Insert`, () => {
         ['\n\tconst insertValue = myLinkedList.insert(1, 2);\n\tinsertValue', insertValue, 'toBe', true],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
-    
+
   })
 })

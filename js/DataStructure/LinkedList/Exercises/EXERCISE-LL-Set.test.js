@@ -1,5 +1,5 @@
 import { describe } from "vitest";
-import { runTests } from "../../../utils";
+import { executeTestCases } from "../../../utils";
 import LinkedList from "./EXERCISE-LL-Set";
 
 describe(`EXERCISE-LL-Set`, () => {
@@ -52,7 +52,7 @@ describe(`EXERCISE-LL-Set`, () => {
       ['myLinkedList.length', myLinkedList.length, 'toEqual', 4],
     ]
 
-    runTests(tests)
+    executeTestCases(tests)
   })
 
   describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\tmyLinkedList.set(1, 4)', () => {
@@ -105,7 +105,7 @@ describe(`EXERCISE-LL-Set`, () => {
       ['\n\tconst setValue = myLinkedList.set(1, 4);\n\tsetValue === true >> true', setValue === true, 'toBe', true],
     ]
 
-    runTests(tests)
+    executeTestCases(tests)
   })
 
   describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.set(-1, 4)', () => {
@@ -117,7 +117,7 @@ describe(`EXERCISE-LL-Set`, () => {
       ['\n\tconst setValue = myLinkedList.set(-1, 4);\n\tsetValue === false >> true', setValue === false, 'toBe', true],
     ]
 
-    runTests(tests)
+    executeTestCases(tests)
   })
 
   describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.set(5, 4)', () => {
@@ -129,7 +129,7 @@ describe(`EXERCISE-LL-Set`, () => {
       ['\n\tconst setValue = myLinkedList.set(-1, 4);\n\tsetValue === false >> true', setValue === false, 'toBe', true],
     ]
 
-    runTests(tests)
+    executeTestCases(tests)
   })
 
 })

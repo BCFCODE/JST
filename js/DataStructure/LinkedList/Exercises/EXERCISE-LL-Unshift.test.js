@@ -5,7 +5,7 @@ import { J } from "../../../utils"
 describe('EXERCISE-LL-Unshift', () => {
 
   // Helper function for cleaner test structure
-  const runTests = (tests) => {
+  const executeTestCases = (tests) => {
     tests.forEach(([message, result, assertionMethod, expected]) => {
       it(`${message} >> ${J(expected)}`, () => {
         expect(result)[assertionMethod](expected);
@@ -29,7 +29,7 @@ describe('EXERCISE-LL-Unshift', () => {
       ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
     ];
 
-    runTests(beforeUnshiftTests)
+    executeTestCases(beforeUnshiftTests)
 
     describe(`Empty Linked List Scenario\n\tlet myLinkedList = new LinkedList(2)\n\tmyLinkedList.pop()`, () => {
       let myLinkedList = new LinkedList(2)
@@ -42,7 +42,7 @@ describe('EXERCISE-LL-Unshift', () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 0],
       ];
 
-      runTests(emptyListTests);
+      executeTestCases(emptyListTests);
     })
 
   })
@@ -88,7 +88,7 @@ describe('EXERCISE-LL-Unshift', () => {
       ['myLinkedList.length', myLinkedList.length, 'toEqual', 3],
     ]
 
-    runTests(afterUnshiftTests)
+    executeTestCases(afterUnshiftTests)
 
 
     describe(`Empty Linked List Scenario\n\tlet myLinkedList = new LinkedList(2)\n\tmyLinkedList.pop()\n\tmyLinkedList.unshift(1)`, () => {
@@ -121,7 +121,7 @@ describe('EXERCISE-LL-Unshift', () => {
         ['\n\tconst unshiftValue = myLinkedList.unshift(1);\n\tunshiftValue === myLinkedList', unshiftValue === myLinkedList, 'toBe', true],
       ]
 
-      runTests(emptyListAfterUnshiftTests);
+      executeTestCases(emptyListAfterUnshiftTests);
     })
   })
 
