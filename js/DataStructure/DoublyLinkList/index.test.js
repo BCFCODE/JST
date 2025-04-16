@@ -1,41 +1,16 @@
-import { DoublyLinkedList } from ".";
-import { describe, it, expect, describe } from "vitest";
-import { J, runTests } from "../../utils";
+import { describe } from "vitest";
+import { DoublyLinkedList } from '.'
+import { checkDLLInternalStructure, executeTestCases } from "../../utils";
+import { afterFirstPop, afterSecondPop, afterThirdPop, beforePop } from "./TESTS/Pop";
 
 describe(`DoublyLinkedList`, () => {
-
-  const propertyTests = (myDoublyLinkedList) => {
-    const nodeProperties = ['value', 'prev', 'next']
-    const headPropertyTests = nodeProperties.map(property =>
-      [
-        `\n\tmyDoublyLinkedList.head.hasOwnProperty(${property})`,
-        myDoublyLinkedList.head.hasOwnProperty(property), 'toBe', true
-      ]
-    )
-    const tailPropertyTests = nodeProperties.map(property =>
-      [
-        `\n\tmyDoublyLinkedList.tail.hasOwnProperty(${property})`,
-        myDoublyLinkedList.tail.hasOwnProperty(property), 'toBe', true
-      ]
-    )
-
-    const myDoublyLinkedListPropertyTests =
-      ['head', 'tail', 'length'].map(property =>
-        [
-          `\n\tmyDoublyLinkedList.hasOwnProperty(${property})`,
-          myDoublyLinkedList.hasOwnProperty(property), 'toBe', true
-        ]
-      )
-
-    return [...myDoublyLinkedListPropertyTests, ...headPropertyTests, ...tailPropertyTests]
-  }
 
   describe(`constructor`, () => {
     describe(`\n\tlet myDoublyLinkedList = new DoublyLinkedList(7)`, () => {
       let myDoublyLinkedList = new DoublyLinkedList(7)
 
       const tests = [
-        ...propertyTests(myDoublyLinkedList),
+        ...checkDLLInternalStructure(myDoublyLinkedList),
         [
           '\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toEqual', {
             value: 7,
@@ -60,7 +35,7 @@ describe(`DoublyLinkedList`, () => {
         ["\n\tmyDoublyLinkedList.length", myDoublyLinkedList.length, 'toBe', 1],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
 
     })
 
@@ -89,13 +64,13 @@ describe(`DoublyLinkedList`, () => {
       ]
 
       const tests = [
-        ...propertyTests(myDoublyLinkedList),
+        ...checkDLLInternalStructure(myDoublyLinkedList),
         ...headTests, ...tailTests,
         ['myDoublyLinkedList.length', myDoublyLinkedList.length, 'toEqual', 2],
         ['\n\tconst pushValue = myDoublyLinkedList.push(2); \n\tpushValue === myDoublyLinkedList', pushValue === myDoublyLinkedList, 'toBe', true]
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -105,20 +80,9 @@ describe(`DoublyLinkedList`, () => {
       let myDoublyLinkedList = new DoublyLinkedList(1)
       myDoublyLinkedList.push(2)
 
-      const tests = [
-        ...propertyTests(myDoublyLinkedList),
-        ['\n\tmyDoublyLinkedList.head.value', myDoublyLinkedList.head.value, 'toBe', 1],
-        ['\n\tmyDoublyLinkedList.tail.prev.value', myDoublyLinkedList.tail.prev.value, 'toBe', 1],
-        ['\n\tmyDoublyLinkedList.head.next.value', myDoublyLinkedList.head.next.value, 'toBe', 2],
-        ['\n\tmyDoublyLinkedList.tail.value', myDoublyLinkedList.tail.value, 'toBe', 2],
-        ['\n\tmyDoublyLinkedList.head.prev', myDoublyLinkedList.head.prev, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.tail.next', myDoublyLinkedList.tail.next, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.head.next.next', myDoublyLinkedList.head.next.next, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.tail.prev.prev', myDoublyLinkedList.tail.prev.prev, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 2],
-      ]
+      const tests = beforePop(myDoublyLinkedList)
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After first pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tconst popValue = myDoublyLinkedList.pop()', () => {
@@ -126,19 +90,9 @@ describe(`DoublyLinkedList`, () => {
       myDoublyLinkedList.push(2)
       const popValue = myDoublyLinkedList.pop()
 
-      const tests = [
-        ...propertyTests(myDoublyLinkedList),
-        ['\n\tmyDoublyLinkedList.head.value', myDoublyLinkedList.head.value, 'toBe', 1],
-        ['\n\tmyDoublyLinkedList.head.next', myDoublyLinkedList.head.next, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.head.prev', myDoublyLinkedList.head.prev, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.tail.value', myDoublyLinkedList.tail.value, 'toBe', 1],
-        ['\n\tmyDoublyLinkedList.tail.next', myDoublyLinkedList.tail.next, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.tail.prev', myDoublyLinkedList.tail.prev, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 1],
-        ['\n\tpopValue', popValue, 'toEqual', { value: 2, next: null, prev: null }],
-      ]
+      const tests = afterFirstPop(myDoublyLinkedList, popValue)
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After second pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
@@ -147,14 +101,9 @@ describe(`DoublyLinkedList`, () => {
       myDoublyLinkedList.pop()
       const popValue = myDoublyLinkedList.pop()
 
-      const tests = [
-        ['\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.tail', myDoublyLinkedList.tail, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 0],
-        ['\n\tpopValue', popValue, 'toEqual', { value: 1, next: null, prev: null }],
-      ]
+      const tests = afterSecondPop(myDoublyLinkedList, popValue)
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After third pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
@@ -164,14 +113,9 @@ describe(`DoublyLinkedList`, () => {
       myDoublyLinkedList.pop()
       const popValue = myDoublyLinkedList.pop()
 
-      const tests = [
-        ['\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.tail', myDoublyLinkedList.tail, 'toBeNull', null],
-        ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 0],
-        ['\n\tpopValue', popValue, 'toBeUndefined', undefined],
-      ]
+      const tests = afterThirdPop(myDoublyLinkedList, popValue)
 
-      runTests(tests)
+      executeTestCases(tests)
     })
   })
 

@@ -1,6 +1,6 @@
 import { LinkedList } from ".";
 import { describe, it, expect, describe } from "vitest";
-import { J, runTests } from "../../utils";
+import { J, executeTestCases } from "../../utils";
 
 describe(`LinkedList`, () => {
 
@@ -81,7 +81,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -130,7 +130,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\t', () => {
@@ -169,7 +169,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 1],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\t', () => {
@@ -196,7 +196,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 0],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
     describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\t', () => {
       let myLinkedList = new LinkedList(1)
@@ -220,7 +220,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 0],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
   })
 
@@ -273,7 +273,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 4],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After unshift()\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\tmyLinkedList.unshift(4)', () => {
@@ -331,7 +331,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 5],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -371,7 +371,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After first shift()\n\tlet myLinkedList = new LinkedList(2);\n\tmyLinkedList.push(1);\n\tmyLinkedList.shift();', () => {
@@ -400,7 +400,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 1],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After second shift()\n\tlet myLinkedList = new LinkedList(2);\n\tmyLinkedList.push(1);\n\tmyLinkedList.shift();\n\tmyLinkedList.shift();', () => {
@@ -416,7 +416,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 0],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -503,7 +503,7 @@ describe(`LinkedList`, () => {
         ["\n\tAfter calling get() method, the value must remain unchanged", myLinkedList.length, 'toBe', 4],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -557,7 +557,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 4],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(23);\n\tmyLinkedList.push(7);\n\tmyLinkedList.set(1, 4)', () => {
@@ -610,7 +610,7 @@ describe(`LinkedList`, () => {
         ['\n\tconst setValue = myLinkedList.set(1, 4);\n\tsetValue === true >> true', setValue === true, 'toBe', true],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.set(-1, 4)', () => {
@@ -622,7 +622,7 @@ describe(`LinkedList`, () => {
         ['\n\tconst setValue = myLinkedList.set(-1, 4);\n\tsetValue === false >> true', setValue === false, 'toBe', true],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After set(index, value)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.set(5, 4)', () => {
@@ -634,7 +634,7 @@ describe(`LinkedList`, () => {
         ['\n\tconst setValue = myLinkedList.set(-1, 4);\n\tsetValue === false >> true', setValue === false, 'toBe', true],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -674,7 +674,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After insert(index, value)\n\tlet myLinkedList = new LinkedList(0);\n\tmyLinkedList.push(2);\n\tmyLinkedList.insert(1, 1);', () => {
@@ -719,7 +719,7 @@ describe(`LinkedList`, () => {
         ['\n\tconst insertValue = myLinkedList.insert(1, 1);\n\tinsertValue === myLinkedList', insertValue === true, 'toBe', true],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -784,7 +784,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 5],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing an element with index less than 0: remove(-1)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(-1)', () => {
@@ -849,7 +849,7 @@ describe(`LinkedList`, () => {
         ['removedNode', removedNode, 'toBeUndefined', undefined],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing an element with index greater than myLinkedList.length: remove(5)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(-1)', () => {
@@ -914,7 +914,7 @@ describe(`LinkedList`, () => {
         ['removedNode', removedNode, 'toBeUndefined', undefined],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing first element: remove(0)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(0)', () => {
@@ -961,7 +961,7 @@ describe(`LinkedList`, () => {
         ['typeof removedNode', removedNode.next, 'toBeTypeOf', 'object'],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing last element: remove(4)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(4)', () => {
@@ -1008,7 +1008,7 @@ describe(`LinkedList`, () => {
         ['typeof removedNode', removedNode.next, 'toBeTypeOf', 'object'],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After removing middle element: remove(2)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);\n\tmyLinkedList.push(5);\n\tconst removedNode = myLinkedList.remove(2)', () => {
@@ -1055,7 +1055,7 @@ describe(`LinkedList`, () => {
         ['typeof removedNode', removedNode.next, 'toBeTypeOf', 'object'],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
@@ -1124,7 +1124,7 @@ describe(`LinkedList`, () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 4],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After reverse()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.push(3);\n\tmyLinkedList.push(4);', () => {
@@ -1192,7 +1192,7 @@ describe(`LinkedList`, () => {
         ['reverseValue === myLinkedList', reverseValue === myLinkedList, 'toBe', true],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })

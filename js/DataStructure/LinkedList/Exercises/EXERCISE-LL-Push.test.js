@@ -1,5 +1,5 @@
 import { describe } from "vitest";
-import { runTests } from "../../../utils";
+import { executeTestCases } from "../../../utils";
 import LinkedList from "./EXERCISE-LL-Push";
 
 describe('EXERCISE-LL-Push', () => {
@@ -20,7 +20,7 @@ describe('EXERCISE-LL-Push', () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 0],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After first push(value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.push(7);', () => {
@@ -50,7 +50,7 @@ describe('EXERCISE-LL-Push', () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 1],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
     describe('After second push(value)\n\tlet myLinkedList = new LinkedList();\n\t myLinkedList.pop();\n\tmyLinkedList.push(7)\n\tmyLinkedList.push(4)', () => {
@@ -83,7 +83,7 @@ describe('EXERCISE-LL-Push', () => {
         ['myLinkedList.length', myLinkedList.length, 'toBe', 2],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })

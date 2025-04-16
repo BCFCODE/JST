@@ -1,5 +1,5 @@
 import { describe, suite } from "vitest";
-import { runTests } from "../../../utils";
+import { executeTestCases } from "../../../utils";
 import LinkedList from "./EXERCISE-LL-Constructor";
 
 describe('EXERCISE-LL-Constructor', () => {
@@ -28,7 +28,7 @@ describe('EXERCISE-LL-Constructor', () => {
         ['myLinkedList.length', myLinkedList.length, 'toEqual', 1],
       ]
 
-      runTests(tests)
+      executeTestCases(tests)
     })
 
   })
