@@ -2,6 +2,7 @@ import { describe } from "vitest";
 import { DoublyLinkedList } from '.'
 import { checkDLLInternalStructure, executeTestCases } from "../../utils";
 import { afterFirstPop, afterSecondPop, afterThirdPop, beforePop } from "./TESTS/Pop";
+import { beforeUnshift, afterFirstUnshift, afterSecondUnshift } from "./TESTS/Unshift";
 
 describe(`DoublyLinkedList`, () => {
 
@@ -76,7 +77,7 @@ describe(`DoublyLinkedList`, () => {
   })
 
   describe(`pop()`, () => {
-    describe('Before pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);', () => {
+    describe('Before pop()\n\tlet myDoublyLinkedList = new DoublyLinkedList(1);\n\tmyDoublyLinkedList.push(2);', () => {
       let myDoublyLinkedList = new DoublyLinkedList(1)
       myDoublyLinkedList.push(2)
 
@@ -85,7 +86,7 @@ describe(`DoublyLinkedList`, () => {
       executeTestCases(tests)
     })
 
-    describe('After first pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tconst popValue = myDoublyLinkedList.pop()', () => {
+    describe('After first pop()\n\tlet myDoublyLinkedList = new DoublyLinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tconst popValue = myDoublyLinkedList.pop()', () => {
       let myDoublyLinkedList = new DoublyLinkedList(1)
       myDoublyLinkedList.push(2)
       const popValue = myDoublyLinkedList.pop()
@@ -95,7 +96,7 @@ describe(`DoublyLinkedList`, () => {
       executeTestCases(tests)
     })
 
-    describe('After second pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
+    describe('After second pop()\n\tlet myDoublyLinkedList = new DoublyLinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
       let myDoublyLinkedList = new DoublyLinkedList(1)
       myDoublyLinkedList.push(2)
       myDoublyLinkedList.pop()
@@ -106,7 +107,7 @@ describe(`DoublyLinkedList`, () => {
       executeTestCases(tests)
     })
 
-    describe('After third pop()\n\tlet myDoublyLinkedList = new LinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
+    describe('After third pop()\n\tlet myDoublyLinkedList = new DoublyLinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.pop()\n\tmyDoublyLinkedList.pop()\n\tconst popValue = myDoublyLinkedList.pop()', () => {
       let myDoublyLinkedList = new DoublyLinkedList(1)
       myDoublyLinkedList.push(2)
       myDoublyLinkedList.pop()
@@ -117,6 +118,39 @@ describe(`DoublyLinkedList`, () => {
 
       executeTestCases(tests)
     })
+  })
+
+  describe(`unshift()`, () => {
+    describe('Before unshift()\n\tlet myDoublyLinkedList = new DoublyLinkedList();\n\tmyDoublyLinkedList.pop();', () => {
+      let myDoublyLinkedList = new DoublyLinkedList()
+      myDoublyLinkedList.pop()
+
+      const tests = beforeUnshift(myDoublyLinkedList)
+
+      executeTestCases(tests)
+    })
+
+    describe('After first unshift()\n\tlet myDoublyLinkedList = new DoublyLinkedList();\n\tmyDoublyLinkedList.pop();\n\tconst unshiftValue = myDoublyLinkedList.unshift(2)', () => {
+      let myDoublyLinkedList = new DoublyLinkedList()
+      myDoublyLinkedList.pop()
+      const unshiftValue = myDoublyLinkedList.unshift(2)
+
+      const tests = afterFirstUnshift(myDoublyLinkedList, unshiftValue)
+
+      executeTestCases(tests)
+    })
+
+    describe('After second unshift()\n\tlet myDoublyLinkedList = new DoublyLinkedList();\n\tmyDoublyLinkedList.pop();\n\tmyDoublyLinkedList.unshift(2)\n\tconst unshiftValue = myDoublyLinkedList.unshift(1)', () => {
+      let myDoublyLinkedList = new DoublyLinkedList()
+      myDoublyLinkedList.pop()
+      myDoublyLinkedList.unshift(2)
+      const unshiftValue = myDoublyLinkedList.unshift(1)
+
+      const tests = afterSecondUnshift(myDoublyLinkedList, unshiftValue)
+
+      executeTestCases(tests)
+    })
+
   })
 
 })
