@@ -1,6 +1,6 @@
 import { describe, it, expect, suite } from "vitest";
 import LinkedList from "./EXERCISE-LL-Get"; 
-import { J } from "../../../utils";
+import { J } from "../../../../utils";
 
 describe('EXERCISE-LL-Get', () => {
   suite(`get()`, () => {

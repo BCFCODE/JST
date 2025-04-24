@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, suite } from "vitest";
 import LinkedList from "./EXERCISE-LL-Shift";
-import { J } from "../../../utils";
+import { J } from "../../../../utils";
 
 describe('EXERCISE-LL-Shift', () => {
   suite(`shift()`, () => {

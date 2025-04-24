@@ -1,5 +1,5 @@
 import { describe, describe } from "vitest";
-import { executeTestCases } from "../../../utils";
+import { executeTestCases } from "../../../../utils";
 import LinkedList from "./EXERCISE-LL-Remove";
 
 describe(`EXERCISE-LL-Remove`, () => {

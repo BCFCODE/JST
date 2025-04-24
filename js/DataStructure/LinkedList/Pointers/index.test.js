@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { obj1 } from "./pointer"
+import { obj1 } from "."
 
 describe(`Pointer description`, () => {
   const tests = [
