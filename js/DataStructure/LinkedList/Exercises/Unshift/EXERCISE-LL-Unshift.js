@@ -78,18 +78,12 @@ class LinkedList {
     return temp;
   }
 
-  unshift(value) {
-    const newNode = new Node(value);
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-    } else {
-      newNode.next = this.head;
-      this.head = newNode;
-    }
-    this.length++;
-    return this;
-  }
+  /// WRITE UNSHIFT METHOD HERE ///
+  //                             //
+  //                             //
+  //                             //
+  //                             //
+  /////////////////////////////////
 
 }
 
@@ -124,28 +118,28 @@ test();
 
 
 /*
-  EXPECTED OUTPUT:
+    EXPECTED OUTPUT:
 
-  Before unshift():
-  -----------------
-  Head: 2
-  Tail: 3
-  Length: 2
+    Before unshift():
+    -----------------
+    Head: 2
+    Tail: 3
+    Length: 2
 
-  Linked List:
-  2
-  3
+    Linked List:
+    2
+    3
 
-  After unshift():
-  ----------------
-  Head: 1
-  Tail: 3
-  Length: 3
+    After unshift():
+    ----------------
+    Head: 1
+    Tail: 3
+    Length: 3
 
-  Linked List:
-  1
-  2
-  3
+    Linked List:
+    1
+    2
+    3
 
 */
 
