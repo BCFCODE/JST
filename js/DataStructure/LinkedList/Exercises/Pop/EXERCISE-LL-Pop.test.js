@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, suite } from "vitest";
 import LinkedList from "./EXERCISE-LL-Pop";
-import { J } from "../../../utils";
+import { J } from "../../../../utils";
 
 describe(`EXERCISE-LL-Pop`, () => {
   suite(`pop()`, () => {

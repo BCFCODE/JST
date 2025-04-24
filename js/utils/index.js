@@ -11,28 +11,54 @@ export const executeTestCases = (tests) => {
   });
 };
 
-export const checkDLLInternalStructure = (myDoublyLinkedList) => {
-  const nodeProperties = ['value', 'prev', 'next']
+export const checkLLInternalStructure = (myLinkedList) => {
+  const nodeProperties = ['value', 'next']
   const headPropertyTests = nodeProperties.map(property =>
     [
-      `\n\tmyDoublyLinkedList.head.hasOwnProperty(${property})`,
-      myDoublyLinkedList.head.hasOwnProperty(property), 'toBe', true
+      `\n\tmyLinkedList.head.hasOwnProperty(${property})`,
+      myLinkedList.head.hasOwnProperty(property), 'toBe', true
     ]
   )
   const tailPropertyTests = nodeProperties.map(property =>
     [
-      `\n\tmyDoublyLinkedList.tail.hasOwnProperty(${property})`,
-      myDoublyLinkedList.tail.hasOwnProperty(property), 'toBe', true
+      `\n\tmyLinkedList.tail.hasOwnProperty(${property})`,
+      myLinkedList.tail.hasOwnProperty(property), 'toBe', true
     ]
   )
 
-  const myDoublyLinkedListPropertyTests =
+  const myLinkedListPropertyTests =
     ['head', 'tail', 'length'].map(property =>
       [
-        `\n\tmyDoublyLinkedList.hasOwnProperty(${property})`,
-        myDoublyLinkedList.hasOwnProperty(property), 'toBe', true
+        `\n\tmyLinkedList.hasOwnProperty(${property})`,
+        myLinkedList.hasOwnProperty(property), 'toBe', true
       ]
     )
 
-  return [...myDoublyLinkedListPropertyTests, ...headPropertyTests, ...tailPropertyTests]
+  return [...myLinkedListPropertyTests, ...headPropertyTests, ...tailPropertyTests]
+}
+
+export const checkDLLInternalStructure = (myLinkedList) => {
+  const nodeProperties = ['value', 'prev', 'next']
+  const headPropertyTests = nodeProperties.map(property =>
+    [
+      `\n\tmyLinkedList.head.hasOwnProperty(${property})`,
+      myLinkedList.head.hasOwnProperty(property), 'toBe', true
+    ]
+  )
+  const tailPropertyTests = nodeProperties.map(property =>
+    [
+      `\n\tmyLinkedList.tail.hasOwnProperty(${property})`,
+      myLinkedList.tail.hasOwnProperty(property), 'toBe', true
+    ]
+  )
+
+  const myLinkedListPropertyTests =
+    ['head', 'tail', 'length'].map(property =>
+      [
+        `\n\tmyLinkedList.hasOwnProperty(${property})`,
+        myLinkedList.hasOwnProperty(property), 'toBe', true
+      ]
+    )
+
+  return [...myLinkedListPropertyTests, ...headPropertyTests, ...tailPropertyTests]
 }
