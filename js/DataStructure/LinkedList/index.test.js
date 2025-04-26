@@ -2,6 +2,7 @@ import { LinkedList } from ".";
 import { describe, it, expect, describe } from "vitest";
 import { J, executeTestCases } from "../../utils";
 import { beforeSet } from "./TESTS/Set";
+import { beforePop, afterFirstPop, afterSecondPop, afterThirdPop } from "./TESTS/Pop";
 
 describe(`LinkedList`, () => {
 
@@ -88,141 +89,49 @@ describe(`LinkedList`, () => {
   })
 
   describe(`pop()`, () => {
-    describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\t', () => {
+
+    describe('Before pop()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.pop(2);', () => {
       let myLinkedList = new LinkedList(1)
       myLinkedList.push(2)
-      myLinkedList.push(3)
-      const popValue = myLinkedList.pop()
 
-      const tests = [
-        [
-          'myLinkedList.pop()', popValue, 'toEqual', {
-            value: 3,
-            next: null
-          }
-        ],
-        [
-          'myLinkedList.head', myLinkedList.head, 'toEqual', {
-            value: 1,
-            next: {
-              value: 2,
-              next: null
-            }
-          }
-        ],
-        [
-          'myLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
-            value: 2,
-            next: null
-          }
-        ],
-        ['myLinkedList.head.value', myLinkedList.head.value, 'toEqual', 1],
-        ['myLinkedList.head.value', myLinkedList.head.value, 'toEqual', 1],
-        ['myLinkedList.head.next.value', myLinkedList.head.next.value, 'toEqual', 2],
-        ['myLinkedList.head.next.next', myLinkedList.head.next.next, 'toBeNull', null],
-        [
-          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
-            value: 2,
-            next: null
-          }
-        ],
-        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toEqual', 2],
-        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
-        ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
-      ]
+      const tests = beforePop(myLinkedList)
 
       executeTestCases(tests)
     })
 
-    describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\t', () => {
+    describe('After first pop()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tconst popValue = myLinkedList.pop()', () => {
       let myLinkedList = new LinkedList(1)
       myLinkedList.push(2)
-      myLinkedList.push(3)
-      myLinkedList.pop()
       const popValue = myLinkedList.pop()
 
-      const tests = [
-        [
-          'myLinkedList.pop()', popValue, 'toEqual', {
-            value: 2,
-            next: null
-          }
-        ],
-        [
-          'myLinkedList.head', myLinkedList.head, 'toEqual', {
-            value: 1,
-            next: null
-          }
-        ],
-        [
-          'myLinkedList.head.next', myLinkedList.head.next, 'toBeNull', null
-        ],
-        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 1],
-        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 1],
-        [
-          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
-            value: 1,
-            next: null
-          }
-        ],
-        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 1],
-        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
-        ['myLinkedList.length', myLinkedList.length, 'toBe', 1],
-      ]
+      const tests = afterFirstPop(myLinkedList, popValue)
 
       executeTestCases(tests)
     })
 
-    describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\t', () => {
+    describe('After second pop()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop()\n\tconst popValue = myLinkedList.pop()', () => {
       let myLinkedList = new LinkedList(1)
       myLinkedList.push(2)
-      myLinkedList.push(3)
+      myLinkedList.pop()
+      const popValue = myLinkedList.pop()
+
+      const tests = afterSecondPop(myLinkedList, popValue)
+
+      executeTestCases(tests)
+    })
+
+    describe('After third pop()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop()\n\tmyLinkedList.pop()\n\tconst popValue = myLinkedList.pop()', () => {
+      let myLinkedList = new LinkedList(1)
+      myLinkedList.push(2)
       myLinkedList.pop()
       myLinkedList.pop()
       const popValue = myLinkedList.pop()
 
-      const tests = [
-        [
-          'myLinkedList.pop()', popValue, 'toEqual', {
-            value: 1,
-            next: null
-          }
-        ],
-        [
-          'myLinkedList.head', myLinkedList.head, 'toBeNull', null
-        ],
-        [
-          'myLinkedList.tail', myLinkedList.tail, 'toBeNull', null
-        ],
-        ['myLinkedList.length', myLinkedList.length, 'toBe', 0],
-      ]
+      const tests = afterThirdPop(myLinkedList, popValue)
 
       executeTestCases(tests)
     })
-    describe('\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\tmyLinkedList.pop();\n\t', () => {
-      let myLinkedList = new LinkedList(1)
-      myLinkedList.push(2)
-      myLinkedList.push(3)
-      myLinkedList.pop()
-      myLinkedList.pop()
-      myLinkedList.pop()
-      const popValue = myLinkedList.pop()
 
-      const tests = [
-        [
-          'myLinkedList.pop()', popValue, 'toBeUndefined'
-        ],
-        [
-          'myLinkedList.head', myLinkedList.head, 'toBeNull', null
-        ],
-        [
-          'myLinkedList.tail', myLinkedList.tail, 'toBeNull', null
-        ],
-        ['myLinkedList.length', myLinkedList.length, 'toBe', 0],
-      ]
-
-      executeTestCases(tests)
-    })
   })
 
   describe(`unshift()`, () => {
@@ -575,7 +484,7 @@ describe(`LinkedList`, () => {
     })
 
     describe('After set(-1, 4)\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tmyLinkedList.set(-1, 4)', () => {
-      let myLinkedList = new LinkedList(11) 
+      let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
       const setValue = myLinkedList.set(-1, 4)
 
