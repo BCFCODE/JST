@@ -14,9 +14,9 @@ describe(`DoublyLinkedList`, () => {
         ...checkDLLInternalStructure(myDoublyLinkedList),
         [
           '\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toEqual', {
-            value: 7,
+            value: 7, 
             next: null,
-            prev: null
+            prev: null 
           }
         ],
         ['\n\tmyDoublyLinkedList.head.value', myDoublyLinkedList.head.value, 'toBe', 7],
