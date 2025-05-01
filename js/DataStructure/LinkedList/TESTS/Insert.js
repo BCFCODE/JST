@@ -63,6 +63,49 @@ export const afterSecondInsert = (myLinkedList, insertValue) => [
   ['\n\tmyLinkedList.length', myLinkedList.length, 'toBe', 2],
 ];
 
+export const afterThirdInsert = (myLinkedList, insertValue) => [
+  ...checkLLInternalStructure(myLinkedList),
+  [
+    '\n\tmyLinkedList.head', myLinkedList.head, 'toEqual', {
+      value: 'New value in the beginning',
+      next: {
+        value: 'New value in the middle',
+        next: {
+          value: 1,
+          next: null
+        }
+      }
+    }
+  ],
+  [
+    '\n\tmyLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
+      value: 'New value in the middle',
+      next: {
+        value: 1,
+        next: null
+      }
+    }
+  ],
+  [
+    'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+      value: 1,
+      next: null
+    }
+  ],
+  ['\n\tmyLinkedList.head.value', myLinkedList.head.value, 'toBe', 'New value in the beginning'],
+  ['\n\tmyLinkedList.head.next.value', myLinkedList.head.next.value, 'toBe', 'New value in the middle'],
+  ['\n\tmyLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 1],
+  ['\n\tmyLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+  ['\n\tmyLinkedList.head.next.next', myLinkedList.head.next.next, 'toEqual', {
+    value: 1,
+    next: null
+  }],
+  ['\n\tmyLinkedList.head.next.next.next', myLinkedList.head.next.next.next, 'toBeNull', null],
+  ['\n\tmyLinkedList.head.next.next === myLinkedList.tail', myLinkedList.head.next.next === myLinkedList.tail, 'toBe', true],
+  ['\n\tinsertValue', insertValue, 'toBe', true],
+  ['\n\tmyLinkedList.length', myLinkedList.length, 'toBe', 3],
+];
+
 export const invalidIndexTestsForInsert = (LinkedList, index) =>
   describe(`EXERCISE-LL-Insert`, () => {
     describe(`After insert(${index}, 'Index out of valid range') - Invalid index\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tmyLinkedList.insert(0, 1)\n\tmyLinkedList.insert(0, 'New value in the beginning')\n\tconst setValue = myLinkedList.set(${index}, 4)`, () => {

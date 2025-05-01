@@ -1,7 +1,7 @@
 import { describe } from "vitest";
 import { executeTestCases } from "../../../../utils";
 import LinkedList from "./EXERCISE-LL-Insert";
-import { afterFirstInsert, afterSecondInsert, beforeInsert, invalidIndexTestsForInsert } from "../../TESTS/Insert";
+import { afterFirstInsert, afterSecondInsert, afterThirdInsert, beforeInsert, invalidIndexTestsForInsert } from "../../TESTS/Insert";
 
 describe(`EXERCISE-LL-Insert`, () => {
   describe(`insert(index, value)`, () => {
@@ -14,7 +14,7 @@ describe(`EXERCISE-LL-Insert`, () => {
       executeTestCases(tests)
     })
 
-    describe(`After first insert(0, 1)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tconst insertValue = myLinkedList.insert(0, 1)`, () => {
+    describe(`let myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tconst insertValue = myLinkedList.insert(0, 1)`, () => {
       let myLinkedList = new LinkedList()
       myLinkedList.pop()
       const insertValue = myLinkedList.insert(0, 1)
@@ -24,13 +24,25 @@ describe(`EXERCISE-LL-Insert`, () => {
       executeTestCases(tests)
     })
 
-    describe(`After second insert(0, 'New value in the beginning')\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tconst insertValue = myLinkedList.insert(0, 1)`, () => {
+    describe(`let myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tmyLinkedList.insert(0, 1)\n\tconst insertValue = myLinkedList.insert(0, 'New value in the beginning')`, () => {
       let myLinkedList = new LinkedList()
       myLinkedList.pop()
       myLinkedList.insert(0, 1)
       const insertValue = myLinkedList.insert(0, 'New value in the beginning')
 
       const tests = afterSecondInsert(myLinkedList, insertValue)
+
+      executeTestCases(tests)
+    });
+
+    describe(`let myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tmyLinkedList.insert(0, 1)\n\tmyLinkedList.insert(0, 'New value in the beginning')\n\tconst insertValue = myLinkedList.insert(1, 'New value in the middle')`, () => {
+      let myLinkedList = new LinkedList()
+      myLinkedList.pop()
+      myLinkedList.insert(0, 1)
+      myLinkedList.insert(0, 'New value in the beginning')
+      const insertValue = myLinkedList.insert(1, 'New value in the middle')
+
+      const tests = afterThirdInsert(myLinkedList, insertValue)
 
       executeTestCases(tests)
     });
