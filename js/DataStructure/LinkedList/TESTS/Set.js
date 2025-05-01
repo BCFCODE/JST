@@ -87,17 +87,17 @@ export const afterSet4ToIndex1 = (myLinkedList, setValue) => [
   ['\n\tconst setValue = myLinkedList.set(1, 4);\n\tsetValue === true >> true', setValue === true, 'toBe', true],
 ]
 
-export const outOfRangeIndex = (LinkedList, index) =>
+export const invalidIndexTestsForSet = (LinkedList, index) =>
   describe(`EXERCISE-LL-Set`, () => {
-    describe(`After set(${index}, 4) - Out of index range\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tconst setValue = myLinkedList.set(${index}, 4)`, () => {
+    describe(`After set(${index}, 4) - Invalid index\n\tlet myLinkedList = new LinkedList(11);\n\tmyLinkedList.push(3);\n\tconst setValue = myLinkedList.set(${index}, 4)`, () => {
       let myLinkedList = new LinkedList(11)
       myLinkedList.push(3)
       const setValue = myLinkedList.set(index, 4)
-
+ 
       const tests = [
         [`\n\tsetValue === false`, setValue === false, 'toBe', true],
       ]
 
       executeTestCases(tests)
-    })
+    }) 
   })

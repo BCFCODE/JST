@@ -1,90 +1,43 @@
-import { describe, suite } from "vitest";
+import { describe } from "vitest";
 import { executeTestCases } from "../../../../utils";
 import LinkedList from "./EXERCISE-LL-Insert";
+import { afterFirstInsert, afterSecondInsert, beforeInsert, invalidIndexTestsForInsert } from "../../TESTS/Insert";
 
 describe(`EXERCISE-LL-Insert`, () => {
-  suite(`insert(index, value)`, () => {
-    describe('Before insert(index, value)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(3);', () => {
-      let myLinkedList = new LinkedList(1);
-      myLinkedList.push(3);
+  describe(`insert(index, value)`, () => {
+    describe(`Before insert(index, value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();`, () => {
+      let myLinkedList = new LinkedList()
+      myLinkedList.pop()
 
-      const tests = [
-        [
-          '\n\tmyLinkedList.head', myLinkedList.head, 'toEqual', {
-            value: 1,
-            next: {
-              value: 3,
-              next: null
-            }
-          }
-        ],
-        [
-          'myLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
-            value: 3,
-            next: null
-          }
-        ],
-        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 1],
-        ['myLinkedList.head.next.next', myLinkedList.head.next.next, 'toBeNull', null],
-        ['myLinkedList.head.next === myLinkedList.tail', myLinkedList.head.next === myLinkedList.tail, 'toBe', true],
-        [
-          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
-            value: 3,
-            next: null
-          }
-        ],
-        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 3],
-        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
-        ['myLinkedList.length', myLinkedList.length, 'toEqual', 2],
-      ]
+      const tests = beforeInsert(myLinkedList)
 
       executeTestCases(tests)
     })
 
-    describe('After insert(index, value)\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(3);\n\tmyLinkedList.insert(1, 2);', () => {
-      let myLinkedList = new LinkedList(1)
-      myLinkedList.push(3)
-      const insertValue = myLinkedList.insert(1, 2)
+    describe(`After first insert(0, 1)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tconst insertValue = myLinkedList.insert(0, 1)`, () => {
+      let myLinkedList = new LinkedList()
+      myLinkedList.pop()
+      const insertValue = myLinkedList.insert(0, 1)
 
-      const tests = [
-        [
-          'myLinkedList.head', myLinkedList.head, 'toEqual', {
-            value: 1,
-            next: {
-              value: 2,
-              next: {
-                value: 3,
-                next: null
-              }
-            }
-          }
-        ],
-        [
-          'myLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
-            value: 2,
-            next: {
-              value: 3,
-              next: null
-            }
-          }
-        ],
-        ['myLinkedList.head.value', myLinkedList.head.value, 'toBe', 1],
-        ['myLinkedList.head.next.next.next', myLinkedList.head.next.next.next, 'toBeNull', null],
-        ['myLinkedList.head.next.next.next === myLinkedList.tail', myLinkedList.head.next.next === myLinkedList.tail, 'toBe', true],
-        [
-          'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
-            value: 3,
-            next: null
-          }
-        ],
-        ['myLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 3],
-        ['myLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
-        ['myLinkedList.length', myLinkedList.length, 'toEqual', 3],
-        ['\n\tconst insertValue = myLinkedList.insert(1, 2);\n\tinsertValue', insertValue, 'toBe', true],
-      ]
+      const tests = afterFirstInsert(myLinkedList, insertValue)
 
       executeTestCases(tests)
     })
+
+    describe(`After second insert(0, 'New value in the beginning')\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tconst insertValue = myLinkedList.insert(0, 1)`, () => {
+      let myLinkedList = new LinkedList()
+      myLinkedList.pop()
+      myLinkedList.insert(0, 1)
+      const insertValue = myLinkedList.insert(0, 'New value in the beginning')
+
+      const tests = afterSecondInsert(myLinkedList, insertValue)
+
+      executeTestCases(tests)
+    });
+
+    // Out of range tests
+    [-30, -1, 3, 999].forEach(index => invalidIndexTestsForInsert(LinkedList, index))
 
   })
 })
+

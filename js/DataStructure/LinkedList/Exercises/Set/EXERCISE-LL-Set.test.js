@@ -1,7 +1,7 @@
 import { describe } from "vitest";
 import { executeTestCases } from "../../../../utils";
 import LinkedList from "./EXERCISE-LL-Set";
-import { afterSet4ToIndex1, beforeSet, outOfRangeIndex } from "../../TESTS/Set";
+import { afterSet4ToIndex1, beforeSet, invalidIndexTestsForSet } from "../../TESTS/Set";
 
 describe(`EXERCISE-LL-Set`, () => {
 
@@ -31,5 +31,7 @@ describe(`EXERCISE-LL-Set`, () => {
 });
 
 // Out of range tests
-[-1, 2].forEach(index => outOfRangeIndex(LinkedList, index))
+[-1, 2, 7, -100].forEach(index => invalidIndexTestsForSet(LinkedList, index))
 
+ 
+ 
