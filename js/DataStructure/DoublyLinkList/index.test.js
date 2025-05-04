@@ -3,6 +3,7 @@ import { DoublyLinkedList } from '.'
 import { checkDLLInternalStructure, executeTestCases } from "../../utils";
 import { afterFirstPop, afterSecondPop, afterThirdPop, beforePop } from "./TESTS/Pop";
 import { beforeUnshift, afterFirstUnshift, afterSecondUnshift } from "./TESTS/Unshift";
+import { afterFirstShift, afterSecondShift, afterThirdShift, beforeShift } from "./TESTS/Shift";
 
 describe(`DoublyLinkedList`, () => {
 
@@ -14,9 +15,9 @@ describe(`DoublyLinkedList`, () => {
         ...checkDLLInternalStructure(myDoublyLinkedList),
         [
           '\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toEqual', {
-            value: 7, 
+            value: 7,
             next: null,
-            prev: null 
+            prev: null
           }
         ],
         ['\n\tmyDoublyLinkedList.head.value', myDoublyLinkedList.head.value, 'toBe', 7],
@@ -147,6 +148,51 @@ describe(`DoublyLinkedList`, () => {
       const unshiftValue = myDoublyLinkedList.unshift(1)
 
       const tests = afterSecondUnshift(myDoublyLinkedList, unshiftValue)
+
+      executeTestCases(tests)
+    })
+
+  })
+
+  describe(`shift()`, () => {
+    describe('Before shift()\n\tlet myDoublyLinkedList = new DoublyLinkedList(2);\n\tmyDoublyLinkedList.push(1);', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(2)
+      myDoublyLinkedList.push(1)
+
+      const tests = beforeShift(myDoublyLinkedList)
+
+      executeTestCases(tests)
+    })
+
+    describe('After first shift()\n\tlet myDoublyLinkedList = new DoublyLinkedList(2);\n\tmyDoublyLinkedList.push(1);\n\tconst shiftValue = myDoublyLinkedList.shift()', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(2)
+      myDoublyLinkedList.push(1)
+      const shiftValue = myDoublyLinkedList.shift()
+
+      const tests = afterFirstShift(myDoublyLinkedList, shiftValue)
+
+      executeTestCases(tests)
+    })
+
+    describe('After second shift()\n\tlet myDoublyLinkedList = new DoublyLinkedList(2);\n\tmyDoublyLinkedList.push(1);\n\tmyDoublyLinkedList.shift()\n\tconst shiftValue = myDoublyLinkedList.shift()', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(2)
+      myDoublyLinkedList.push(2)
+      myDoublyLinkedList.shift()
+      const shiftValue = myDoublyLinkedList.shift()
+
+      const tests = afterSecondShift(myDoublyLinkedList, shiftValue)
+
+      executeTestCases(tests)
+    })
+
+    describe('After third shift()\n\tlet myDoublyLinkedList = new DoublyLinkedList(2);\n\tmyDoublyLinkedList.push(1);\n\tmyDoublyLinkedList.shift()\n\tmyDoublyLinkedList.shift()\n\tconst shiftValue = myDoublyLinkedList.shift()', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(2)
+      myDoublyLinkedList.push(1)
+      myDoublyLinkedList.shift()
+      myDoublyLinkedList.shift()
+      const shiftValue = myDoublyLinkedList.shift()
+
+      const tests = afterThirdShift(myDoublyLinkedList, shiftValue)
 
       executeTestCases(tests)
     })
