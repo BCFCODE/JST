@@ -122,12 +122,14 @@ class DoublyLinkedList {
     return temp;
   }
 
-  /// WRITE SET METHOD HERE ///
-  //                         //
-  //                         //
-  //                         //
-  //                         //
-  /////////////////////////////
+  set(index, value) {
+    let temp = this.get(index);
+    if (temp) {
+      temp.value = value;
+      return true;
+    }
+    return false;
+  }
 
 }
 
@@ -167,5 +169,6 @@ test();
     3
 
 */
+
 
 export default DoublyLinkedList
