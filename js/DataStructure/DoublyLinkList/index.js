@@ -26,7 +26,7 @@ class DoublyLinkedList {
     }
     this.length++
     return this
-  } 
+  }
 
   pop() {
     if (this.length === 0) return undefined
@@ -86,6 +86,15 @@ class DoublyLinkedList {
       }
     }
     return temp;
+  }
+
+  set(index, value) {
+    let temp = this.get(index)
+    if (temp) {
+      temp.value = value
+      return true
+    }
+    return false
   }
 }
 
