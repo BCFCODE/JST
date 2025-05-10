@@ -1,10 +1,11 @@
 import { describe } from "vitest";
-import { DoublyLinkedList } from '.'
+import { DoublyLinkedList } from '.';
 import { checkDLLInternalStructure, executeTestCases } from "../../utils";
+import { afterGetIndex0, afterGetIndex1, afterGetIndex2, afterGetIndex3, afterGetOutOfRangeIndex, beforeGet } from "./TESTS/Get";
 import { afterFirstPop, afterSecondPop, afterThirdPop, beforePop } from "./TESTS/Pop";
-import { beforeUnshift, afterFirstUnshift, afterSecondUnshift } from "./TESTS/Unshift";
+import { beforeSet, generateRandomValidSetInputs, validateSetOperationOnInvalidIndexes, validateSetOperationOnValidIndexes } from "./TESTS/Set";
 import { afterFirstShift, afterSecondShift, afterThirdShift, beforeShift } from "./TESTS/Shift";
-import { afterGetIndex0, afterGetIndex1, afterGetIndex2, afterGetIndex3, afterGetOutOfRangeIndex, beforeGet, outOfRangeTests } from "./TESTS/Get";
+import { afterFirstUnshift, afterSecondUnshift, beforeUnshift } from "./TESTS/Unshift";
 
 describe(`DoublyLinkedList`, () => {
 
@@ -271,6 +272,51 @@ describe(`DoublyLinkedList`, () => {
         const tests = afterGetOutOfRangeIndex(myDoublyLinkedList, getValue)
 
         executeTestCases(tests)
+      })
+    })
+
+  })
+
+  describe(`set()`, () => {
+    describe('Before set()\n\tlet myDoublyLinkedList = new DoublyLinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.push(3);', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(1)
+      myDoublyLinkedList.push(2)
+      myDoublyLinkedList.push(3)
+
+      const tests = beforeSet(myDoublyLinkedList)
+
+      executeTestCases(tests)
+    })
+
+    generateRandomValidSetInputs().forEach(({ index, value }, i, arr) => {
+      const testCounts = arr.length
+      describe(`${testCounts} Random Tests – Targeting Valid Indexes`, () => {
+        describe(`\n\tlet myDoublyLinkedList = new DoublyLinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.push(3);\n\tconst setValue = myDoublyLinkedList.set(${index}, ${value})`, () => {
+          let myDoublyLinkedList = new DoublyLinkedList(1)
+          myDoublyLinkedList.push(2)
+          myDoublyLinkedList.push(3)
+          const setValue = myDoublyLinkedList.set(index, value)
+
+          const tests = validateSetOperationOnValidIndexes({ myDoublyLinkedList, setValue, index, value })
+
+          executeTestCases(tests)
+        })
+      })
+    });
+
+    [{ index: -1, value: 10 }, { index: 4, value: 10 }].forEach(({ index, value }, i, arr) => {
+      const testCounts = arr.length
+      describe(`${testCounts} Random Tests – Targeting Invalid Indexes`, () => {
+        describe(`\n\tlet myDoublyLinkedList = new DoublyLinkedList(1);\n\tmyDoublyLinkedList.push(2);\n\tmyDoublyLinkedList.push(3);\n\tconst setValue = myDoublyLinkedList.set(${index}, ${value})`, () => {
+          let myDoublyLinkedList = new DoublyLinkedList(1)
+          myDoublyLinkedList.push(2)
+          myDoublyLinkedList.push(3)
+          const setValue = myDoublyLinkedList.set(index, value)
+
+          const tests = validateSetOperationOnInvalidIndexes({ myDoublyLinkedList, setValue, index, value })
+
+          executeTestCases(tests)
+        })
       })
     })
 
