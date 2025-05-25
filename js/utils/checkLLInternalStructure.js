@@ -1,5 +1,3 @@
-
-
 const checkLLInternalStructure = (myLinkedList) => {
   const nodeProperties = ['value', 'next']
   const headPropertyTests = nodeProperties.map(property =>
