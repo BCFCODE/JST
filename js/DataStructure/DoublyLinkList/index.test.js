@@ -7,6 +7,7 @@ import { beforeSet, generateRandomValidSetInputs, validateSetOperationOnInvalidI
 import { afterFirstShift, afterSecondShift, afterThirdShift, beforeShift } from "./TESTS/Shift";
 import { afterFirstUnshift, afterSecondUnshift, beforeUnshift } from "./TESTS/Unshift";
 import { afterFirstInsert, beforeInsert, generateRandomValidInsertInputs, validateInsertOperationOnInvalidIndexes, validateInsertOperationOnValidIndexes } from "./TESTS/Insert";
+import { beforeRemove, generateRandomValidRemoveInputs, validateRemoveOperationOnInvalidIndexes, validateRemoveOperationOnValidIndexes } from "./TESTS/Remove";
 
 describe(`DoublyLinkedList`, () => {
 
@@ -362,6 +363,51 @@ describe(`DoublyLinkedList`, () => {
           const insertValue = myDoublyLinkedList.insert(index, value)
 
           const tests = validateInsertOperationOnInvalidIndexes({ myDoublyLinkedList, insertValue, index, value })
+
+          executeTestCases(tests)
+        })
+      })
+    })
+  })
+
+
+  describe(`remove(index)`, () => {
+    describe('Before remove()\n\tlet myDoublyLinkedList = new DoublyLinkedList();\n\tmyDoublyLinkedList.pop()', () => {
+      let myDoublyLinkedList = new DoublyLinkedList(0)
+      myDoublyLinkedList.push(1)
+      myDoublyLinkedList.push(2)
+      
+      const tests = beforeRemove(myDoublyLinkedList)
+
+      executeTestCases(tests)
+    })
+
+    generateRandomValidRemoveInputs().forEach((index, _, arr) => {
+      const testCounts = arr.length
+      describe(`${testCounts} Random Tests – Targeting Valid Indexes`, () => {
+        describe(`\n\tlet myDoublyLinkedList = new DoublyLinkedList(0);\n\tmyDoublyLinkedList.push(1);\n\tmyDoublyLinkedList.push(2);\n\tconst removeValue = myDoublyLinkedList.remove(${index})`, () => {
+          let myDoublyLinkedList = new DoublyLinkedList(0)
+          myDoublyLinkedList.push(1)
+          myDoublyLinkedList.push(2)
+          const removeValue = myDoublyLinkedList.remove(index)
+
+          const tests = validateRemoveOperationOnValidIndexes({ myDoublyLinkedList, removeValue, index })
+
+          executeTestCases(tests)
+        })
+      })
+    });
+
+    [-4, 4].forEach((index, _, arr) => {
+      const testCounts = arr.length
+      describe(`${testCounts} Random Tests – Targeting Invalid Indexes`, () => {
+        describe(`\n\tlet myDoublyLinkedList = new DoublyLinkedList(0);\n\tmyDoublyLinkedList.push(1);\n\tmyDoublyLinkedList.push(2);\n\tconst removeValue = myDoublyLinkedList.remove(${index})`, () => {
+          let myDoublyLinkedList = new DoublyLinkedList(0)
+          myDoublyLinkedList.push(1)
+          myDoublyLinkedList.push(2)
+          const removeValue = myDoublyLinkedList.remove(index)
+
+          const tests = validateRemoveOperationOnInvalidIndexes({ myDoublyLinkedList, removeValue, index })
 
           executeTestCases(tests)
         })
