@@ -1,6 +1,6 @@
 import { DoublyLinkedList } from ".."
 import { checkDLLInternalStructure } from "../../../utils"
-import toBeNullTests from "./utils/toBeNullTests"
+import toBeNullTests from "../../../utils/tests/toBeNullTests"
 import toBeTests from "./utils/toBeTests"
 
 export const beforeSet = (myDoublyLinkedList) => [

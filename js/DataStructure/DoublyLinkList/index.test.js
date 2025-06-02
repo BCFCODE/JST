@@ -2,12 +2,12 @@ import { describe } from "vitest";
 import { DoublyLinkedList } from '.';
 import { checkDLLInternalStructure, executeTestCases } from "../../utils";
 import { afterGetIndex0, afterGetIndex1, afterGetIndex2, afterGetIndex3, afterGetOutOfRangeIndex, beforeGet } from "./TESTS/Get";
+import { beforeInsert, generateRandomValidInsertInputs, validateInsertOperationOnInvalidIndexes, validateInsertOperationOnValidIndexes } from "./TESTS/Insert";
 import { afterFirstPop, afterSecondPop, afterThirdPop, beforePop } from "./TESTS/Pop";
+import { beforeRemove, generateRandomValidRemoveInputs, validateRemoveOperationOnInvalidIndexes, validateRemoveOperationOnValidIndexes } from "./TESTS/Remove";
 import { beforeSet, generateRandomValidSetInputs, validateSetOperationOnInvalidIndexes, validateSetOperationOnValidIndexes } from "./TESTS/Set";
 import { afterFirstShift, afterSecondShift, afterThirdShift, beforeShift } from "./TESTS/Shift";
 import { afterFirstUnshift, afterSecondUnshift, beforeUnshift } from "./TESTS/Unshift";
-import { afterFirstInsert, beforeInsert, generateRandomValidInsertInputs, validateInsertOperationOnInvalidIndexes, validateInsertOperationOnValidIndexes } from "./TESTS/Insert";
-import { beforeRemove, generateRandomValidRemoveInputs, validateRemoveOperationOnInvalidIndexes, validateRemoveOperationOnValidIndexes } from "./TESTS/Remove";
 
 describe(`DoublyLinkedList`, () => {
 
