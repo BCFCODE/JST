@@ -1,4 +1,4 @@
-import getNestedProperty from "../../../../utils/getNestedProperty"
+import getNestedProperty from "../getNestedProperty"
 
 const toBeNullTests = ({ my, paths }) =>
   paths.map(path =>
