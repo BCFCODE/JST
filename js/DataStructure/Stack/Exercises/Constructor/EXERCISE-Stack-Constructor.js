@@ -1,18 +1,16 @@
-// WRITE NODE CLASS HERE //
-//                       //
-//                       //
-//                       //
-//                       //
-///////////////////////////
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
 
 class Stack {
-    // WRITE STACK CONSTRUCTOR HERE //
-    //                              //
-    //                              //
-    //                              //
-    //                              //
-    //////////////////////////////////
-
+    constructor(value) {
+        const newNode = new Node(value);
+        this.top = newNode;
+        this.length = 1;
+    }
 }
 
 export default Stack
