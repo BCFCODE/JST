@@ -45,8 +45,8 @@ export const validateInsertOperationOnValidIndexes = ({ myDoublyLinkedList, inse
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
-    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 4],
     // ['\n\tinsertValue', insertValue, 'toBe', true],
   ]
@@ -73,8 +73,8 @@ export const validateInsertOperationOnInvalidIndexes = ({ myDoublyLinkedList, in
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
-    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
     ['\n\tinsertValue', insertValue, 'toBe', false],
   ]

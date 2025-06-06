@@ -15,6 +15,7 @@ export const validateConstructorOperations = (myStack) => {
 
   const toBePaths = [
     'top.value',
+    'length'
   ]
 
   const toBeNullPaths = [
@@ -23,9 +24,8 @@ export const validateConstructorOperations = (myStack) => {
 
   return [
     ...checkStackInternalStructure(myStack),
-    ...toBeTests({ my: myStack, correct, paths: toBePaths }),
+    ...toBeTests({ name: 'myStack', my: myStack, correct, paths: toBePaths }),
     ...toBeNullTests({ name: 'myStack', my: myStack, paths: toBeNullPaths }),
-    ['\n\tmyStack.length', myStack.length, 'toBe', 1],
   ]
 }
 

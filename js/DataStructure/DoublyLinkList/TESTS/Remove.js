@@ -33,8 +33,8 @@ export const beforeRemove = (myDoublyLinkedList) => {
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
-    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
   ]
 }
@@ -74,8 +74,8 @@ export const validateRemoveOperationOnValidIndexes = ({ myDoublyLinkedList, remo
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
-    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 2],
     ['\n\tremoveValue', removeValue, 'toEqual', correct.removeValue],
   ]
@@ -102,11 +102,10 @@ export const validateRemoveOperationOnInvalidIndexes = ({ myDoublyLinkedList, re
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
-    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'myDoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
     ['\n\tremoveValue', removeValue, 'toEqual', correct.removeValue],
   ]
 }
- 
- 
+
