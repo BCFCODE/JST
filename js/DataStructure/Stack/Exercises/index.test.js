@@ -1,8 +1,10 @@
 import { describe } from "vitest"
 import ConstructorStack from "./Constructor"
 import PushStack from "./Push"
+import PopStack from "./Pop"
 import { constructorTests } from "../tests/Constructor"
 import { pushTests } from "../tests/Push"
+import { popTests } from "../tests/Pop"
 
 const tests = [
   {
@@ -14,6 +16,11 @@ const tests = [
     describeText: 'EXERCISE-Stack-Push',
     Stack: PushStack,
     tests: pushTests
+  },
+  {
+    describeText: 'EXERCISE-Stack-Pop',
+    Stack: PopStack,
+    tests: popTests
   },
 ]
 
