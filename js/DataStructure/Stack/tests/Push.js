@@ -14,8 +14,6 @@ const buildExpectedDLLBeforePush = () => {
 export const beforePush = (myStack) => {
   const correct = buildExpectedDLLBeforePush().myStack
 
-  myStack.name = 'Stack'
-
   const toBePaths = [
     'top.value',
   ]
@@ -27,7 +25,7 @@ export const beforePush = (myStack) => {
   return [
     ...checkStackInternalStructure(myStack),
     ...toBeTests({ my: myStack, correct, paths: toBePaths }),
-    ...toBeNullTests({ name: 'Stack', my: myStack, paths: toBeNullPaths }),
+    ...toBeNullTests({ name: 'myStack', my: myStack, paths: toBeNullPaths }),
     ['\n\tmyStack.length', myStack.length, 'toBe', 1],
   ]
 }
@@ -75,8 +73,9 @@ export const validatePushOperations = ({ myStack, pushValue }) => {
   ]
 }
 
-export const pushTests = () => {
+export const pushTests = (Stack) => {
   describe(`push()`, () => {
+
     describe(`Before push()\n\tlet myStack = new Stack(7)`, () => {
       let myStack = new Stack(7)
 
@@ -84,6 +83,7 @@ export const pushTests = () => {
 
       executeTestCases(tests)
     })
+
     describe(`After push()\n\tlet myStack = new Stack(7)\n\tmyStack.push(23)\n\tmyStack.push(3)\n\tconst pushValue = myStack.push(11)`, () => {
       let myStack = new Stack(7)
       myStack.push(23)
@@ -94,5 +94,6 @@ export const pushTests = () => {
 
       executeTestCases(tests)
     })
+    
   })
 }

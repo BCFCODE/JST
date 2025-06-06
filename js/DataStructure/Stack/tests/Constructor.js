@@ -24,12 +24,12 @@ export const validateConstructorOperations = (myStack) => {
   return [
     ...checkStackInternalStructure(myStack),
     ...toBeTests({ my: myStack, correct, paths: toBePaths }),
-    ...toBeNullTests({ name: 'Stack', my: myStack, paths: toBeNullPaths }),
+    ...toBeNullTests({ name: 'myStack', my: myStack, paths: toBeNullPaths }),
     ['\n\tmyStack.length', myStack.length, 'toBe', 1],
   ]
 }
 
-export const constructorTests = () => {
+export const constructorTests = (Stack) => {
   describe(`constructor`, () => {
     describe(`\n\tlet myStack = new Stack(4)`, () => {
       let myStack = new Stack(4)
