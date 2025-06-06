@@ -24,12 +24,16 @@ class Stack {
     return this
   }
 
-  /// WRITE POP METHOD HERE ///
-  //                         //
-  //                         //
-  //                         //
-  //                         //
-  /////////////////////////////
+  pop() {
+    if (this.length === 0) return undefined
+
+    let temp = this.top
+    this.top = this.top.next
+    temp.next = null
+
+    this.length--
+    return temp
+  }
 
 }
 
