@@ -1,4 +1,4 @@
-import Stack from ".."
+import Stack from "../Lessons"
 import checkStackInternalStructure from "../../../utils/checkStackInternalStructure"
 import toBeTests from "../../../utils/tests/toBeTests"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"

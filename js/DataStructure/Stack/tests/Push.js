@@ -1,5 +1,5 @@
 import { describe } from "vitest"
-import Stack from ".."
+import Stack from "../Lessons"
 import { checkStackInternalStructure, executeTestCases } from "../../../utils"
 import checkStackInternalStructure from "../../../utils/checkStackInternalStructure"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
@@ -94,6 +94,6 @@ export const pushTests = (Stack) => {
 
       executeTestCases(tests)
     })
-    
+
   })
 }
