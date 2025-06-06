@@ -1,4 +1,4 @@
-export const constructorTests = (myDoublyLinkedList) => [
+export const validateConstructorOperations = (myDoublyLinkedList) => [
   [
     '\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toEqual', {
       value: 7,

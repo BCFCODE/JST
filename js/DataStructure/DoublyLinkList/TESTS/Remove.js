@@ -33,7 +33,7 @@ export const beforeRemove = (myDoublyLinkedList) => {
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
     ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
   ]
 }
@@ -74,7 +74,7 @@ export const validateRemoveOperationOnValidIndexes = ({ myDoublyLinkedList, remo
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
     ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 2],
     ['\n\tremoveValue', removeValue, 'toEqual', correct.removeValue],
   ]
@@ -102,7 +102,7 @@ export const validateRemoveOperationOnInvalidIndexes = ({ myDoublyLinkedList, re
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
     ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
     ['\n\tremoveValue', removeValue, 'toEqual', correct.removeValue],
   ]

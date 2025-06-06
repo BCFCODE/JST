@@ -4,10 +4,10 @@ import { checkDLLInternalStructure, executeTestCases } from "../../utils";
 import { afterGetIndex0, afterGetIndex1, afterGetIndex2, afterGetIndex3, afterGetOutOfRangeIndex, beforeGet } from "./TESTS/Get";
 import { beforeInsert, generateRandomValidInsertInputs, validateInsertOperationOnInvalidIndexes, validateInsertOperationOnValidIndexes } from "./TESTS/Insert";
 import { afterFirstPop, afterSecondPop, afterThirdPop, beforePop } from "./TESTS/Pop";
-import { beforeRemove, generateRandomValidRemoveInputs, validateRemoveOperationOnInvalidIndexes, validateRemoveOperationOnValidIndexes } from "./TESTS/Remove";
 import { beforeSet, generateRandomValidSetInputs, validateSetOperationOnInvalidIndexes, validateSetOperationOnValidIndexes } from "./TESTS/Set";
 import { afterFirstShift, afterSecondShift, afterThirdShift, beforeShift } from "./TESTS/Shift";
 import { afterFirstUnshift, afterSecondUnshift, beforeUnshift } from "./TESTS/Unshift";
+import { generateRandomValidRemoveInputs, beforeRemove, validateRemoveOperationOnInvalidIndexes, validateRemoveOperationOnValidIndexes } from "./tests/Remove";
 
 describe(`DoublyLinkedList`, () => {
 
@@ -376,7 +376,7 @@ describe(`DoublyLinkedList`, () => {
       let myDoublyLinkedList = new DoublyLinkedList(0)
       myDoublyLinkedList.push(1)
       myDoublyLinkedList.push(2)
-      
+
       const tests = beforeRemove(myDoublyLinkedList)
 
       executeTestCases(tests)
