@@ -1,5 +1,5 @@
 import { describe } from "vitest"
-import Stack from ".."
+import Stack from "../Lessons"
 import { checkStackInternalStructure, executeTestCases } from "../../../utils"
 import checkStackInternalStructure from "../../../utils/checkStackInternalStructure"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
@@ -24,7 +24,7 @@ export const beforePush = (myStack) => {
 
   return [
     ...checkStackInternalStructure(myStack),
-    ...toBeTests({ my: myStack, correct, paths: toBePaths }),
+    ...toBeTests({ name: 'myStack', my: myStack, correct, paths: toBePaths }),
     ...toBeNullTests({ name: 'myStack', my: myStack, paths: toBeNullPaths }),
     ['\n\tmyStack.length', myStack.length, 'toBe', 1],
   ]
@@ -51,7 +51,7 @@ export const validatePushOperations = ({ myStack, pushValue }) => {
     'top.next.value',
     'top.next.next.value',
     'top.next.next.next.value',
-    'top.length',
+    'length',
   ]
 
   const toEqualPaths = [
@@ -66,8 +66,8 @@ export const validatePushOperations = ({ myStack, pushValue }) => {
 
   return [
     ...checkStackInternalStructure(myStack),
-    ...toBeTests({ my: myStack, correct: correct.myStack, paths: toBePaths }),
-    ...toEqualTests({ my: myStack, correct: correct.myStack, paths: toEqualPaths }),
+    ...toBeTests({ name: 'myStack', my: myStack, correct: correct.myStack, paths: toBePaths }),
+    ...toEqualTests({ name: 'myStack', my: myStack, correct: correct.myStack, paths: toEqualPaths }),
     ...toBeNullTests({ name: 'myStack', my: myStack, paths: toBeNullPaths }),
     ['\n\tpushValue', pushValue, 'toEqual', correct.pushValue],
   ]
@@ -94,6 +94,6 @@ export const pushTests = (Stack) => {
 
       executeTestCases(tests)
     })
-    
+
   })
 }

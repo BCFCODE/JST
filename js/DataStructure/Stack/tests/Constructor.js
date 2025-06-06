@@ -1,4 +1,4 @@
-import Stack from ".."
+import Stack from "../Lessons"
 import checkStackInternalStructure from "../../../utils/checkStackInternalStructure"
 import toBeTests from "../../../utils/tests/toBeTests"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
@@ -15,6 +15,7 @@ export const validateConstructorOperations = (myStack) => {
 
   const toBePaths = [
     'top.value',
+    'length'
   ]
 
   const toBeNullPaths = [
@@ -23,9 +24,8 @@ export const validateConstructorOperations = (myStack) => {
 
   return [
     ...checkStackInternalStructure(myStack),
-    ...toBeTests({ my: myStack, correct, paths: toBePaths }),
+    ...toBeTests({ name: 'myStack', my: myStack, correct, paths: toBePaths }),
     ...toBeNullTests({ name: 'myStack', my: myStack, paths: toBeNullPaths }),
-    ['\n\tmyStack.length', myStack.length, 'toBe', 1],
   ]
 }
 
