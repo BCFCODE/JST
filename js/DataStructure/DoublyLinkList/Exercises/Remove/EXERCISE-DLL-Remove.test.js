@@ -1,7 +1,7 @@
 import { describe } from "vitest";
 import { executeTestCases } from "../../../../utils";
 import DoublyLinkedList from "./EXERCISE-DLL-Remove";
-import { beforeRemove, generateRandomValidRemoveInputs, validateRemoveOperationOnInvalidIndexes, validateRemoveOperationOnValidIndexes } from "../../TESTS/Remove";
+import { generateRandomValidRemoveInputs, beforeRemove, validateRemoveOperationOnInvalidIndexes, validateRemoveOperationOnValidIndexes } from "../../tests/Remove";
 
 describe(`EXERCISE-DLL-Remove`, () => {
 

@@ -1,7 +1,8 @@
 import { DoublyLinkedList } from ".."
 import { checkDLLInternalStructure } from "../../../utils"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
-import toBeTests from "./utils/toBeTests"
+import toBeTests from "../../../utils/tests/toBeTests"
+
 
 const buildExpectedDLLBeforeRemove = () => {
   let myDoublyLinkedList = new DoublyLinkedList(0)
@@ -32,8 +33,8 @@ export const beforeRemove = (myDoublyLinkedList) => {
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
   ]
 }
@@ -73,8 +74,8 @@ export const validateRemoveOperationOnValidIndexes = ({ myDoublyLinkedList, remo
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 2],
     ['\n\tremoveValue', removeValue, 'toEqual', correct.removeValue],
   ]
@@ -101,10 +102,11 @@ export const validateRemoveOperationOnInvalidIndexes = ({ myDoublyLinkedList, re
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
     ['\n\tremoveValue', removeValue, 'toEqual', correct.removeValue],
   ]
 }
-
+ 
+ 

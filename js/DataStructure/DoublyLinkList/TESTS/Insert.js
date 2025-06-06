@@ -1,9 +1,7 @@
 import { DoublyLinkedList } from ".."
 import { checkDLLInternalStructure } from "../../../utils"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
-// import toBeNullTests from "./utils/toBeNullTests"
-import toBeTests from "./utils/toBeTests"
-// import toBeTests from "../../../utils/tests/toBeTests"
+import toBeTests from "../../../utils/tests/toBeTests"
 
 export const beforeInsert = (myDoublyLinkedList) => [
   ['\n\tmyDoublyLinkedList.head', myDoublyLinkedList.head, 'toBeNull', null],
@@ -47,8 +45,8 @@ export const validateInsertOperationOnValidIndexes = ({ myDoublyLinkedList, inse
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 4],
     // ['\n\tinsertValue', insertValue, 'toBe', true],
   ]
@@ -75,8 +73,8 @@ export const validateInsertOperationOnInvalidIndexes = ({ myDoublyLinkedList, in
 
   return [
     ...checkDLLInternalStructure(myDoublyLinkedList),
-    ...toBeTests({ my: myDoublyLinkedList, correct, paths: toBePaths }),
-    ...toBeNullTests({ my: myDoublyLinkedList, paths: toBeNullPaths }),
+    ...toBeTests({ my: myDoublyLinkedList, correct: correct.myDoublyLinkedList, paths: toBePaths }),
+    ...toBeNullTests({ name: 'DoublyLinkedList', my: myDoublyLinkedList, paths: toBeNullPaths }),
     ['\n\tmyDoublyLinkedList.length', myDoublyLinkedList.length, 'toBe', 3],
     ['\n\tinsertValue', insertValue, 'toBe', false],
   ]

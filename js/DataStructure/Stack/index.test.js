@@ -1,20 +1,10 @@
-import Stack from ".";
 import { describe } from "vitest";
-import { executeTestCases } from "../../utils";
+import Stack from ".";
 import { constructorTests } from "./tests/Constructor";
+import { pushTests } from "./tests/Push";
 
 describe(`Stack`, () => {
-
-  describe(`constructor`, () => {
-    describe(`\n\tlet myStack = new Stack(4)`, () => {
-      let myStack = new Stack(4)
-
-      const tests = constructorTests(myStack)
-
-      executeTestCases(tests)
-    })
-  })
- 
-
-}) 
+  constructorTests(Stack)
+  pushTests(Stack)
+})
 

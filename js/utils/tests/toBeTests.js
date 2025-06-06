@@ -1,8 +1,8 @@
 import getNestedProperty from "../getNestedProperty"
 
-const toBeTests = ({ my, correct, paths }) =>
+const toEqualTests = ({ my, correct, paths }) =>
   paths.map(path =>
-    [`\n\t${my.name}.${path}`, getNestedProperty(my, path), 'toBe', getNestedProperty(correct, path)]
+    [`\n\t${my.name}.${path}`, getNestedProperty(my, path), 'toEqual', getNestedProperty(correct, path)]
   )
 
-export default toBeTests
+export default toEqualTests
