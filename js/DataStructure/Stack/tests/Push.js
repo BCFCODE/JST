@@ -1,7 +1,7 @@
 import { describe } from "vitest"
 import Stack from "../Lessons"
 import { checkStackInternalStructure, executeTestCases } from "../../../utils"
-import checkStackInternalStructure from "../../../utils/checkStackInternalStructure"
+import checkStackInternalStructure from "../../../utils/checkInternalStructures/checkStackInternalStructure"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
 import toEqualTests from "../../../utils/tests/toBeTests"
 import toBeTests from "../../../utils/tests/toBeTests"
