@@ -1,5 +1,5 @@
 import Stack from "../Lessons"
-import checkStackInternalStructure from "../../../utils/checkStackInternalStructure"
+import checkStackInternalStructure from "../../../utils/checkInternalStructures/checkStackInternalStructure"
 import toBeTests from "../../../utils/tests/toBeTests"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
 import { describe } from "vitest"

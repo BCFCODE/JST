@@ -1,10 +1,10 @@
 import { describe } from "vitest"
-import ConstructorStack from "./Constructor"
-import PushStack from "./Push"
-import PopStack from "./Pop"
-import { constructorTests } from "../tests/Constructor"
-import { pushTests } from "../tests/Push"
-import { popTests } from "../tests/Pop"
+import ConstructorStack from "../Exercises/Constructor"
+import PushStack from "../Exercises/Push"
+import PopStack from "../Exercises/Pop"
+import { constructorTests } from "./Constructor"
+import { pushTests } from "./Push"
+import { popTests } from "./Pop"
 
 const tests = [
   {
