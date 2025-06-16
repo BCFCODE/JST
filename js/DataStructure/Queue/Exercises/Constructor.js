@@ -1,17 +1,17 @@
-// WRITE NODE CLASS HERE //
-//                       //
-//                       //
-//                       //
-//                       //
-///////////////////////////
+class Node {
+  constructor(value) {
+    this.value = value
+    this.next = null
+  }
+}
 
 class Queue {
-  // WRITE QUEUE CONSTRUCTOR HERE //
-  //                              //
-  //                              //
-  //                              //
-  //                              //
-  //////////////////////////////////
+  constructor(value) {
+    const newNode = new Node(value)
+    this.first = newNode
+    this.last = newNode
+    this.length = 1
+  }
 }
 
 export default Queue
