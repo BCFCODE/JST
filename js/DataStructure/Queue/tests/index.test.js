@@ -5,11 +5,11 @@ import ConstructorQueue from "../Exercises/Constructor"
 const tests = [
   {
     describeText: 'EXERCISE-Queue-Constructor',
-    Stack: ConstructorQueue,
+    Queue: ConstructorQueue,
     tests: constructorTests
   },
 ]
 
-tests.forEach(({ describeText, tests, Stack }) => {
-  describe(describeText, () => tests(Stack))
+tests.forEach(({ describeText, tests, Queue }) => {
+  describe(describeText, () => tests(Queue))
 })
