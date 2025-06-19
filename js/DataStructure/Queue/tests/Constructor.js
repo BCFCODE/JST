@@ -1,9 +1,6 @@
 import Queue from "../Lessons"
-import toBeTests from "../../../utils/tests/toBeTests"
-import toBeNullTests from "../../../utils/tests/toBeNullTests"
 import { describe } from "vitest"
-import { executeTestCases } from "../../../utils"
-import checkQueueInternalStructure from "../../../utils/checkInternalStructures/checkQueueInternalStructure"
+import { executeTestCases, toBeNullTests, toBeTests, checkQueueInternalStructure } from "../../../utils"
 
 const buildExpectedQueueConstructor = () => {
   let myQueue = new Queue(4)
@@ -32,7 +29,7 @@ export const validateConstructorOperations = (myQueue) => {
 
 }
 
-export const constructorTests = (Queue) => {
+const constructorTests = (Queue) => {
   describe(`constructor`, () => {
     describe(`\n\tlet myQueue = new Queue(4)`, () => {
       let myQueue = new Queue(4)
@@ -43,6 +40,8 @@ export const constructorTests = (Queue) => {
     })
   })
 }
+
+export default constructorTests
 
 
 

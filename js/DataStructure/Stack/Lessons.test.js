@@ -1,8 +1,6 @@
 import { describe } from "vitest";
 import Stack from "./Lessons";
-import { constructorTests } from "./tests/Constructor";
-import { pushTests } from "./tests/Push";
-import { popTests } from "./tests/Pop";
+import { constructorTests, popTests, pushTests } from "./tests";
 
 describe(`Stack`, () => {
   constructorTests(Stack)

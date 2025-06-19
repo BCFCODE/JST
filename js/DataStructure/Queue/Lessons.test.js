@@ -1,8 +1,6 @@
 import { describe } from "vitest";
 import Queue from "./Lessons";
-import { constructorTests } from "./tests/Constructor";
-import { enqueueTests } from "./tests/Enqueue";
-import { dequeueTests } from "./tests/Dequeue";
+import { constructorTests, enqueueTests, dequeueTests } from "./tests";
 
 describe(`Queue`, () => {
   constructorTests(Queue)

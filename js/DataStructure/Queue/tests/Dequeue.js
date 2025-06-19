@@ -1,8 +1,5 @@
 import { describe } from "vitest"
-import { executeTestCases } from "../../../utils"
-import checkQueueInternalStructure from "../../../utils/checkInternalStructures/checkQueueInternalStructure"
-import toBeNullTests from "../../../utils/tests/toBeNullTests"
-import toBeTests from "../../../utils/tests/toBeTests"
+import { executeTestCases, toBeNullTests, checkQueueInternalStructure, toEqualTests } from "../../../utils"
 
 const buildExpectedBeforeDequeue = (Queue) => {
   let myQueue = new Queue(11)
@@ -60,9 +57,9 @@ export const validateBeforeDequeueOperations =
 
     return [
       checkQueueInternalStructure(myQueue),
-      toBeTests({ name: 'myQueue', my: myQueue, correct: correct.myQueue, paths: toBePaths }),
+      toEqualTests({ name: 'myQueue', my: myQueue, correct: correct.myQueue, paths: toBePaths }),
       toBeNullTests({ name: 'myQueue', my: myQueue, paths: toBeNullPaths }),
-      toBeTests({ name: 'returnValue', my: returnValue, correct: correct.myQueue, paths: toBePaths }),
+      toEqualTests({ name: 'returnValue', my: returnValue, correct: correct.myQueue, paths: toBePaths }),
       toBeNullTests({ name: 'returnValue', my: returnValue, paths: toBeNullPaths }),
     ].flat()
 
@@ -74,7 +71,7 @@ export const validateAfterFirstDequeueOperations =
 
     return [
       checkQueueInternalStructure(myQueue),
-      toBeTests({
+      toEqualTests({
         name: 'myQueue', my: myQueue, correct: correct.myQueue, paths: [
           'first.value',
           'first.next.value',
@@ -88,7 +85,7 @@ export const validateAfterFirstDequeueOperations =
           'last.next',
         ]
       }),
-      toBeTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['value'] }),
+      toEqualTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['value'] }),
       toBeNullTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['next'] }),
     ].flat()
 
@@ -100,7 +97,7 @@ export const validateAfterSecondDequeueOperations =
 
     return [
       checkQueueInternalStructure(myQueue),
-      toBeTests({
+      toEqualTests({
         name: 'myQueue', my: myQueue, correct: correct.myQueue, paths: [
           'first.value',
           'last.value',
@@ -108,7 +105,7 @@ export const validateAfterSecondDequeueOperations =
         ]
       }),
       toBeNullTests({ name: 'myQueue', my: myQueue, paths: ['first.next', 'last.next'] }),
-      toBeTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['value'] }),
+      toEqualTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['value'] }),
       toBeNullTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['next'] }),
     ].flat()
 
@@ -118,14 +115,14 @@ export const validateAfterThirdDequeueOperations =
   (Queue, { myQueue, returnValue }) => {
     const { correct } = buildExpectedAfterThirdDequeue(Queue)
     return [
-      toBeTests({ name: 'myQueue', my: myQueue, correct: correct.myQueue, paths: ['length'] }),
+      toEqualTests({ name: 'myQueue', my: myQueue, correct: correct.myQueue, paths: ['length'] }),
       toBeNullTests({ name: 'myQueue', my: myQueue, correct: correct.myQueue, paths: ['first', 'last'] }),
-      toBeTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['value'] }),
+      toEqualTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['value'] }),
       toBeNullTests({ name: 'returnValue', my: returnValue, correct: correct.returnValue, paths: ['next'] }),
     ].flat()
   }
 
-export const dequeueTests = (Queue) => {
+const dequeueTests = (Queue) => {
   describe(`dequeue`, () => {
 
     describe(`Before dequeue\n\tlet myQueue = new Queue(11)\n\tmyQueue.enqueue(3)\n\tconst returnValue = myQueue.enqueue(23)`, () => {
@@ -176,6 +173,8 @@ export const dequeueTests = (Queue) => {
 
   })
 }
+
+export default dequeueTests
 
 
 

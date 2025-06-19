@@ -1,8 +1,5 @@
 import { describe } from "vitest"
-import { executeTestCases } from "../../../utils"
-import checkQueueInternalStructure from "../../../utils/checkInternalStructures/checkQueueInternalStructure"
-import toBeNullTests from "../../../utils/tests/toBeNullTests"
-import toBeTests from "../../../utils/tests/toBeTests"
+import { executeTestCases, toBeNullTests, toEqualTests, checkQueueInternalStructure } from "../../../utils"
 import Queue from "../Lessons"
 
 const buildExpectedBeforeEnqueue = () => {
@@ -39,7 +36,7 @@ export const validateBeforeEnqueueOperations = (myQueue) => {
 
   return [
     checkQueueInternalStructure(myQueue),
-    toBeTests({ name: 'myQueue', my: myQueue, correct, paths: toBePaths }),
+    toEqualTests({ name: 'myQueue', my: myQueue, correct, paths: toBePaths }),
     toBeNullTests({ name: 'myQueue', my: myQueue, paths: toBeNullPaths })
   ].flat()
 
@@ -63,9 +60,9 @@ export const validateAfterFirstEnqueueOperations = ({ myQueue, returnValue }) =>
 
   return [
     checkQueueInternalStructure(myQueue),
-    toBeTests({ name: 'myQueue', my: myQueue, correct, paths: toBePaths }),
+    toEqualTests({ name: 'myQueue', my: myQueue, correct, paths: toBePaths }),
     toBeNullTests({ name: 'myQueue', my: myQueue, paths: toBeNullPaths }),
-    toBeTests({ name: 'returnValue', my: returnValue, correct, paths: toBePaths }),
+    toEqualTests({ name: 'returnValue', my: returnValue, correct, paths: toBePaths }),
     toBeNullTests({ name: 'returnValue', my: returnValue, paths: toBeNullPaths }),
   ].flat()
 
@@ -92,15 +89,15 @@ export const validateAfterSecondEnqueueOperations = ({ myQueue, returnValue }) =
 
   return [
     checkQueueInternalStructure(myQueue),
-    toBeTests({ name: 'myQueue', my: myQueue, correct, paths: toBePaths }),
+    toEqualTests({ name: 'myQueue', my: myQueue, correct, paths: toBePaths }),
     toBeNullTests({ name: 'myQueue', my: myQueue, paths: toBeNullPaths }),
-    toBeTests({ name: 'returnValue', my: returnValue, correct, paths: toBePaths }),
+    toEqualTests({ name: 'returnValue', my: returnValue, correct, paths: toBePaths }),
     toBeNullTests({ name: 'returnValue', my: returnValue, paths: toBeNullPaths }),
   ].flat()
 
 }
 
-export const enqueueTests = (Queue) => {
+const enqueueTests = (Queue) => {
   describe(`enqueue`, () => {
 
     describe(`Before enqueue\n\tlet myQueue = new Queue(11)`, () => {
@@ -132,6 +129,8 @@ export const enqueueTests = (Queue) => {
 
   })
 }
+
+export default enqueueTests
 
 
 

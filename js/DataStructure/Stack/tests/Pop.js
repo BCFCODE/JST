@@ -1,10 +1,12 @@
 import { describe } from "vitest"
 import Stack from "../Lessons"
-import { checkStackInternalStructure, executeTestCases } from "../../../utils"
-import checkStackInternalStructure from "../../../utils/checkInternalStructures/checkStackInternalStructure"
-import toBeNullTests from "../../../utils/tests/toBeNullTests"
-import toEqualTests from "../../../utils/tests/toBeTests"
-import toBeTests from "../../../utils/tests/toBeTests"
+import {
+  checkStackInternalStructure,
+  executeTestCases,
+  toBeNullTests,
+  toEqualTests,
+  toBeTests
+} from "../../../utils"
 
 const buildExpectedDLLBeforePop = () => {
   let myStack = new Stack(7)
@@ -191,7 +193,7 @@ export const validatePushOperationsAfterFourthPop = ({ myStack, popValue }) => {
 //   Array.from({ length: testCounts }).map(() => Math.floor(Math.random() * 3))
 
 
-export const popTests = (Stack) => {
+const popTests = (Stack) => {
   describe(`pop()`, () => {
 
     describe(`Before pop()\n\tlet myStack = new Stack(7)\n\tmyStack.push(23)\n\tmyStack.push(3)\n\tconst pushValue = myStack.push(11)`, () => {
@@ -261,3 +263,5 @@ export const popTests = (Stack) => {
 
   })
 }
+
+export default popTests
