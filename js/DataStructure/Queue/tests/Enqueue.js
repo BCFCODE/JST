@@ -1,10 +1,9 @@
-import Queue from "../Lessons"
-import toBeTests from "../../../utils/tests/toBeTests"
-import toBeNullTests from "../../../utils/tests/toBeNullTests"
 import { describe } from "vitest"
 import { executeTestCases } from "../../../utils"
 import checkQueueInternalStructure from "../../../utils/checkInternalStructures/checkQueueInternalStructure"
-import toEqualTests from "../../../utils/tests/toBeTests"
+import toBeNullTests from "../../../utils/tests/toBeNullTests"
+import toBeTests from "../../../utils/tests/toBeTests"
+import Queue from "../Lessons"
 
 const buildExpectedBeforeEnqueue = () => {
   let myQueue = new Queue(11)
