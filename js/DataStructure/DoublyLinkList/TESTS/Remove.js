@@ -1,8 +1,5 @@
 import { DoublyLinkedList } from ".."
-import { checkDLLInternalStructure } from "../../../utils"
-import toBeNullTests from "../../../utils/tests/toBeNullTests"
-import toBeTests from "../../../utils/tests/toBeTests"
-
+import { checkDLLInternalStructure, toBeNullTests, toBeTests } from "../../../utils"
 
 const buildExpectedDLLBeforeRemove = () => {
   let myDoublyLinkedList = new DoublyLinkedList(0)

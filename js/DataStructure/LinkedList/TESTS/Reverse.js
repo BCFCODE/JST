@@ -1,6 +1,5 @@
 import { checkLLInternalStructure } from "../../../utils"
 
-
 export const beforeReverse = (myLinkedList) => [
   ...checkLLInternalStructure(myLinkedList),
   [

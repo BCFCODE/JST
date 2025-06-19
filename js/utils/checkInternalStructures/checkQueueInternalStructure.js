@@ -1,6 +1,6 @@
 import hasPropertyTests from "../tests/hasPropertyTests"
 
-export const checkQueueInternalStructure = (myQueue) => {
+const checkQueueInternalStructure = (myQueue) => {
   const nodeProperties = ['value', 'next']
 
   return [

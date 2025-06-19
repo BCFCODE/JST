@@ -1,7 +1,33 @@
-import J from "./J";
 import checkDLLInternalStructure from "./checkInternalStructures/checkDLLInternalStructure";
 import checkLLInternalStructure from "./checkInternalStructures/checkLLInternalStructure";
-import executeTestCases from "./executeTestCases";
+import checkQueueInternalStructure from "./checkInternalStructures/checkQueueInternalStructure";
+import checkStackInternalStructure from "./checkInternalStructures/checkStackInternalStructure";
+import checkBSTInternalStructure from "./checkInternalStructures/checkBSTInternalStructure";
 
-export { checkDLLInternalStructure, checkLLInternalStructure, executeTestCases, J };
+import hasPropertyTests from "./tests/hasPropertyTests";
+import toBeNullTests from "./tests/toBeNullTests";
+import toEqualTests from "./tests/toEqualTests";
+
+import executeTestCases from "./executeTestCases";
+import getNestedProperty from "./getNestedProperty";
+import J from "./J";
+import toBeTests from "./tests/toBeTests";
+
+
+export {
+  checkDLLInternalStructure,
+  checkLLInternalStructure,
+  checkQueueInternalStructure,
+  checkStackInternalStructure,
+  checkBSTInternalStructure,
+
+  hasPropertyTests,
+  toBeNullTests,
+  toEqualTests,
+  toBeTests,
+
+  executeTestCases,
+  getNestedProperty,
+  J
+};
 

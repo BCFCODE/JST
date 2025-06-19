@@ -1,9 +1,6 @@
 import Stack from "../Lessons"
-import checkStackInternalStructure from "../../../utils/checkInternalStructures/checkStackInternalStructure"
-import toBeTests from "../../../utils/tests/toBeTests"
-import toBeNullTests from "../../../utils/tests/toBeNullTests"
 import { describe } from "vitest"
-import { executeTestCases } from "../../../utils"
+import { executeTestCases, toBeNullTests, toBeTests, checkStackInternalStructure } from "../../../utils"
 
 const buildExpectedStackConstructor = () => {
   let myStack = new Stack(4)
@@ -29,7 +26,7 @@ export const validateConstructorOperations = (myStack) => {
   ]
 }
 
-export const constructorTests = (Stack) => {
+const constructorTests = (Stack) => {
   describe(`constructor`, () => {
     describe(`\n\tlet myStack = new Stack(4)`, () => {
       let myStack = new Stack(4)
@@ -40,6 +37,8 @@ export const constructorTests = (Stack) => {
     })
   })
 }
+
+export default constructorTests
 
 
 

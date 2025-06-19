@@ -3,8 +3,8 @@ import Stack from "../Lessons"
 import { checkStackInternalStructure, executeTestCases } from "../../../utils"
 import checkStackInternalStructure from "../../../utils/checkInternalStructures/checkStackInternalStructure"
 import toBeNullTests from "../../../utils/tests/toBeNullTests"
-import toEqualTests from "../../../utils/tests/toBeTests"
-import toBeTests from "../../../utils/tests/toBeTests"
+import toEqualTests from "../../../utils/tests/toEqualTests"
+import toBeTests from "../../../utils/tests/toEqualTests"
 
 const buildExpectedDLLBeforePush = () => {
   let myStack = new Stack(7)
@@ -73,7 +73,7 @@ export const validatePushOperations = ({ myStack, pushValue }) => {
   ]
 }
 
-export const pushTests = (Stack) => {
+const pushTests = (Stack) => {
   describe(`push()`, () => {
 
     describe(`Before push()\n\tlet myStack = new Stack(7)`, () => {
@@ -97,3 +97,5 @@ export const pushTests = (Stack) => {
 
   })
 }
+
+export default pushTests
