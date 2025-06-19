@@ -7,11 +7,12 @@ import checkBSTInternalStructure from "./checkInternalStructures/checkBSTInterna
 import hasPropertyTests from "./tests/hasPropertyTests";
 import toBeNullTests from "./tests/toBeNullTests";
 import toEqualTests from "./tests/toEqualTests";
+import toBeTests from "./tests/toBeTests";
+import toBeUndefined from "./tests/toBeUndefined";
 
 import executeTestCases from "./executeTestCases";
 import getNestedProperty from "./getNestedProperty";
 import J from "./J";
-import toBeTests from "./tests/toBeTests";
 
 
 export {
@@ -25,6 +26,7 @@ export {
   toBeNullTests,
   toEqualTests,
   toBeTests,
+  toBeUndefined,
 
   executeTestCases,
   getNestedProperty,

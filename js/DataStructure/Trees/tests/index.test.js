@@ -1,12 +1,17 @@
 import { describe } from "vitest"
-import { constructorTests } from '.'
-import { BSTConstructor, Node } from "../Exercises"
+import { constructorTests, insertTests } from '.'
+import { BSTConstructor, Node, BSTInsert } from "../Exercises"
 
 const tests = [
   {
     describeText: 'EXERCISE-BST-Constructor',
     BST: BSTConstructor,
     tests: constructorTests
+  },
+  {
+    describeText: 'EXERCISE-BST-Insert',
+    BST: BSTInsert,
+    tests: insertTests
   },
 ]
 
