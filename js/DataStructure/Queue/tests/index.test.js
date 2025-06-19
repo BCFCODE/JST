@@ -1,8 +1,6 @@
 import { describe } from "vitest"
-import { constructorTests } from "./Constructor"
-import { enqueueTests } from "./Enqueue"
-import QueueConstructor from "../Exercises/Constructor"
-import QueueEnqueue from "../Exercises/Enqueue"
+import { constructorTests, dequeueTests, enqueueTests } from '.'
+import { QueueConstructor, QueueDequeue, QueueEnqueue } from "../Exercises"
 
 const tests = [
   {
@@ -14,6 +12,11 @@ const tests = [
     describeText: 'EXERCISE-Queue-Enqueue',
     Queue: QueueEnqueue,
     tests: enqueueTests
+  },
+  {
+    describeText: 'EXERCISE-Queue-Dequeue',
+    Queue: QueueDequeue,
+    tests: dequeueTests
   },
 ]
 

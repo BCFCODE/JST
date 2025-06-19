@@ -26,6 +26,20 @@ export class Queue {
     return this
   }
 
+  dequeue() {
+    if (this.length === 0) return undefined
+    const temp = this.first
+    if (this.length === 1) {
+      this.first = null
+      this.last = null
+    } else {
+      this.first = this.first.next
+      temp.next = null
+    }
+    this.length--
+    return temp
+  }
+
 }
 
 

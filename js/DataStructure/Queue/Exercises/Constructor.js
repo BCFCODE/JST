@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class Queue {
+export class Queue {
   constructor(value) {
     const newNode = new Node(value)
     this.first = newNode
@@ -14,5 +14,4 @@ class Queue {
   }
 }
 
-export default Queue
 
