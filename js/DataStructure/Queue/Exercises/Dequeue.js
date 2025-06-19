@@ -26,6 +26,13 @@ export class Queue {
     return this
   }
 
+  // WRITE DEQUEUE METHOD HERE //
+  //                           //
+  //                           //
+  //                           //
+  //                           //
+  ///////////////////////////////
+
 }
 
 
