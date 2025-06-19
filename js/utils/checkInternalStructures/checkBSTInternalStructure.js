@@ -1,11 +1,11 @@
 import hasPropertyTests from "../tests/hasPropertyTests"
 
-const checkBSTInternalStructure = ({ newNode }) => {
+const checkBSTInternalStructure = ({ Node }) => {
 
   return [
     {
       name: 'newNode',
-      obj: newNode,
+      obj: new Node(),
       paths: [],
       properties: ['value', 'left', 'right']
     },

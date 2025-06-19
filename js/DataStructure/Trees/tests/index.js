@@ -1,2 +1,3 @@
-export { constructorTests } from "./Constructor";
+import constructorTests from "./Constructor";
 
+export { constructorTests }
