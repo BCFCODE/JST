@@ -18,7 +18,7 @@ export const validateConstructorOperations = ({ BST, myTree, Node }) => {
 
 const constructorTests = ({ BST, Node }) => {
   describe(`constructor`, () => {
-    describe(`\n\tlet myTree = new BST(4)`, () => {
+    describe(`\n\tlet myTree = new BST()`, () => {
       let myTree = new BST()
 
       const tests = validateConstructorOperations({ BST, myTree, Node })

@@ -11,5 +11,5 @@ const tests = [
 ]
 
 tests.forEach(({ describeText, tests, BST }) => {
-  describe(describeText, () => tests({ BST, Node }))
+  describe(describeText, () => tests({ BST , Node}))
 }) 
