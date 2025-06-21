@@ -20,17 +20,12 @@ class HashTable {
     return this
   }
 
-  get(key) {
-    let index = this._hash(key)
-    if (this.dataMap[index]) {
-      for (let i = 0; i < this.dataMap[index].length; i++) {
-        if (this.dataMap[index][i][0] === key) {
-          return this.dataMap[index][i][1]
-        }
-      }
-    }
-    return undefined
-  }
+  ///  WRITE GET METHOD HERE  ///
+  //                           //
+  //                           //
+  //                           //
+  //                           //
+  ///////////////////////////////
 }
 
 export default HashTable
