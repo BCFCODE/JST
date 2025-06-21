@@ -1,3 +1,7 @@
 import constructorTests from "./Constructor";
+import setTests from "./Set";
 
-export { constructorTests }
+export {
+  constructorTests,
+  setTests
+}
