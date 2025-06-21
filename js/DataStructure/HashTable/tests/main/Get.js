@@ -23,7 +23,7 @@ const getTests = (HashTable) => {
 
     ['bolts', 'washers', 'lumber'].forEach(key => {
 
-      describe(`\n\tlet myHashTable = new HashTable()\n\t myHashTable.set('bolts', 1400)\n\tmyHashTable.set('washers', 50)\n\tconst returnValue = myHashTable.get(${J(key)})`, () => {
+      describe(`\n\tlet myHashTable = new HashTable()\n\tmyHashTable.set('bolts', 1400)\n\tmyHashTable.set('washers', 50)\n\tconst returnValue = myHashTable.get(${J(key)})`, () => {
 
         let myHashTable = new HashTable()
         myHashTable.set('bolts', 1400)

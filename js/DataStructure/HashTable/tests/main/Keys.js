@@ -21,7 +21,7 @@ export const validateKeysOperations = ({ myHashTable, returnValue }) => {
 const keysTests = (HashTable) => {
   describe(`keys`, () => {
 
-    describe(`\n\tlet myHashTable = new HashTable()\n\t myHashTable.set('bolts', 1400)\n\tmyHashTable.set('washers', 50)\n\tconst returnValue = myHashTable.keys()`, () => {
+    describe(`\n\tlet myHashTable = new HashTable()\n\tmyHashTable.set('bolts', 1400)\n\tmyHashTable.set('washers', 50)\n\tconst returnValue = myHashTable.keys()`, () => {
 
       let myHashTable = new HashTable()
       myHashTable.set('bolts', 1400)
