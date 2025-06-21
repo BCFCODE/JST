@@ -1,10 +1,7 @@
 class HashTable {
-  // CREATE HashTable CONSTRUCTOR HERE//
-  //                                  //
-  //                                  //
-  //                                  //
-  //                                  //
-  //////////////////////////////////////
+  constructor(size = 7) {
+    this.dataMap = new Array(size)
+  }
 
   _hash(key) {
     let hash = 0
