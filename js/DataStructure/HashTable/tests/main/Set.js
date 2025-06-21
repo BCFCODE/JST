@@ -1,7 +1,7 @@
 import { describe } from "vitest"
-import { checkHTInternalStructure, executeTestCases } from "../../../utils"
-import CorrectHashTable from "./Correct"
-import { toEqualDataMapTests } from "./dataMapTests"
+import { checkHTInternalStructure, executeTestCases } from "../../../../utils"
+import CorrectHashTable from "../Correct"
+import { toEqualDataMapTests } from "../dataMapTests"
 
 const keyValues = [
   [
@@ -38,8 +38,8 @@ const setTests = (HashTable) => {
     keyValues.forEach((keyValue) => {
 
       describe(`\n\tlet myHashTable = new HashTable()\n\tmyHashTable.set('bolts', 1400)\n\tmyHashTable.set('washers', 50)\n\tconst returnValue = myHashTable.keys()`, () => {
-        let myHashTable = new HashTable();
 
+        let myHashTable = new HashTable();
         keyValue.forEach(([key, value]) => myHashTable.set(key, value));
 
         const returnValue = myHashTable.set('bolts', 1400)

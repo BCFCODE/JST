@@ -1,7 +1,7 @@
 import { describe } from "vitest"
-import { checkHTInternalStructure, executeTestCases, J } from "../../../utils"
-import CorrectHashTable from "./Correct"
-import { toEqualDataMapTests } from "./dataMapTests"
+import { checkHTInternalStructure, executeTestCases, J } from "../../../../utils"
+import CorrectHashTable from "../Correct"
+import { toEqualDataMapTests } from "../dataMapTests"
 
 export const validateGetOperations = ({ myHashTable, returnValue, key }) => {
   let correct = new CorrectHashTable()

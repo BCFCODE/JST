@@ -1,6 +1,16 @@
 import { describe } from "vitest"
-import { constructorTests, setTests, getTests } from '.'
-import { HashTableConstructor, HashTableSet, HashTableGet } from "../Exercises"
+import {
+  constructorTests,
+  setTests,
+  getTests,
+  keysTests,
+} from '.'
+import {
+  HashTableConstructor,
+  HashTableSet,
+  HashTableGet,
+  HashTableKeys
+} from "../Exercises"
 
 const tests = [
   {
@@ -17,6 +27,11 @@ const tests = [
     describeText: 'EXERCISE-HT-Get',
     HashTable: HashTableGet,
     tests: getTests
+  },
+  {
+    describeText: 'EXERCISE-HT-Keys',
+    HashTable: HashTableKeys,
+    tests: keysTests
   },
 ]
 
