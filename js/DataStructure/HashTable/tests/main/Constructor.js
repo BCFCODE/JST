@@ -1,5 +1,5 @@
 import { describe } from "vitest"
-import { checkHTInternalStructure, executeTestCases } from "../../../utils"
+import { checkHTInternalStructure, executeTestCases } from "../../../../utils"
 
 export const validateConstructorOperations = (myHashTable) => [
   checkHTInternalStructure(myHashTable),
