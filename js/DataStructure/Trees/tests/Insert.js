@@ -1,6 +1,6 @@
 import { describe } from "vitest"
 import { executeTestCases, toBeNullTests, toBeTests, toEqualTests } from "../../../utils"
-import CorrectBST from "./CorrectBST"
+import CorrectBST from "./Correct"
 
 const validateBeforeInsertOperations = (myTree) => {
   let correct = new CorrectBST()
