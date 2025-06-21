@@ -1,17 +1,13 @@
 import { describe } from "vitest"
 import { checkBSTInternalStructure, executeTestCases, toBeNullTests } from "../../../utils"
+import CorrectBST from "./CorrectBST"
 
-const buildExpectedBSTConstructor = (BST) => {
-  let myTree = new BST()
-  return { correct: myTree }
-}
-
-export const validateConstructorOperations = ({ BST, myTree, Node }) => {
-  const { correct } = buildExpectedBSTConstructor(BST)
+const validateConstructorOperations = ({ myTree, Node }) => {
+  let correct = new CorrectBST()
 
   return [
     checkBSTInternalStructure({ Node }),
-    toBeNullTests({ name: 'myTree', my: myTree, correct: correct.myTree, paths: ['root'] })
+    toBeNullTests({ name: 'myTree', my: myTree, correct, paths: ['root'] })
   ].flat()
 
 }
