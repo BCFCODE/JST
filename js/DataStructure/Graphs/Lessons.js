@@ -29,7 +29,7 @@ class Graph {
       return true
     }
     return false
-  }
+  } 
 }
 
 export default Graph
