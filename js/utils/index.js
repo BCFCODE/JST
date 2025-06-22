@@ -10,6 +10,7 @@ import toBeNullTests from "./tests/toBeNullTests";
 import toEqualTests from "./tests/toEqualTests";
 import toBeTests from "./tests/toBeTests";
 import toBeUndefined from "./tests/toBeUndefined";
+import formatArgsForDisplay from "./tests/formatArgsForDisplay";
 
 import executeTestCases from "./executeTestCases";
 import getNestedProperty from "./getNestedProperty";
@@ -23,6 +24,7 @@ export {
   checkBSTInternalStructure,
   checkHTInternalStructure,
 
+  formatArgsForDisplay,
   hasPropertyTests,
   toBeNullTests,
   toEqualTests,

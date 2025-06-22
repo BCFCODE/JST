@@ -7,5 +7,10 @@ export {
   HashTableConstructor,
   HashTableSet,
   HashTableGet,
-  HashTableKeys
+  HashTableKeys,
+  itemInCommon
 }
+
+export {
+  itemInCommon
+} from './Interview'

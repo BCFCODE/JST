@@ -4,12 +4,14 @@ import {
   setTests,
   getTests,
   keysTests,
+  itemInCommonTests
 } from '.'
 import {
   HashTableConstructor,
   HashTableSet,
   HashTableGet,
-  HashTableKeys
+  HashTableKeys,
+  itemInCommon
 } from "../Exercises"
 
 const tests = [
@@ -37,4 +39,17 @@ const tests = [
 
 tests.forEach(({ describeText, tests, HashTable }) => {
   describe(describeText, () => tests(HashTable))
-}) 
+})
+
+const interviewTests = [
+  {
+    describeText: 'EXERCISE-HT-Interview',
+    fnTests: itemInCommonTests,
+    fn: itemInCommon,
+  },
+]
+
+interviewTests.forEach(({ describeText, fnTests, fn }) => {
+  describe(describeText, () => fnTests(fn))
+})
+
