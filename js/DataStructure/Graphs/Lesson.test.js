@@ -3,11 +3,13 @@ import Graph from "./Lessons";
 
 import {
   addEdgeTests,
-  addVertexTests
+  addVertexTests,
+  removeEdgeTests
 } from "./tests";
 
 describe(`Graphs`, () => {
   addVertexTests(Graph)
   addEdgeTests(Graph)
+  removeEdgeTests(Graph)
 })
 

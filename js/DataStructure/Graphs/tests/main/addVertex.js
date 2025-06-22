@@ -3,7 +3,7 @@ import { checkGRInternalStructure, executeTestCases, toEqualTests } from "../../
 import CorrectGraph from "../Correct"
 import { addVertexDescription } from "../descriptions"
 
-const validateAddVertexOperations = ({ myGraph, vertexes, returnValue }) => {
+const validateOperations = ({ myGraph, vertexes, returnValue }) => {
   const correct = new CorrectGraph()
   let correctReturnValue;
   vertexes.forEach(vertex => {
@@ -37,7 +37,7 @@ const addVertexTests = (Graph) => {
           returnValue = myGraph.addVertex(vertex)
         })
 
-        const tests = validateAddVertexOperations({ myGraph, vertexes, returnValue })
+        const tests = validateOperations({ myGraph, vertexes, returnValue })
 
         executeTestCases(tests)
       })
