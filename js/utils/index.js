@@ -4,6 +4,7 @@ import checkQueueInternalStructure from "./checkInternalStructures/checkQueueInt
 import checkStackInternalStructure from "./checkInternalStructures/checkStackInternalStructure";
 import checkBSTInternalStructure from "./checkInternalStructures/checkBSTInternalStructure";
 import checkHTInternalStructure from "./checkInternalStructures/checkHTInternalStructure";
+import checkGRInternalStructure from "./checkInternalStructures/checkGRInternalStructure";
 
 import hasPropertyTests from "./tests/hasPropertyTests";
 import toBeNullTests from "./tests/toBeNullTests";
@@ -23,6 +24,7 @@ export {
   checkStackInternalStructure,
   checkBSTInternalStructure,
   checkHTInternalStructure,
+  checkGRInternalStructure,
 
   formatArgsForDisplay,
   hasPropertyTests,
