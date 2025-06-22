@@ -30,3 +30,18 @@ export const removeEdgeDescription = ({ vertexes, connectionEdges, removeEdges }
 
   return `\n\tlet myGraph = new Graph()${addVertexText}${addEdgeText}\n\tconst returnValue = myGraph.removeEdge(${formatArgsForDisplay(removeEdges)})`
 }
+
+export const removeVertexDescription = ({ vertexes, connectionEdges, removeValue }) => {
+
+  const addVertexText =
+    vertexes.map((vertex) =>
+      `\n\tmyGraph.addVertex(${J(vertex)})`
+    ).join``
+
+  const addEdgeText =
+    connectionEdges.map((edges) =>
+      `\n\tmyGraph.addEdge(${formatArgsForDisplay(edges)})`
+    ).join``
+
+  return `\n\tlet myGraph = new Graph()${addVertexText}${addEdgeText}\n\tconst returnValue = myGraph.removeVertex(${J(removeValue)})`
+}

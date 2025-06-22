@@ -7,7 +7,7 @@ class Graph {
     if (!this.adjacencyList[vertex]) {
       this.adjacencyList[vertex] = []
       return true
-    } 
+    }
     return false
   }
 
@@ -29,7 +29,17 @@ class Graph {
       return true
     }
     return false
-  } 
+  }
+
+  removeVertex(vertex) {
+    if (!this.adjacencyList[vertex]) return undefined
+    while (this.adjacencyList[vertex].length) {
+      let temp = this.adjacencyList[vertex].pop()
+      this.removeEdge(vertex, temp)
+    }
+    delete this.adjacencyList[vertex]
+    return this
+  }
 }
 
 export default Graph
