@@ -1,23 +1,30 @@
 import { describe } from "vitest"
 import {
   addVertexTests,
-  addEdgeTests
+  addEdgeTests,
+  removeEdgeTests
 } from '.'
 import {
   AddEdgeGraphClass,
   AddVertexGraphClass,
+  RemoveEdgeGraphClass
 } from "../Exercises"
 
 const tests = [
   {
-    describeText: 'EXERCISE-HT-Constructor',
+    describeText: 'EXERCISE-GR-addVertex',
     Graph: AddVertexGraphClass,
     tests: addVertexTests
   },
   {
-    describeText: 'EXERCISE-HT-Constructor',
+    describeText: 'EXERCISE-GR-addEdge',
     Graph: AddEdgeGraphClass,
     tests: addEdgeTests
+  },
+  {
+    describeText: 'EXERCISE-GR-removeEdge',
+    Graph: RemoveEdgeGraphClass,
+    tests: removeEdgeTests
   },
 ]
 
