@@ -1,7 +1,7 @@
 import { describe } from "vitest"
-import { checkGRInternalStructure, executeTestCases, toEqualTests } from "../../../utils"
-import CorrectGraph from "./Correct"
-import { addVertexDescription } from "./descriptions"
+import { checkGRInternalStructure, executeTestCases, toEqualTests } from "../../../../utils"
+import CorrectGraph from "../Correct"
+import { addVertexDescription } from "../descriptions"
 
 const validateAddVertexOperations = ({ myGraph, vertexes, returnValue }) => {
   const correct = new CorrectGraph()
@@ -9,8 +9,8 @@ const validateAddVertexOperations = ({ myGraph, vertexes, returnValue }) => {
   vertexes.forEach(vertex => {
     correctReturnValue = correct.addVertex(vertex)
   })
-
-  return [
+ 
+  return [ 
     checkGRInternalStructure(myGraph),
     toEqualTests({ name: 'myGraph', my: myGraph, correct, paths: ['adjacencyList'] }),
     [

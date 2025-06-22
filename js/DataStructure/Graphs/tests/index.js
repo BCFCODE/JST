@@ -1,7 +1,9 @@
-import addVertexTests from "./addVertex";
+import addEdgeTests from "./main/addEdge";
+import addVertexTests from "./main/addVertex";
 
 export {
-  addVertexTests
+  addVertexTests,
+  addEdgeTests
 }
 
 export {
