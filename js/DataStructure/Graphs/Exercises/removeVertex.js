@@ -31,12 +31,15 @@ class Graph {
     return false
   }
 
-  /// WRITE removeVertex METHOD HERE ///
-  //                                  //
-  //                                  //
-  //                                  //
-  //                                  //
-  //////////////////////////////////////
+  removeVertex(vertex) {
+    if (!this.adjacencyList[vertex]) return undefined
+    while (this.adjacencyList[vertex].length) {
+      let temp = this.adjacencyList[vertex].pop()
+      this.removeEdge(vertex, temp)
+    }
+    delete this.adjacencyList[vertex]
+    return this
+  }
 }
 
 export default Graph
