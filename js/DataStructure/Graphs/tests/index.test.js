@@ -2,12 +2,14 @@ import { describe } from "vitest"
 import {
   addVertexTests,
   addEdgeTests,
-  removeEdgeTests
+  removeEdgeTests,
+  removeVertexTests
 } from '.'
 import {
   AddEdgeGraphClass,
   AddVertexGraphClass,
-  RemoveEdgeGraphClass
+  RemoveEdgeGraphClass,
+  RemoveVertexGraphClass
 } from "../Exercises"
 
 const tests = [
@@ -25,6 +27,11 @@ const tests = [
     describeText: 'EXERCISE-GR-removeEdge',
     Graph: RemoveEdgeGraphClass,
     tests: removeEdgeTests
+  },
+  {
+    describeText: 'EXERCISE-GR-removeVertex',
+    Graph: RemoveVertexGraphClass,
+    tests: removeVertexTests
   },
 ]
 
