@@ -2,7 +2,8 @@ import { describe } from "vitest";
 import Heap from "../Lessons";
 import heapTests from ".";
 import {
-  HeapClassHelperMethodHeap
+  HeapClassHelperMethodHeap,
+  HeapClassHelperMethodGetHeap
 } from "../Exercises";
 
 const tests = [
@@ -10,6 +11,10 @@ const tests = [
   {
     description: 'EXERCISE-Heap-#heap',
     Heap: HeapClassHelperMethodHeap,
+  },
+  {
+    description: 'EXERCISE-Heap-getHeap()',
+    Heap: HeapClassHelperMethodGetHeap,
   },
 ]
 
