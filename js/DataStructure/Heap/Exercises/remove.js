@@ -54,19 +54,5 @@ export class Heap {
     }
   }
 
-  remove() {
-    if (this.#heap.length === 0) {
-      return null
-    }
-
-    if (this.#heap.length === 1) {
-      return this.#heap.pop()
-    }
-
-    const maxValue = this.#heap[0]
-    this.#heap[0] = this.#heap.pop()
-    this.#sinkDown(0)
-
-    return maxValue
-  }
+  // ...
 }
