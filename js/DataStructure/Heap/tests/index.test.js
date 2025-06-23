@@ -16,6 +16,10 @@ const tests = [
     description: 'EXERCISE-Heap-getHeap()',
     Heap: HeapClassHelperMethodGetHeap,
   },
+  {
+    description: 'EXERCISE-Heap-#leftChild(index)',
+    Heap: HeapClassHelperMethodGetHeap,
+  },
 ]
 
 tests.forEach(({ description, Heap }) => {
