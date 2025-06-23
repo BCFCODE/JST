@@ -73,7 +73,7 @@ describe(`Helper Methods`, () => {
 
   testValues.forEach((values) => {
     const description = insertDescription(values)
-    describe(`After second remove${description}\n\tconst returnValue = myHeap.remove()`, () => {
+    describe(`After second remove${description}\n\tmyHeap.remove() // first remove\n\tconst returnValue = myHeap.remove() // second remove`, () => {
       let myHeap = new Heap()
       values.forEach(value => myHeap.insert(value))
       myHeap.remove()
