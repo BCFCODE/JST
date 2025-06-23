@@ -10,7 +10,8 @@ import {
   HeapClassHelperMethodSwap,
   HeapClassHelperMethodAll,
   HeapClassInsert,
-  HeapClassRemove
+  HeapClassRemove,
+  HeapClassHelperMethodSinkDown
 } from "../Exercises";
 
 const tests = [
@@ -53,6 +54,10 @@ const tests = [
   {
     description: 'EXERCISE-Heap-remove()',
     Heap: HeapClassRemove,
+  },
+  {
+    description: 'EXERCISE-Heap-#sinkDown(index)',
+    Heap: HeapClassHelperMethodSinkDown,
   },
 ]
 

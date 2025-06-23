@@ -5,5 +5,6 @@ export { Heap as HeapClassHelperMethodRightChild } from "./helper/rightChild";
 export { Heap as HeapClassHelperMethodParent } from "./helper/parent";
 export { Heap as HeapClassHelperMethodSwap } from "./helper/swap";
 export { Heap as HeapClassHelperMethodAll } from "./helper/all";
+export { Heap as HeapClassHelperMethodSinkDown } from "./helper/sinkDown";
 export { Heap as HeapClassInsert } from "./insert";
 export { Heap as HeapClassRemove } from "./remove";

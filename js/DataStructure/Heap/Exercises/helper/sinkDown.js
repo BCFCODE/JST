@@ -21,29 +21,7 @@ export class Heap {
     [this.#heap[index1], this.#heap[index2]] = [this.#heap[index2], this.#heap[index1]]
   }
 
-  #sinkDown(index) {
-    let maxIndex = index
-    const size = this.#heap.length
-    while (true) {
-      const leftIndex = this.#leftChild(index)
-      const rightIndex = this.#rightChild(index)
-
-      if (leftIndex < size && this.#heap[leftIndex] > this.#heap[maxIndex]) {
-        maxIndex = leftIndex
-      }
-
-      if (rightIndex < size && this.#heap[rightIndex] > this.#heap[maxIndex]) {
-        maxIndex = rightIndex
-      }
-
-      if (maxIndex !== index) {
-        this.#swap(index, maxIndex)
-        index = maxIndex
-      } else {
-        return
-      }
-    }
-  }
+  // ...
 
   insert(value) {
     this.#heap.push(value);
