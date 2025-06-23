@@ -9,9 +9,7 @@ export class Heap {
     return 2 * index + 1
   }
 
-  #rightChild(index) {
-    return 2 * index + 2
-  }
+  // ...
 
   #parent(index) {
     return Math.floor((index - 1) / 2)
