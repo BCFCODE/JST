@@ -1,4 +1,4 @@
-class Heap {
+export class Heap {
   #heap = []
 
   getHeap() {
@@ -10,7 +10,7 @@ class Heap {
   }
 
   #rightChild(index) {
-    return 2 * index + 2 
+    return 2 * index + 2
   }
 
   #parent(index) {
@@ -70,5 +70,3 @@ class Heap {
     return maxValue
   }
 }
-
-export default Heap

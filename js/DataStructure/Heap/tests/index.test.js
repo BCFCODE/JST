@@ -1,6 +1,6 @@
 import { describe } from "vitest";
-import Heap from "../Lessons";
 import heapTests from ".";
+import { Heap as HeapClassLessons } from "../Lessons";
 import {
   HeapClassHelperMethodHeap,
   HeapClassHelperMethodGetHeap,
@@ -12,7 +12,10 @@ import {
 } from "../Exercises";
 
 const tests = [
-  { description: 'Heap (Lessons)', Heap },
+  {
+    description: 'Heap (Lessons)',
+    Heap: HeapClassLessons
+  },
   {
     description: 'EXERCISE-Heap-#heap',
     Heap: HeapClassHelperMethodHeap,
@@ -46,7 +49,6 @@ const tests = [
 tests.forEach(({ description, Heap }) => {
   describe(description, () => heapTests(Heap))
 })
-
 
 
 
