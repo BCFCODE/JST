@@ -1,7 +1,9 @@
 import { describe } from "vitest";
 import Heap from "../Lessons";
 import heapTests from ".";
-import { Heap as HeapClassHelperMethodHeap } from "../Exercises/helper/heap";
+import {
+  HeapClassHelperMethodHeap
+} from "../Exercises";
 
 const tests = [
   { description: 'Heap (Lessons)', Heap },
