@@ -1,11 +1,11 @@
 export class Heap {
   #heap = []
 
-  // ...
-
-  #leftChild(index) {
-    return 2 * index + 1
+  getHeap() {
+    return [...this.#heap]
   }
+
+  // ...
 
   #rightChild(index) {
     return 2 * index + 2
