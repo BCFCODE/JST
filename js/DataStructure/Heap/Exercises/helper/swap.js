@@ -17,9 +17,7 @@ export class Heap {
     return Math.floor((index - 1) / 2)
   }
 
-  #swap(index1, index2) {
-    [this.#heap[index1], this.#heap[index2]] = [this.#heap[index2], this.#heap[index1]]
-  }
+  // ...
 
   #sinkDown(index) {
     let maxIndex = index
