@@ -9,7 +9,8 @@ import {
   HeapClassHelperMethodParent,
   HeapClassHelperMethodSwap,
   HeapClassHelperMethodAll,
-  HeapClassInsert
+  HeapClassInsert,
+  HeapClassRemove
 } from "../Exercises";
 
 const tests = [
@@ -46,8 +47,12 @@ const tests = [
     Heap: HeapClassHelperMethodAll,
   },
   {
-    description: 'EXERCISE-Heap-Insert',
+    description: 'EXERCISE-Heap-insert(index)',
     Heap: HeapClassInsert,
+  },
+  {
+    description: 'EXERCISE-Heap-remove()',
+    Heap: HeapClassRemove,
   },
 ]
 
