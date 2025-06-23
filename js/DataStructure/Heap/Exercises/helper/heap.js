@@ -1,4 +1,4 @@
-class Heap {
+export class Heap {
   #heap = []
 
   getHeap() {
@@ -70,5 +70,3 @@ class Heap {
     return maxValue
   }
 }
-
-export default Heap
