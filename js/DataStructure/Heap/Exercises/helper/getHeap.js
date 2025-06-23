@@ -5,11 +5,11 @@ export class Heap {
     return [...this.#heap]
   }
 
-  // ...
-
-  #rightChild(index) {
-    return 2 * index + 2
+  #leftChild(index) {
+    return 2 * index + 1
   }
+
+  // ...
 
   #parent(index) {
     return Math.floor((index - 1) / 2)
