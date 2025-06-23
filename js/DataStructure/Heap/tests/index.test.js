@@ -3,7 +3,12 @@ import Heap from "../Lessons";
 import heapTests from ".";
 import {
   HeapClassHelperMethodHeap,
-  HeapClassHelperMethodGetHeap
+  HeapClassHelperMethodGetHeap,
+  HeapClassHelperMethodLeftChild,
+  HeapClassHelperMethodRightChild,
+  HeapClassHelperMethodParent,
+  HeapClassHelperMethodSwap,
+  HeapClassHelperMethodAll
 } from "../Exercises";
 
 const tests = [
@@ -18,7 +23,23 @@ const tests = [
   },
   {
     description: 'EXERCISE-Heap-#leftChild(index)',
-    Heap: HeapClassHelperMethodGetHeap,
+    Heap: HeapClassHelperMethodLeftChild,
+  },
+  {
+    description: 'EXERCISE-Heap-#rightChild(index)',
+    Heap: HeapClassHelperMethodRightChild,
+  },
+  {
+    description: 'EXERCISE-Heap-#parent(index)',
+    Heap: HeapClassHelperMethodParent,
+  },
+  {
+    description: 'EXERCISE-Heap-#swap(index1, index2)',
+    Heap: HeapClassHelperMethodSwap,
+  },
+  {
+    description: 'EXERCISE-Heap-all',
+    Heap: HeapClassHelperMethodAll,
   },
 ]
 
