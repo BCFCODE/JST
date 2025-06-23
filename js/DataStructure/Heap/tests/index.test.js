@@ -1,7 +1,7 @@
 import { describe } from "vitest";
-import { executeTestCases } from "../../../utils";
 import Heap from "../Lessons";
 import CorrectHeap from "./Correct";
+import { executeTestCases } from "../../../utils";
 import { insertDescription } from "./description";
 
 const validateInsertOperations = ({ myHeap, values }) => {
@@ -45,7 +45,7 @@ const testValues = [
   [99, 72, 61, 58, 100, 75, 3, 0, 23],
 ]
 
-describe(`Helper Methods`, () => {
+describe(`Heap`, () => {
   testValues.forEach((values) => {
     const description = insertDescription(values)
     describe(description, () => {
