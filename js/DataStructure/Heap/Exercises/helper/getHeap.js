@@ -1,7 +1,9 @@
 export class Heap {
   #heap = []
 
-  // ...
+  getHeap() {
+    return [...this.#heap]
+  }
 
   #leftChild(index) {
     return 2 * index + 1
