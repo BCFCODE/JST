@@ -49,7 +49,7 @@ const heapTests = (Heap) => {
   testValues.forEach((values) => {
     const description = insertDescription(values)
     describe(description, () => {
-      let myHeap = new Heap()
+      let myHeap = new Heap();
       values.forEach(value => myHeap.insert(value))
 
       const tests = validateInsertOperations({ myHeap, values })
