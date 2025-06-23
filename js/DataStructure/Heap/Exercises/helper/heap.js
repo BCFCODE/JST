@@ -1,5 +1,5 @@
 export class Heap {
-  //...
+  #heap = []
 
   getHeap() {
     return [...this.#heap]
