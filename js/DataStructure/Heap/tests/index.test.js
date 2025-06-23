@@ -8,7 +8,8 @@ import {
   HeapClassHelperMethodRightChild,
   HeapClassHelperMethodParent,
   HeapClassHelperMethodSwap,
-  HeapClassHelperMethodAll
+  HeapClassHelperMethodAll,
+  HeapClassInsert
 } from "../Exercises";
 
 const tests = [
@@ -43,6 +44,10 @@ const tests = [
   {
     description: 'EXERCISE-Heap-all',
     Heap: HeapClassHelperMethodAll,
+  },
+  {
+    description: 'EXERCISE-Heap-Insert',
+    Heap: HeapClassInsert,
   },
 ]
 
