@@ -10,7 +10,7 @@ const tests = [
   },
   {
     description: 'EXERCISE-Recursion-factorial(n)',
-    fn: factorialFn
+    fn: factorialFnExercise
   },
 ]
 
