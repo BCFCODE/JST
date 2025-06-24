@@ -1,5 +1,12 @@
-import BSTConstructor, { Node } from "./Constructor";
-import BSTInsert from "./Insert";
-import BSTContains from "./Contains";
+import BSTConstructor, { Node } from "./constructor";
+import BSTInsert from "./insert";
+import BSTContains from "./contains";
+import BSTrContains from "./rContains";
 
-export { BSTConstructor, Node, BSTInsert, BSTContains }  
+export {
+  Node,
+  BSTConstructor,
+  BSTInsert,
+  BSTContains,
+  BSTrContains
+}  
