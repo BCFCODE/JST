@@ -58,35 +58,6 @@ const validateContainsOperations = ({ value, returnValue }) => {
   const correctReturnValue = correct.contains(value)
 
   return [
-    // toBeTests({
-    //   name: 'myTree',
-    //   my: myTree,
-    //   correct,
-    //   paths: [
-    //     'root.value',
-    //     'root.left.value',
-    //     'root.left.left.value',
-    //     'root.left.right.value',
-    //     'root.right.value',
-    //     'root.right.left.value',
-    //     'root.right.right.value'
-    //   ]
-    // }),
-    // toBeNullTests({
-    //   name: 'myTree',
-    //   my: myTree,
-    //   correct,
-    //   paths: [
-    //     'root.left.left.left',
-    //     'root.left.left.right',
-    //     'root.left.right.left',
-    //     'root.left.right.right',
-    //     'root.right.left.left',
-    //     'root.right.left.right',
-    //     'root.right.right.left',
-    //     'root.right.right.right'
-    //   ]
-    // }),
     [[`\n\treturnValue`, returnValue, 'toBe', correctReturnValue]]
   ].flat()
 

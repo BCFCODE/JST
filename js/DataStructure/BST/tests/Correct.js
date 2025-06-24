@@ -46,10 +46,22 @@ class CorrectBST {
       } else if (value > temp.value) {
         temp = temp.right
       } else {
-        return true 
+        return true
       }
     }
     return false
+  }
+
+  rContains(value, currentNode = this.root) {
+    if (currentNode === null) return false
+
+    if (value === currentNode.value) return true
+
+    if (value < currentNode.value) {
+      return this.rContains(value, currentNode.left)
+    } else {
+      return this.rContains(value, currentNode.right)
+    }
   }
 }
 
