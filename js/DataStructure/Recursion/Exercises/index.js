@@ -1,0 +1,1 @@
+export { factorial as factorialFnExercise } from './factorial'
