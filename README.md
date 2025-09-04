@@ -88,7 +88,7 @@ We welcome contributions to make JST even better! Here's how to get involved:
 
 ## License 📜
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/BCFCODE/JST/blob/main/LICENSE.txt) file for details.
 
 ## Author ✨
 
