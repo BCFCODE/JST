@@ -11,14 +11,14 @@ const validateBeforeInsertOperations = (myTree) => {
 
 }
 
-const validateAfterInsert47Operations = ({ myTree, returnValue }) => {
+const validateAfterInsert47Operations = ({ myTree }) => {
   let correct = new CorrectBST()
-  const correctReturnValue = correct.rInsert(47)
+  correct.rInsert(47)
 
   return [
     toBeTests({
       name: 'myTree',
-      my: myTree, 
+      my: myTree,
       correct,
       paths: ['root.value']
     }),
@@ -28,211 +28,136 @@ const validateAfterInsert47Operations = ({ myTree, returnValue }) => {
       correct,
       paths: ['root.left', 'root.right']
     }),
+  ].flat()
+
+}
+
+const validateAfterInsert21Operations = ({ myTree }) => {
+  let correct = new CorrectBST()
+  correct.rInsert(47)
+  correct.rInsert(21)
+
+  return [
     toBeTests({
-      name: 'returnValue',
-      my: returnValue,
-      correct: correctReturnValue,
-      paths: ['root.value']
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: ['root.value', 'root.left.value']
     }),
     toBeNullTests({
-      name: 'returnValue',
-      my: returnValue,
-      correct: correct.returnValue,
-      paths: ['root.left', 'root.right']
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.right',
+        'root.left.left',
+        'root.left.right'
+      ]
     }),
   ].flat()
 
 }
 
-// const validateAfterInsert21Operations = ({ myTree, returnValue }) => {
-//   let correct = new CorrectBST()
-//   correct.rInsert(47)
-//   const correctReturnValue = correct.rInsert(21)
+const validateAfterInsert76Operations = ({ myTree }) => {
+  let correct = new CorrectBST()
+  correct.rInsert(47)
+  correct.rInsert(21)
+  correct.rInsert(76)
 
-//   return [
-//     toBeTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: ['root.value', 'root.left.value']
-//     }),
-//     toBeNullTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: [
-//         'root.right',
-//         'root.left.left',
-//         'root.left.right'
-//       ]
-//     }),
-//     toBeTests({
-//       name: 'returnValue',
-//       my: returnValue,
-//       correct: correctReturnValue,
-//       paths: ['root.value', 'root.left.value']
-//     }),
-//     toBeNullTests({
-//       name: 'returnValue',
-//       my: returnValue,
-//       correct: correctReturnValue,
-//       paths: [
-//         'root.right',
-//         'root.left.left',
-//         'root.left.right'
-//       ]
-//     }),
-//   ].flat()
+  return [
+    toBeTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.value',
+        'root.left.value',
+        'root.right.value'
+      ]
+    }),
+    toBeNullTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.left.left',
+        'root.left.right',
+        'root.right.left',
+        'root.right.right',
+      ]
+    }),
+  ].flat()
 
-// }
+}
 
-// const validateAfterInsert76Operations = ({ myTree, returnValue }) => {
-//   let correct = new CorrectBST()
-//   correct.rInsert(47)
-//   correct.rInsert(21)
-//   const correctReturnValue = correct.rInsert(76)
+const validateAfterInsert18Operations = ({ myTree }) => {
+  let correct = new CorrectBST()
+  correct.rInsert(47)
+  correct.rInsert(21)
+  correct.rInsert(76)
+  correct.rInsert(18)
 
-//   return [
-//     toBeTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: [
-//         'root.value',
-//         'root.left.value',
-//         'root.right.value'
-//       ]
-//     }),
-//     toBeNullTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: [
-//         'root.left.left',
-//         'root.left.right',
-//         'root.right.left',
-//         'root.right.right',
-//       ]
-//     }),
-//     toBeTests({
-//       name: 'returnValue',
-//       my: returnValue,
-//       correct: correctReturnValue,
-//       paths: [
-//         'root.value',
-//         'root.left.value',
-//         'rtRight.value'
-//       ]
-//     }),
-//     toBeNullTests({
-//       name: 'returnValue',
-//       my: returnValue,
-//       correct: correctReturnValue,
-//       paths: [
-//         'root.left.left',
-//         'root.left.right',
-//         'root.right.left',
-//         'root.right.right',
-//       ]
-//     }),
-//   ].flat()
+  return [
+    toBeTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.value',
+        'root.left.value',
+        'root.left.left.value',
+        'root.right.value'
+      ]
+    }),
+    toBeNullTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.left.left.left',
+        'root.left.left.right',
+        'root.left.right',
+        'root.right.left',
+        'root.right.right',
+      ]
+    }),
+  ].flat()
+}
 
-// }
+const validateAfterInsertDuplicationOperations = ({ myTree }) => {
+  let correct = new CorrectBST()
+  correct.rInsert(47)
+  correct.rInsert(21)
+  correct.rInsert(76)
+  correct.rInsert(18)
+  correct.rInsert(76)
 
-// const validateAfterInsert18Operations = ({ myTree, returnValue }) => {
-//   let correct = new CorrectBST()
-//   correct.rInsert(47)
-//   correct.rInsert(21)
-//   correct.rInsert(76)
-//   const correctReturnValue = correct.rInsert(18)
-
-//   return [
-//     toBeTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: [
-//         'root.value',
-//         'root.left.value',
-//         'root.left.left.value',
-//         'root.right.value'
-//       ]
-//     }),
-//     toBeNullTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: [
-//         'root.left.left.left',
-//         'root.left.left.right',
-//         'root.left.right',
-//         'root.right.left',
-//         'root.right.right',
-//       ]
-//     }),
-//     toBeTests({
-//       name: 'returnValue',
-//       my: returnValue,
-//       correct: correctReturnValue,
-//       paths: [
-//         'root.value',
-//         'root.left.value',
-//         'root.left.left.value',
-//         'root.right.value'
-//       ]
-//     }),
-//     toBeNullTests({
-//       name: 'returnValue',
-//       my: returnValue,
-//       correct: correctReturnValue,
-//       paths: [
-//         'root.left.left.left',
-//         'root.left.left.right',
-//         'root.left.right',
-//         'root.right.left',
-//         'root.right.right',
-//       ]
-//     }),
-//   ].flat()
-// }
-
-// const validateAfterInsertDuplicationOperations = ({ myTree, returnValue }) => {
-//   let correct = new CorrectBST()
-//   correct.rInsert(47)
-//   correct.rInsert(21)
-//   correct.rInsert(76)
-//   correct.rInsert(18)
-//   const correctReturnValue = correct.rInsert(76)
-
-//   return [
-//     toBeTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: [
-//         'root.value',
-//         'root.left.value',
-//         'root.left.left.value',
-//         'root.right.value'
-//       ]
-//     }),
-//     toBeNullTests({
-//       name: 'myTree',
-//       my: myTree,
-//       correct,
-//       paths: [
-//         'root.left.left.left',
-//         'root.left.left.right',
-//         'root.left.right',
-//         'root.right.left',
-//         'root.right.right',
-//       ]
-//     }),
-//     [
-//       ['\n\treturnValue', returnValue, 'toEqual', correctReturnValue],
-//     ]
-//   ].flat()
-// }
+  return [
+    toBeTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.value',
+        'root.left.value',
+        'root.left.left.value',
+        'root.right.value'
+      ]
+    }),
+    toBeNullTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.left.left.left',
+        'root.left.left.right',
+        'root.left.right',
+        'root.right.left',
+        'root.right.right',
+      ]
+    }),
+  ].flat()
+}
 
 const rInsertTests = ({ BST }) => {
   describe(`rInsert`, () => {
@@ -242,65 +167,62 @@ const rInsertTests = ({ BST }) => {
       const tests = validateBeforeInsertOperations(myTree)
 
       executeTestCases(tests)
-    }) 
+    })
 
-    describe(`\n\tlet myTree = new BST()\n\tconst returnValue = myTree.rInsert(47)`, () => {
+    describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)`, () => {
       let myTree = new BST()
-      const returnValue = myTree.rInsert(47)
+      myTree.rInsert(47)
 
-      const tests = validateAfterInsert47Operations({ myTree, returnValue })
+      const tests = validateAfterInsert47Operations({ myTree })
 
       executeTestCases(tests)
     })
 
-  //   describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tconst returnValue = myTree.rInsert(21)`, () => {
-  //     let myTree = new BST()
-  //     myTree.rInsert(47)
-  //     const returnValue = myTree.rInsert(21)
+    describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)`, () => {
+      let myTree = new BST()
+      myTree.rInsert(47)
+      myTree.rInsert(21)
 
-  //     const tests = validateAfterInsert21Operations({ myTree, returnValue })
+      const tests = validateAfterInsert21Operations({ myTree })
 
-  //     executeTestCases(tests)
-  //   })
+      executeTestCases(tests)
+    })
 
-  //   describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tconst returnValue = myTree.rInsert(76)`, () => {
-  //     let myTree = new BST()
-  //     myTree.rInsert(47)
-  //     myTree.rInsert(21)
-  //     const returnValue = myTree.rInsert(76)
+    describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(76)`, () => {
+      let myTree = new BST()
+      myTree.rInsert(47)
+      myTree.rInsert(21)
+      myTree.rInsert(76)
 
-  //     const tests = validateAfterInsert76Operations({ myTree, returnValue })
+      const tests = validateAfterInsert76Operations({ myTree })
 
-  //     executeTestCases(tests)
-  //   })
+      executeTestCases(tests)
+    })
 
-  //   describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(76)\n\tconst returnValue = myTree.rInsert(18)`, () => {
-  //     let myTree = new BST()
-  //     myTree.rInsert(47)
-  //     myTree.rInsert(21)
-  //     myTree.rInsert(76)
-  //     const returnValue = myTree.rInsert(18)
+    describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(76)\n\tmyTree.rInsert(18)`, () => {
+      let myTree = new BST()
+      myTree.rInsert(47)
+      myTree.rInsert(21)
+      myTree.rInsert(76)
+      myTree.rInsert(18)
 
-  //     const tests = validateAfterInsert18Operations({ myTree, returnValue })
+      const tests = validateAfterInsert18Operations({ myTree })
 
-  //     executeTestCases(tests)
-  //   })
+      executeTestCases(tests)
+    })
 
-  //   describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(76)\n\tmyTree.rInsert(18)\n\tconst returnValue = myTree.rInsert(76)`, () => {
-  //     let myTree = new BST()
-  //     myTree.rInsert(47)
-  //     myTree.rInsert(21)
-  //     myTree.rInsert(76)
-  //     myTree.rInsert(18)
-  //     const returnValue = myTree.rInsert(76)
+    describe(`\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(76)\n\tmyTree.rInsert(18)\n\tmyTree.rInsert(76)`, () => {
+      let myTree = new BST()
+      myTree.rInsert(47)
+      myTree.rInsert(21)
+      myTree.rInsert(76)
+      myTree.rInsert(18)
+      myTree.rInsert(76)
 
-  //     const tests = validateAfterInsertDuplicationOperations({
-  //       myTree,
-  //       returnValue
-  //     })
+      const tests = validateAfterInsertDuplicationOperations({ myTree })
 
-  //     executeTestCases(tests)
-  //   })
+      executeTestCases(tests)
+    })
   })
 }
 

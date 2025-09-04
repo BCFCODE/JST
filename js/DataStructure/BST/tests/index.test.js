@@ -3,15 +3,18 @@ import {
   constructorTests,
   containsTests,
   insertTests,
-  rContainsTests
+  rContainsTests,
+  rInsertTests
 } from '.'
 import {
   Node,
   BSTConstructor,
   BSTInsert,
   BSTContains,
-  BSTrContains
+  BSTrContains,
+  BSTrInsert
 } from "../Exercises"
+
 
 const tests = [
   {
@@ -33,6 +36,11 @@ const tests = [
     describeText: 'EXERCISE-BST-rContains',
     BST: BSTrContains,
     tests: rContainsTests
+  },
+  {
+    describeText: 'EXERCISE-BST-rInsert',
+    BST: BSTrInsert,
+    tests: rInsertTests
   },
 ]
 
