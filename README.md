@@ -13,7 +13,7 @@ Welcome to **JST (JS Training)**, a comprehensive hands-on project designed to h
 JST is more than just a code repository—it's a complete learning ecosystem for JavaScript developers. Whether you're a beginner building foundational skills or an experienced coder diving into DSAA, this project offers practical exercises, modular code, and rigorous testing to reinforce your knowledge.
 
 - **DSAA Focus**: Concentrate on Data Structures (arrays, linked lists, trees, graphs) and Algorithms (sorting, searching, recursion, dynamic programming) with real-world JavaScript implementations.
-- **Anki Deck**: We share a curated Anki deck with flashcards covering JS concepts, DSAA topics, and code snippets for effective memorization through spaced repetition. Download it [here](link-to-anki-deck) (over 1,000 cards included!).
+- **Anki Deck**: We share a curated Anki deck with flashcards covering JS concepts, DSAA topics, and code snippets for effective memorization through spaced repetition. Download it [here](https://github.com/BCFCODE/JST/tree/main/Anki) (over 200 cards included!).
 - **Extensive Testing**: Over 4,000 Vitest tests for training exercises, ensuring you practice edge cases, debugging, and optimization.
 
 Ready to level up your JS skills? Join BCFCODE and start coding!
@@ -67,7 +67,7 @@ pnpm test --watch
 Over 4,000 tests cover fundamentals, edge cases, and DSAA scenarios—perfect for practice!
 
 ### Anki Deck 📇
-To reinforce learning, download our Anki deck [here](link-to-anki-deck). It includes:
+To reinforce learning, download our Anki deck [here](https://github.com/BCFCODE/JST/tree/main/Anki). It includes:
 - JS syntax and best practices.
 - DSAA concepts with code examples.
 - Problem-solving flashcards.
@@ -84,7 +84,7 @@ We welcome contributions to make JST even better! Here's how to get involved:
 4. Push to the branch (`git push origin feature/AmazingFeature`).
 5. Open a Pull Request.
 
-Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) and ensure tests pass before submitting.
+<!-- Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) and ensure tests pass before submitting. -->
 
 ## License 📜
 
