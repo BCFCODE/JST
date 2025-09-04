@@ -4,7 +4,8 @@ import {
   constructorTests,
   containsTests,
   insertTests,
-  rContainsTests
+  rContainsTests,
+  rInsertTests
 } from "./tests";
 
 describe(`BST`, () => {
@@ -12,5 +13,6 @@ describe(`BST`, () => {
   insertTests({ BST })
   containsTests({ BST })
   rContainsTests({ BST })
+  rInsertTests({ BST })
 })
 

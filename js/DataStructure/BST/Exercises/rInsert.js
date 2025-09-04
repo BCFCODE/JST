@@ -64,7 +64,6 @@ class BST {
     }
   }
 
-
   #rInsert(value, currentNode = this.root) {
     if (currentNode === null) return new Node(value)
 
