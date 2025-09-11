@@ -3,11 +3,13 @@ import insertTests from "./Insert";
 import containsTests from "./contains";
 import rContainsTests from "./rContains";
 import rInsertTests from "./rInsert";
+import deleteNodeTests from "./deleteNode";
 
 export {
   constructorTests,
   insertTests,
   containsTests,
   rContainsTests,
-  rInsertTests
+  rInsertTests,
+  deleteNodeTests
 }
