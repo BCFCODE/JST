@@ -4,7 +4,8 @@ import {
   containsTests,
   insertTests,
   rContainsTests,
-  rInsertTests
+  rInsertTests,
+  deleteNodeTests
 } from '.'
 import {
   Node,
@@ -12,7 +13,8 @@ import {
   BSTInsert,
   BSTContains,
   BSTrContains,
-  BSTrInsert
+  BSTrInsert,
+  BSTDeleteNode
 } from "../Exercises"
 
 
@@ -41,6 +43,11 @@ const tests = [
     describeText: 'EXERCISE-BST-rInsert',
     BST: BSTrInsert,
     tests: rInsertTests
+  },
+  {
+    describeText: 'EXERCISE-BST-deleteNode',
+    BST: BSTDeleteNode,
+    tests: deleteNodeTests
   },
 ]
 
