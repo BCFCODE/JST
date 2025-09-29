@@ -89,7 +89,21 @@ class BST {
     return currentNode.value
   }
 
-  // ...
+  #deleteNode(value, currentNode) {
+    if (currentNode === null) return null
+
+    if (value < currentNode.value) {
+      currentNode.left = this.#deleteNode(value, currentNode.left)
+    } else if (value > currentNode.value) {
+      currentNode.right = this.#deleteNode(value, currentNode.right)
+    }
+
+    return currentNode
+  }
+
+  deleteNode(value) {
+    this.root = this.#deleteNode(value, this.root)
+  }
 }
 
 export default BST
