@@ -104,6 +104,7 @@ class BST {
       } else if (currentNode.right === null) {
         currentNode = currentNode.left
       }
+      // ...
     }
 
     return currentNode

@@ -170,6 +170,44 @@ const buildTestsForMinValueHelperFunction = ({ myTree, actualMinValueAtRoot, act
 }
 
 
+const buildTestsForDeletingNodeWithTwoChildren = ({ myTree }) => {
+  let correct = new CorrectBST()
+  correct.rInsert(47)
+  correct.rInsert(21)
+  correct.rInsert(20)
+  correct.rInsert(25)
+  correct.rInsert(24)
+  correct.rInsert(26)
+  correct.deleteNode(21)
+
+  return [
+    toBeTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.value',
+        'root.left.value',
+        'root.left.left.value',
+        'root.left.right.value',
+        'root.left.right.right.value'
+      ]
+    }),
+    toBeNullTests({
+      name: 'myTree',
+      my: myTree,
+      correct,
+      paths: [
+        'root.right',
+        'root.left.left.left',
+        'root.left.left.right',
+        'root.left.right.left',
+        'root.left.right.right.left',
+        'root.left.right.right.right',
+      ]
+    }),
+  ].flat()
+}
 
 const deleteNodeTests = ({ BST }) => {
   describe(`deleteNode`, () => {
@@ -233,6 +271,21 @@ const deleteNodeTests = ({ BST }) => {
       const actualMinValueAtRightSubtree = myTree.minValue(myTree.root.right)
 
       const tests = buildTestsForMinValueHelperFunction({ myTree, actualMinValueAtRoot, actualMinValueAtRightSubtree })
+
+      executeTestCases(tests)
+    })
+
+    describe(`\n\tStep 5: Deleting a Node with Two Children >>\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(20)\n\tmyTree.rInsert(25)\n\tmyTree.rInsert(24)\n\tmyTree.rInsert(26)\n\tmyTree.deleteNode(21)`, () => {
+      let myTree = new BST()
+      myTree.rInsert(47)
+      myTree.rInsert(21)
+      myTree.rInsert(20)
+      myTree.rInsert(25)
+      myTree.rInsert(24)
+      myTree.rInsert(26)
+      myTree.deleteNode(21)
+
+      const tests = buildTestsForDeletingNodeWithTwoChildren({ myTree })
 
       executeTestCases(tests)
     })
