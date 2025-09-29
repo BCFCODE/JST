@@ -92,11 +92,8 @@ class BST {
     } else {
       if (currentNode.left === null && currentNode.right === null) {
         return null
-      } else if (currentNode.left === null) {
-        currentNode = currentNode.right
-      } else if (currentNode.right === null) {
-        currentNode = currentNode.left
-      }
+      } 
+      // ...
     }
 
     return currentNode
