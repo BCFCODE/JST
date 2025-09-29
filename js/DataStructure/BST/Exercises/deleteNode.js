@@ -82,7 +82,12 @@ class BST {
     this.#rInsert(value)
   }
 
-  // ...
+  minValue(currentNode) {
+    while (currentNode.left != null) {
+      currentNode = currentNode.left
+    }
+    return currentNode.value
+  }
 
   #deleteNode(value, currentNode) {
     if (currentNode === null) return null
