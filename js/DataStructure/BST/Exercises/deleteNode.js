@@ -82,6 +82,8 @@ class BST {
     this.#rInsert(value)
   }
 
+  // ...
+
   #deleteNode(value, currentNode) {
     if (currentNode === null) return null
 
