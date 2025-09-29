@@ -96,7 +96,8 @@ class BST {
       currentNode.left = this.#deleteNode(value, currentNode.left)
     } else if (value > currentNode.value) {
       currentNode.right = this.#deleteNode(value, currentNode.right)
-    }
+    } 
+    // ...
 
     return currentNode
   }
