@@ -103,11 +103,7 @@ class BST {
         currentNode = currentNode.right
       } else if (currentNode.right === null) {
         currentNode = currentNode.left
-      } else {
-        let subTreeMin = this.minValue(currentNode.right)
-        currentNode.value = subTreeMin
-        currentNode.right = this.#deleteNode(subTreeMin, currentNode.right)
-      }
+      } 
     }
 
     return currentNode
