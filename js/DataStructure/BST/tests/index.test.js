@@ -1,12 +1,13 @@
-import { describe } from "vitest"
+import { describe } from "vitest";
 import {
   constructorTests,
   containsTests,
   insertTests,
   rContainsTests,
   rInsertTests,
-  deleteNodeTests
-} from '.'
+  deleteNodeTests,
+  bfsTests
+} from ".";
 import {
   Node,
   BSTConstructor,
@@ -14,43 +15,49 @@ import {
   BSTContains,
   BSTrContains,
   BSTrInsert,
-  BSTDeleteNode
-} from "../Exercises"
+  BSTDeleteNode,
+  BSTBFS
+} from "..";
 
 
 const tests = [
   {
-    describeText: 'EXERCISE-BST-Constructor',
+    describeText: "EXERCISE-BST-Constructor",
     BST: BSTConstructor,
-    tests: constructorTests
+    tests: constructorTests,
   },
   {
-    describeText: 'EXERCISE-BST-Insert',
+    describeText: "EXERCISE-BST-Insert",
     BST: BSTInsert,
-    tests: insertTests
+    tests: insertTests,
   },
   {
-    describeText: 'EXERCISE-BST-Contains',
+    describeText: "EXERCISE-BST-Contains",
     BST: BSTContains,
-    tests: containsTests
+    tests: containsTests,
   },
   {
-    describeText: 'EXERCISE-BST-rContains',
+    describeText: "EXERCISE-BST-rContains",
     BST: BSTrContains,
-    tests: rContainsTests
+    tests: rContainsTests,
   },
   {
-    describeText: 'EXERCISE-BST-rInsert',
+    describeText: "EXERCISE-BST-rInsert",
     BST: BSTrInsert,
-    tests: rInsertTests
+    tests: rInsertTests,
   },
   {
-    describeText: 'EXERCISE-BST-deleteNode',
+    describeText: "EXERCISE-BST-deleteNode",
     BST: BSTDeleteNode,
-    tests: deleteNodeTests
+    tests: deleteNodeTests,
   },
-]
+  {
+    describeText: "EXERCISE-BST-BFS",
+    BST: BSTBFS,
+    tests: bfsTests,
+  },
+];
 
 tests.forEach(({ describeText, tests, BST }) => {
-  describe(describeText, () => tests({ BST, Node }))
-})  
+  describe(describeText, () => tests({ BST, Node }));
+});

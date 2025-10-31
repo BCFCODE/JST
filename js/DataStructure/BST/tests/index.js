@@ -4,6 +4,7 @@ import containsTests from "./contains";
 import rContainsTests from "./rContains";
 import rInsertTests from "./rInsert";
 import deleteNodeTests from "./deleteNode";
+import bfsTests from "./BFS";
 
 export {
   constructorTests,
@@ -11,5 +12,8 @@ export {
   containsTests,
   rContainsTests,
   rInsertTests,
-  deleteNodeTests
+  deleteNodeTests, 
+  bfsTests
 }
+
+
