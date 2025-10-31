@@ -4,6 +4,7 @@ import BSTContains from "./contains";
 import BSTrContains from "./rContains";
 import BSTrInsert from "./rInsert";
 import BSTDeleteNode from "./deleteNode";
+import BSTBFS from "./BFS";
 
 export {
   Node,
@@ -12,5 +13,6 @@ export {
   BSTContains,
   BSTrContains,
   BSTrInsert,
-  BSTDeleteNode
+  BSTDeleteNode,
+  BSTBFS
 }  

@@ -102,6 +102,8 @@ class BST {
         currentNode = currentNode.right;
       } else if (currentNode.right === null) {
         currentNode = currentNode.left;
+      } else {
+        
       }
     }
 
