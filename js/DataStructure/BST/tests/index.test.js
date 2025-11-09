@@ -6,7 +6,8 @@ import {
   rContainsTests,
   rInsertTests,
   deleteNodeTests,
-  bfsTests
+  bfsTests,
+  dfsPreOrderTests,
 } from ".";
 import {
   Node,
@@ -16,9 +17,9 @@ import {
   BSTrContains,
   BSTrInsert,
   BSTDeleteNode,
-  BSTBFS
+  BSTBFS,
+  BSTDFSPreOrder,
 } from "..";
-
 
 const tests = [
   {
@@ -55,6 +56,11 @@ const tests = [
     describeText: "EXERCISE-BST-BFS",
     BST: BSTBFS,
     tests: bfsTests,
+  },
+  {
+    describeText: "EXERCISE-BST-DFSPreOrder",
+    BST: BSTDFSPreOrder,
+    tests: dfsPreOrderTests,
   },
 ];
 

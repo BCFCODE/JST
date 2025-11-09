@@ -5,6 +5,7 @@ import BSTrContains from "./rContains";
 import BSTrInsert from "./rInsert";
 import BSTDeleteNode from "./deleteNode";
 import BSTBFS from "./BFS";
+import BSTDFSPreOrder from "./DFSPreOrder";
 
 export {
   Node,
@@ -14,5 +15,6 @@ export {
   BSTrContains,
   BSTrInsert,
   BSTDeleteNode,
-  BSTBFS
+  BSTBFS, 
+  BSTDFSPreOrder
 }  
