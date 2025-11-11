@@ -8,6 +8,7 @@ import {
   deleteNodeTests,
   bfsTests,
   dfsPreOrderTests,
+  dfsPostOrderTests,
 } from ".";
 import {
   Node,
@@ -19,6 +20,7 @@ import {
   BSTDeleteNode,
   BSTBFS,
   BSTDFSPreOrder,
+  BSTDFSPostOrder,
 } from "..";
 
 const tests = [
@@ -61,6 +63,11 @@ const tests = [
     describeText: "EXERCISE-BST-DFSPreOrder",
     BST: BSTDFSPreOrder,
     tests: dfsPreOrderTests,
+  },
+  {
+    describeText: "EXERCISE-BST-DFSPostOrder",
+    BST: BSTDFSPostOrder,
+    tests: dfsPostOrderTests,
   },
 ];
 

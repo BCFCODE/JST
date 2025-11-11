@@ -6,6 +6,7 @@ import rInsertTests from "./rInsert";
 import deleteNodeTests from "./deleteNode";
 import bfsTests from "./BFS";
 import dfsPreOrderTests from "./DFSPreOrder";
+import dfsPostOrderTests from "./DFSPostOrder";
 
 export {
   constructorTests,
@@ -16,4 +17,5 @@ export {
   deleteNodeTests,
   bfsTests,
   dfsPreOrderTests,
+  dfsPostOrderTests
 };
