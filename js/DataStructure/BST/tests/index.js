@@ -7,6 +7,7 @@ import deleteNodeTests from "./deleteNode";
 import bfsTests from "./BFS";
 import dfsPreOrderTests from "./DFSPreOrder";
 import dfsPostOrderTests from "./DFSPostOrder";
+import dfsInOrderTests from "./DFSInOrder";
 
 export {
   constructorTests,
@@ -17,5 +18,6 @@ export {
   deleteNodeTests,
   bfsTests,
   dfsPreOrderTests,
-  dfsPostOrderTests
+  dfsPostOrderTests,
+  dfsInOrderTests
 };

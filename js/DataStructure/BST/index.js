@@ -7,6 +7,7 @@ import BSTDeleteNode from "./deleteNode";
 import BSTBFS from "./BFS";
 import BSTDFSPreOrder from "./DFSPreOrder";
 import BSTDFSPostOrder from "./DFSPostOrder";
+import BSTDFSInOrder from "./DFSInOrder";
 
 export {
   Node,
@@ -19,4 +20,5 @@ export {
   BSTBFS,
   BSTDFSPreOrder,
   BSTDFSPostOrder,
+  BSTDFSInOrder,
 };
