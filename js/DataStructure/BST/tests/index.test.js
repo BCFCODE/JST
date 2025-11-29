@@ -9,6 +9,7 @@ import {
   bfsTests,
   dfsPreOrderTests,
   dfsPostOrderTests,
+  dfsInOrderTests,
 } from ".";
 import {
   Node,
@@ -21,6 +22,7 @@ import {
   BSTBFS,
   BSTDFSPreOrder,
   BSTDFSPostOrder,
+  BSTDFSInOrder,
 } from "..";
 
 const tests = [
@@ -68,6 +70,11 @@ const tests = [
     describeText: "EXERCISE-BST-DFSPostOrder",
     BST: BSTDFSPostOrder,
     tests: dfsPostOrderTests,
+  },
+  {
+    describeText: "EXERCISE-BST-DFSInOrder",
+    BST: BSTDFSInOrder,
+    tests: dfsInOrderTests,
   },
 ];
 
