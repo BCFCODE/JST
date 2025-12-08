@@ -15,7 +15,7 @@ const randomArray = (length = 9) => [
 describe(`Basic Sorts`, () => {
   describe("", () => {
     const array = randomArray();
-    function bubbleSort(array) {
+    function correct(array) {
       for (let i = array.length - 1; i > 0; i--) {
         for (let j = 0; j < i; j++) {
           if (array[j] > array[j + 1]) {
@@ -27,7 +27,7 @@ describe(`Basic Sorts`, () => {
       }
       return array;
     }
-    const expectedResult = bubbleSort(array);
+    const expectedResult = correct(array);
     it(`bubbleSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = bubbleSort(array);
       expect(result).toEqual(expectedResult);
@@ -36,7 +36,7 @@ describe(`Basic Sorts`, () => {
 
   describe("", () => {
     const array = randomArray();
-    function selectionSort(array) {
+    function correct(array) {
       for (let i = 0; i < array.length - 1; i++) {
         let min = i;
         for (let j = i + 1; j < array.length; j++) {
@@ -52,7 +52,7 @@ describe(`Basic Sorts`, () => {
       }
       return array;
     }
-    const expectedResult = selectionSort(array);
+    const expectedResult = correct(array);
     it(`selectionSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = selectionSort(array);
       expect(result).toEqual(expectedResult);
@@ -61,7 +61,7 @@ describe(`Basic Sorts`, () => {
 
   describe("", () => {
     const array = randomArray();
-    function insertionSort(array) {
+    function correct(array) {
       let temp;
       for (let i = 1; i < array.length; i++) {
         temp = array[i];
@@ -72,7 +72,7 @@ describe(`Basic Sorts`, () => {
       }
       return array;
     }
-    const expectedResult = insertionSort(array);
+    const expectedResult = correct(array);
     it(`insertionSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = insertionSort(array);
       expect(result).toEqual(expectedResult);
