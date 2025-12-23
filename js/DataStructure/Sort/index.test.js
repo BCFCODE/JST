@@ -1,9 +1,8 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 import { bubbleSort } from "./bubbleSort";
-import { selectionSort } from "./selectionSort";
 import { insertionSort } from "./insertionSort";
-import { merge, mergeSort } from "./merge";
-import { pivot, swap } from "./quickSort";
+import { pivot, quickSort, swap } from "./quickSort";
+import { selectionSort } from "./selectionSort";
 
 const randomIndex = (arr) =>
   Array.from({ length: 2 }).map(() => Math.floor(Math.random() * arr.length));
@@ -139,14 +138,35 @@ describe("Merge Sort", () => {
 describe("Quick Sort", () => {
   const buildTest = (arr) => [[...arr], ...randomIndex(arr)];
 
+  function correctSwap(array, firstIndex, secondIndex) {
+    let temp = array[firstIndex];
+    array[firstIndex] = array[secondIndex];
+    array[secondIndex] = temp;
+  }
+
+  function correctPivot(array, pivotIndex = 0, endIndex = array.length - 1) {
+    let swapIndex = pivotIndex;
+    for (let i = pivotIndex + 1; i <= endIndex; i++) {
+      if (array[i] < array[pivotIndex]) {
+        swapIndex++;
+        swap(array, swapIndex, i);
+      }
+    }
+    swap(array, pivotIndex, swapIndex);
+    return swapIndex;
+  }
+
+  function correctQuickSort(array, left = 0, right = array.length - 1) {
+    if (left < right) {
+      let pivotIndex = pivot(array, left, right);
+      correctQuickSort(array, left, pivotIndex - 1);
+      correctQuickSort(array, pivotIndex + 1, right);
+    }
+    return array;
+  }
+
   describe("", () => {
     const tests = Array.from({ length: 1 }).map(() => buildTest(randomArray()));
-
-    function correctSwap(array, firstIndex, secondIndex) {
-      let temp = array[firstIndex];
-      array[firstIndex] = array[secondIndex];
-      array[secondIndex] = temp;
-    }
 
     tests.forEach(([array, firstIndex, secondIndex]) => {
       const expectedResult = [...array];
@@ -161,24 +181,38 @@ describe("Quick Sort", () => {
   describe("", () => {
     const tests = Array.from({ length: 1 }).map(() => buildTest(randomArray()));
 
-    function correctPivot(array, pivotIndex = 0, endIndex = array.length - 1) {
-      let swapIndex = pivotIndex;
-      for (let i = pivotIndex + 1; i <= endIndex; i++) {
-        if (array[i] < array[pivotIndex]) {
-          swapIndex++;
-          swap(array, swapIndex, i);
-        }
-      }
-      swap(array, pivotIndex, swapIndex);
-      return swapIndex;
-    }
-
     tests.forEach(([array, pivotIndex, endIndex]) => {
       const expectedResult = [...array];
-      correctPivot(expectedResult, pivotIndex, endIndex);
+      const correctPivotReturnValue = correctPivot(
+        expectedResult,
+        pivotIndex,
+        endIndex
+      );
+      let pivotReturnValue;
       it(`pivot([${array.join`, `}], ${pivotIndex}, ${endIndex}) >> [${expectedResult.join`, `}]`, () => {
-        pivot(array, pivotIndex, endIndex);
+        pivotReturnValue = pivot(array, pivotIndex, endIndex);
         expect(array).toEqual(expectedResult);
+      });
+      it(`pivotReturnValue >> ${correctPivotReturnValue}`, () => {
+        expect(pivotReturnValue).toEqual(correctPivotReturnValue);
+      });
+    });
+  });
+
+  describe("", () => {
+    const tests = Array.from({ length: 1 }).map(() => randomArray());
+
+    tests.forEach((array) => {
+      const expectedResult = [...array];
+      const correctQuickSortReturnValue = correctQuickSort(expectedResult);
+      let quickSortReturnValue;
+      it(`const returnValue = quickSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
+        quickSortReturnValue = quickSort(array);
+        expect(array).toEqual(expectedResult);
+      });
+      it(`returnValue >> [${correctQuickSortReturnValue.join`, `}]`, () => {
+        quickSort(array);
+        expect(quickSortReturnValue).toEqual(correctQuickSortReturnValue);
       });
     });
   });
