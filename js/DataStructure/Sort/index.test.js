@@ -183,18 +183,16 @@ describe("Quick Sort", () => {
 
     tests.forEach(([array, pivotIndex, endIndex]) => {
       const expectedResult = [...array];
-      const correctPivotReturnValue = correctPivot(
+      const correctReturnValue = correctPivot(
         expectedResult,
         pivotIndex,
         endIndex
       );
-      let pivotReturnValue;
-      it(`pivot([${array.join`, `}], ${pivotIndex}, ${endIndex}) >> [${expectedResult.join`, `}]`, () => {
-        pivotReturnValue = pivot(array, pivotIndex, endIndex);
+      let returnValue;
+      it(`\n\tconst returnValue = pivot([${array.join`, `}], ${pivotIndex}, ${endIndex})\n\tarray = [${expectedResult.join`, `}]\n\treturnValue >> ${correctReturnValue}`, () => {
+        returnValue = pivot(array, pivotIndex, endIndex);
         expect(array).toEqual(expectedResult);
-      });
-      it(`pivotReturnValue >> ${correctPivotReturnValue}`, () => {
-        expect(pivotReturnValue).toEqual(correctPivotReturnValue);
+        expect(returnValue).toEqual(correctReturnValue);
       });
     });
   });
@@ -206,12 +204,9 @@ describe("Quick Sort", () => {
       const expectedResult = [...array];
       const correctQuickSortReturnValue = correctQuickSort(expectedResult);
       let quickSortReturnValue;
-      it(`const returnValue = quickSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
+      it(`\n\tconst returnValue = quickSort([${array.join`, `}])\n\tarray = [${expectedResult.join`, `}]\n\treturnValue >> [${correctQuickSortReturnValue.join`, `}]`, () => {
         quickSortReturnValue = quickSort(array);
         expect(array).toEqual(expectedResult);
-      });
-      it(`returnValue >> [${correctQuickSortReturnValue.join`, `}]`, () => {
-        quickSort(array);
         expect(quickSortReturnValue).toEqual(correctQuickSortReturnValue);
       });
     });
