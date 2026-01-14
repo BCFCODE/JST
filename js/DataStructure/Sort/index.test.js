@@ -3,6 +3,7 @@ import { bubbleSort } from "./bubbleSort";
 import { insertionSort } from "./insertionSort";
 import { pivot, quickSort, swap } from "./quickSort";
 import { selectionSort } from "./selectionSort";
+import { merge, mergeSort } from "./merge";
 
 const randomIndex = (arr) =>
   Array.from({ length: 2 }).map(() => Math.floor(Math.random() * arr.length));
@@ -80,7 +81,7 @@ describe(`Basic Sorts`, () => {
 });
 
 describe("Merge Sort", () => {
-  function merge(array1, array2) {
+  function correctMerge(array1, array2) {
     let combined = [];
     let i = 0;
     let j = 0;
@@ -104,21 +105,21 @@ describe("Merge Sort", () => {
     return combined;
   }
 
-  function mergeSort(array) {
+  function correctMergeSort(array) {
     if (array.length === 1) return array;
 
     let midIndex = Math.floor(array.length / 2);
-    let left = mergeSort(array.slice(0, midIndex));
-    let right = mergeSort(array.slice(midIndex));
+    let left = correctMergeSort(array.slice(0, midIndex));
+    let right = correctMergeSort(array.slice(midIndex));
 
-    return merge(left, right);
+    return correctMerge(left, right);
   }
 
   describe("", () => {
     const [array1, array2] = Array.from({ length: 2 }).map((arr) =>
       randomArray(arr)
     );
-    const expectedResult = merge(array1, array2);
+    const expectedResult = correctMerge(array1, array2);
     it(`merge([${array1.join`, `}], [${array2.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = merge(array1, array2);
       expect(result).toEqual(expectedResult);
@@ -127,7 +128,7 @@ describe("Merge Sort", () => {
 
   describe("", () => {
     const array = randomArray();
-    const expectedResult = mergeSort(array);
+    const expectedResult = correctMergeSort(array);
     it(`mergeSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = mergeSort(array);
       expect(result).toEqual(expectedResult);
