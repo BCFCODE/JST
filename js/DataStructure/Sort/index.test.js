@@ -8,8 +8,12 @@ import { merge, mergeSort } from "./merge";
 const randomIndex = (arr) =>
   Array.from({ length: 2 }).map(() => Math.floor(Math.random() * arr.length));
 
-const randomArray = (length = 9) => [
-  ...new Set(Array.from({ length }, () => Math.floor(Math.random() * 9))),
+const randomArray = () => [
+  ...new Set(
+    Array.from({ length: Math.ceil(Math.random() * 15) }, () =>
+      Math.floor(Math.random() * 9)
+    )
+  ),
 ];
 
 describe(`Basic Sorts`, () => {
