@@ -1,7 +1,18 @@
-// ...
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+    this.prev = null;
+  }
+}
 
 class DoublyLinkedList {
-  // ...
+  constructor(value) {
+    const newNode = new Node(value);
+    this.head = newNode;
+    this.tail = newNode;
+    this.length = 1;
+  }
 
   makeEmpty() {
     this.head = null;
@@ -108,9 +119,21 @@ class DoublyLinkedList {
     return true;
   }
 
-  // ...
+  remove(index) {
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    if (index < 0 || index >= this.length) return undefined;
 
+    const temp = this.get(index);
+
+    temp.prev.next = temp.next;
+    temp.next.prev = temp.prev;
+    temp.next = null;
+    temp.prev = null;
+
+    this.length--;
+    return temp;
+  }
 }
 
-
-export default DoublyLinkedList
+export default DoublyLinkedList;
