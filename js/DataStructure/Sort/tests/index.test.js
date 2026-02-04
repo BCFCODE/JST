@@ -13,7 +13,7 @@ describe(`Basic Sorts`, () => {
   describe("", () => {
     const array = randomArray();
 
-    const expectedResult = correct.bubbleSort(array);
+    const expectedResult = correct.bubbleSort([...array]);
     it(`bubbleSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = bubbleSort(array);
       expect(result).toEqual(expectedResult);
@@ -23,7 +23,7 @@ describe(`Basic Sorts`, () => {
   describe("", () => {
     const array = randomArray();
 
-    const expectedResult = correct.selectionSort(array);
+    const expectedResult = correct.selectionSort([...array]);
     it(`selectionSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = selectionSort(array);
       expect(result).toEqual(expectedResult);
@@ -33,7 +33,7 @@ describe(`Basic Sorts`, () => {
   describe("", () => {
     const array = randomArray();
 
-    const expectedResult = correct.insertionSort(array);
+    const expectedResult = correct.insertionSort([...array]);
     it(`insertionSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = insertionSort(array);
       expect(result).toEqual(expectedResult);
@@ -55,7 +55,7 @@ describe("Merge Sort", () => {
 
   describe("", () => {
     const array = randomArray();
-    const expectedResult = correct.mergeSort(array);
+    const expectedResult = correct.mergeSort([...array]);
     it(`mergeSort([${array.join`, `}]) >> [${expectedResult.join`, `}]`, () => {
       const result = mergeSort(array);
       expect(result).toEqual(expectedResult);
