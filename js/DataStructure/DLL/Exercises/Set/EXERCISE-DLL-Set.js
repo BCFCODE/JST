@@ -1,18 +1,7 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-    this.prev = null;
-  }
-}
+// ...
 
 class DoublyLinkedList {
-  constructor(value) {
-    const newNode = new Node(value);
-    this.head = newNode;
-    this.tail = newNode;
-    this.length = 1;
-  }
+  // ...
 
   printList() {
     let temp = this.head;
@@ -122,14 +111,7 @@ class DoublyLinkedList {
     return temp;
   }
 
-  set(index, value) {
-    let temp = this.get(index);
-    if (temp) {
-      temp.value = value;
-      return true;
-    }
-    return false;
-  }
+  // ...
 
 }
 
