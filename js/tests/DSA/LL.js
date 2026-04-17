@@ -1,7 +1,7 @@
 import { describe } from "vitest";
 import { LinkedList } from "../../DSA/LL";
 import { CorrectLinkedList } from "./correct/LL";
-import { Tests } from "../../utils/tests/helper";
+import { Tests } from "../../utils";
 
 const Push = () => {
   describe("\n\tBefore push(value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop(); (this.length = 0)", () => {

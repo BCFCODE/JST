@@ -1,3 +1,5 @@
+import Tests from "./Tests";
+
 import {
   formatArgsForDisplay,
   getNestedProperty,
@@ -23,6 +25,7 @@ import {
 } from "./tests/checkInternalStructure";
 
 export {
+  Tests,
   checkBSTInternalStructure,
   checkDLLInternalStructure,
   checkGRInternalStructure,
