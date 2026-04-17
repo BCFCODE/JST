@@ -5,7 +5,7 @@ class Node {
   }
 }
 
-class LinkedList {
+class CorrectLinkedList {
   constructor(value) {
     const newNode = new Node(value);
     this.head = newNode;
@@ -131,4 +131,4 @@ class LinkedList {
   }
 }
 
-export { LinkedList, Node };
+export { CorrectLinkedList, CorrectLLNode };
