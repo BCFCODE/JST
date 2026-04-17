@@ -99,7 +99,7 @@ export class Tests {
   #getNestedProperty = (obj, path) =>
     path.split(".").reduce((acc, part) => acc?.[part], obj);
 
-  toBeNull = (paths) =>
+  toBeNull = (paths = []) =>
     paths.forEach((path) =>
       this.#tests.push([
         `\n\t${this.name}${path ? "." : ""}${path}`,
@@ -109,7 +109,7 @@ export class Tests {
       ]),
     );
 
-  toEqual = (paths) =>
+  toEqual = (paths = []) =>
     paths.forEach((path) =>
       this.#tests.push([
         `\n\t${this.name}${path ? "." : ""}${path}`,
@@ -119,7 +119,7 @@ export class Tests {
       ]),
     );
 
-  toBe = (paths) =>
+  toBe = (paths = []) =>
     paths.forEach((path) =>
       this.#tests.push([
         `\n\t${this.name}${path ? "." : ""}${path}`,
@@ -129,7 +129,7 @@ export class Tests {
       ]),
     );
 
-  toBeUndefined(paths) {
+  toBeUndefined(paths = []) {
     this.toBeUndefinedPaths = paths;
   }
 
@@ -257,6 +257,10 @@ export class Tests {
       },
     ].flatMap((test) => hasPropertyTests(test));
   };
+
+  set manual(tests) {
+    tests.forEach((test) => this.#tests.push(test));
+  }
 
   run = () => {
     this.#tests.forEach(([message, result, assertionMethod, expected]) => {
