@@ -1,4 +1,4 @@
-import hasPropertyTests from "../tests/hasPropertyTests"
+import hasPropertyTests from "../hasPropertyTests"
 
 const checkDLLInternalStructure = (myDoublyLinkedList) => {
   const nodeProperties = ['value', 'prev', 'next']

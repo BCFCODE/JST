@@ -1,6 +1,5 @@
 import { it } from "vitest";
 import { expect } from "vitest";
-import J from "../J";
 
 // Helper function for cleaner test structure
 export const executeTestCases = (tests) => {
@@ -11,4 +10,4 @@ export const executeTestCases = (tests) => {
   });
 };
 
-export default executeTestCases
+export default executeTestCases;
