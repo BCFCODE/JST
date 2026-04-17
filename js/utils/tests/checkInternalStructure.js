@@ -1,4 +1,4 @@
-import hasPropertyTests from "./hasPropertyTests";
+import { hasPropertyTests } from "./helper";
 
 export const checkBSTInternalStructure = (Node) => {
   return [
@@ -122,3 +122,5 @@ export const checkStackInternalStructure = (myStack) => {
     },
   ].flatMap((test) => hasPropertyTests(test));
 };
+
+

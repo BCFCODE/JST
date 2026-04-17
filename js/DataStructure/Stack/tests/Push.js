@@ -1,9 +1,12 @@
 import { describe } from "vitest";
 import Stack from "../Lessons";
-import { checkStackInternalStructure, executeTestCases } from "../../../utils";
-import toBeNullTests from "../../../utils/tests/toBeNullTests";
-import toEqualTests from "../../../utils/tests/toEqualTests";
-import toBeTests from "../../../utils/tests/toEqualTests";
+import {
+  checkStackInternalStructure,
+  executeTestCases,
+  toBeNullTests,
+  toBeTests,
+  toEqualTests,
+} from "../../../utils";
 
 const buildExpectedDLLBeforePush = () => {
   let myStack = new Stack(7);

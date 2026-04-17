@@ -6,6 +6,8 @@ import {
   toBeTests,
   toBeUndefined,
   toEqualTests,
+  setTarget,
+  TargetPaths,
 } from "./tests/helper";
 
 import executeTestCases from "./tests/executeTestCases";
@@ -28,6 +30,7 @@ export {
   checkLLInternalStructure,
   checkQueueInternalStructure,
   checkStackInternalStructure,
+  setTarget,
   executeTestCases,
   formatArgsForDisplay,
   getNestedProperty,
@@ -36,4 +39,5 @@ export {
   toBeTests,
   toBeUndefined,
   toEqualTests,
+  TargetPaths,
 };

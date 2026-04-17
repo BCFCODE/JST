@@ -1,14 +1,7 @@
 import { describe } from "vitest";
 import { LinkedList } from "../../DSA/LL";
 import { CorrectLinkedList } from "./correct/LL";
-
-import {
-  checkLLInternalStructure,
-  executeTestCases,
-  toBeNullTests,
-  toBeTests,
-  toEqualTests,
-} from "../../utils";
+import { Tests } from "../../utils/tests/helper";
 
 const Push = () => {
   describe("\n\tBefore push(value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop(); (this.length = 0)", () => {
@@ -18,106 +11,73 @@ const Push = () => {
     let myLinkedList = new LinkedList();
     myLinkedList.pop();
 
-    const target = { name: "myLinkedList", my: myLinkedList };
-
-    const tests = [
-      toBeNullTests({
-        ...target,
-        paths: ["head", "tail"],
-      }),
-      toBeTests({ ...target, paths: ["length"], correct }),
-    ].flat();
-
-    executeTestCases(tests);
+    const tests = new Tests({
+      name: "myLinkedList",
+      my: myLinkedList,
+      correct,
+    });
+    const paths = {
+      toBeNull: ["head", "tail"],
+      toBe: ["length"],
+    };
+    tests.toBeNull(paths.toBeNull);
+    tests.toBe(paths.toBe);
+    tests.run();
   });
 
-    describe("\n\tAfter first push(value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.push(7);", () => {
-      let myLinkedList = new LinkedList();
-      myLinkedList.pop();
-      const pushValue = myLinkedList.push(7);
+  describe("\n\tAfter first push(value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.push(7);", () => {
+    let correct = new CorrectLinkedList();
+    correct.pop();
+    correct.push(7);
 
-      const tests = [
-        ...checkLLInternalStructure(myLinkedList),
-        // toBeNullTests({})
-        [
-          "myLinkedList.head",
-          myLinkedList.head,
-          "toEqual",
-          {
-            value: 7,
-            next: null,
-          },
-        ],
-        ["myLinkedList.head.next", myLinkedList.head.next, "toBeNull", null],
-        ["myLinkedList.head.value", myLinkedList.head.value, "toBe", 7],
-        [
-          "myLinkedList.tail",
-          myLinkedList.tail,
-          "toEqual",
-          {
-            value: 7,
-            next: null,
-          },
-        ],
-        ["myLinkedList.tail.value", myLinkedList.tail.value, "toBe", 7],
-        ["myLinkedList.tail.next", myLinkedList.tail.next, "toBeNull", null],
-        ["pushValue === myLinkedList", pushValue === myLinkedList, "toBe", true],
-        [
-          "myLinkedList.head === myLinkedList.tail",
-          myLinkedList.head === myLinkedList.tail,
-          "toBe",
-          true,
-        ],
-        ["myLinkedList.length", myLinkedList.length, "toBe", 1],
-      ];
+    let myLinkedList = new LinkedList();
+    myLinkedList.pop();
+    myLinkedList.push(7);
 
-      executeTestCases(tests);
+    const tests = new Tests({
+      name: "myLinkedList",
+      my: myLinkedList,
+      correct,
     });
+    const paths = {
+      toBeNull: ["head.next", "tail.next"],
+      toBe: ["head.value", "tail.value", "length"],
+      toEqual: ["head", "tail"],
+    };
+    tests.toBeNull(paths.toBeNull);
+    tests.toBe(paths.toBe);
+    tests.toEqual(paths.toEqual);
+    tests.checkLLInternalStructure();
+    tests.run();
+  });
 
-  //   describe("\n\tAfter second push(value)\n\tlet myLinkedList = new LinkedList();\n\t myLinkedList.pop();\n\tmyLinkedList.push(7)\n\tmyLinkedList.push(4)", () => {
-  //     let myLinkedList = new LinkedList();
-  //     myLinkedList.pop();
-  //     myLinkedList.push(7);
-  //     const pushValue = myLinkedList.push(4);
+  describe("\n\tAfter second push(value)\n\tlet myLinkedList = new LinkedList();\n\t myLinkedList.pop();\n\tmyLinkedList.push(7)\n\tmyLinkedList.push(4)", () => {
+    let correct = new LinkedList();
+    correct.pop();
+    correct.push(7);
+    correct.push(4);
 
-  //     const tests = [
-  //       ...checkLLInternalStructure(myLinkedList),
-  //       [
-  //         "myLinkedList.head",
-  //         myLinkedList.head,
-  //         "toEqual",
-  //         {
-  //           value: 7,
-  //           next: {
-  //             value: 4,
-  //             next: null,
-  //           },
-  //         },
-  //       ],
-  //       [
-  //         "myLinkedList.head.next.next",
-  //         myLinkedList.head.next.next,
-  //         "toBeNull",
-  //         null,
-  //       ],
-  //       ["myLinkedList.head.value", myLinkedList.head.value, "toBe", 7],
-  //       [
-  //         "myLinkedList.tail",
-  //         myLinkedList.tail,
-  //         "toEqual",
-  //         {
-  //           value: 4,
-  //           next: null,
-  //         },
-  //       ],
-  //       ["myLinkedList.tail.value", myLinkedList.tail.value, "toBe", 4],
-  //       ["myLinkedList.tail.next", myLinkedList.tail.next, "toBeNull", null],
-  //       ["pushValue === myLinkedList", pushValue === myLinkedList, "toBe", true],
-  //       ["myLinkedList.length", myLinkedList.length, "toBe", 2],
-  //     ];
+    let myLinkedList = new LinkedList();
+    myLinkedList.pop();
+    myLinkedList.push(7);
+    myLinkedList.push(4);
 
-  //     executeTestCases(tests);
-  //   });
+    const tests = new Tests({
+      name: "myLinkedList",
+      my: myLinkedList,
+      correct,
+    });
+    const paths = {
+      toBeNull: ["tail.next", "head.next.next"],
+      toBe: ["head.value", "tail.value", "length"],
+      toEqual: ["head", "tail"],
+    };
+    tests.toBeNull(paths.toBeNull);
+    tests.toBe(paths.toBe);
+    tests.toEqual(paths.toEqual);
+    tests.checkLLInternalStructure();
+    tests.run();
+  });
 };
 
 export default [Push];
