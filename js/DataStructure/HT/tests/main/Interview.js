@@ -12,7 +12,7 @@ const itemInCommonTests = (itemInCommon) => {
     ];
 
     tests.forEach(([params, expectedResult]) => {
-      it(`\n\titemInCommon(${formatArgsForDisplay(params)}) >> ${J(expectedResult)}`, () => {
+      it(`\n\titemInCommon(${formatArgsForDisplay(params)}) >> ${JSON.stringify(expectedResult)}`, () => {
         const result = itemInCommon(...params)
         expect(result).toBe(expectedResult);
       });

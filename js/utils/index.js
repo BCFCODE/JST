@@ -13,7 +13,7 @@ import toBeTests from "./tests/toBeTests";
 import toBeUndefined from "./tests/toBeUndefined";
 import toEqualTests from "./tests/toEqualTests";
 
-import executeTestCases from "./executeTestCases";
+import executeTestCases from "./tests/executeTestCases";
 import getNestedProperty from "./getNestedProperty";
 import J from "./J";
 

@@ -120,7 +120,7 @@ describe('EXERCISE-LL-Get', () => {
       ]
 
       tests.forEach(([message, result, testMethod, expectedResult]) => {
-        it(`${message} >> ${J(expectedResult)}`, () => {
+        it(`${message} >> ${JSON.stringify(expectedResult)}`, () => {
           expect(result)[testMethod](expectedResult);
         });
       })
