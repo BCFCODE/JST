@@ -2,6 +2,10 @@ import { describe } from "vitest";
 import { LinkedList } from "../../DSA/LL";
 import { CorrectLinkedList } from "./correct/LL";
 import { Tests } from "../../utils";
+import {
+  generateRandomIndexBetween,
+  generateRandomIndexNotBetween,
+} from "../../utils/generateRandomIndexes";
 
 const Push = () => {
   describe("\n\tBefore push(value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop(); (this.length = 0)", () => {
@@ -52,7 +56,7 @@ const Push = () => {
   });
 
   describe("\n\tAfter second push(value)\n\tlet myLinkedList = new LinkedList();\n\t myLinkedList.pop();\n\tmyLinkedList.push(7)\n\tmyLinkedList.push(4)", () => {
-    let correct = new LinkedList();
+    let correct = new CorrectLinkedList();
     correct.pop();
     correct.push(7);
     correct.push(4);
@@ -82,7 +86,7 @@ const Push = () => {
 
 const Pop = () => {
   describe("Before pop()\n\tconst myLinkedList = new LinkedList(1);\n\tmyLinkedList.pop(2);", () => {
-    const correct = new LinkedList(1);
+    const correct = new CorrectLinkedList(1);
     correct.push(2);
 
     const myLinkedList = new LinkedList(1);
@@ -106,7 +110,7 @@ const Pop = () => {
   });
 
   describe("After first pop()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tconst popReturnValue = myLinkedList.pop()", () => {
-    let correct = new LinkedList(1);
+    let correct = new CorrectLinkedList(1);
     correct.push(2);
     const correctPopReturnValue = correct.pop();
 
@@ -135,7 +139,7 @@ const Pop = () => {
   });
 
   describe("After second pop()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop()\n\tconst popReturnValue = myLinkedList.pop()", () => {
-    let correct = new LinkedList(1);
+    let correct = new CorrectLinkedList(1);
     correct.push(2);
     correct.pop();
     const correctPopReturnValue = correct.pop();
@@ -163,7 +167,7 @@ const Pop = () => {
   });
 
   describe("After third pop()\n\tlet myLinkedList = new LinkedList(1);\n\tmyLinkedList.push(2);\n\tmyLinkedList.pop()\n\tmyLinkedList.pop()\n\tconst popValue = myLinkedList.pop()", () => {
-    let correct = new LinkedList(1);
+    let correct = new CorrectLinkedList(1);
     correct.push(2);
     correct.pop();
     correct.pop();
@@ -195,7 +199,7 @@ const Pop = () => {
 
 const Unshift = () => {
   describe("Before unshift()\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();", () => {
-    let correct = new LinkedList();
+    let correct = new CorrectLinkedList();
     correct.pop();
 
     let myLinkedList = new LinkedList();
@@ -216,7 +220,7 @@ const Unshift = () => {
   });
 
   describe("After first unshift()\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tconst unshiftReturnValue = myLinkedList.unshift(2)", () => {
-    let correct = new LinkedList();
+    let correct = new CorrectLinkedList();
     correct.pop();
     const correctUnshiftReturnValue = correct.unshift(2);
 
@@ -250,7 +254,7 @@ const Unshift = () => {
   });
 
   describe("After second unshift()\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tmyLinkedList.unshift(2)\n\tconst unshiftValue = myLinkedList.unshift(1)", () => {
-    let correct = new LinkedList();
+    let correct = new CorrectLinkedList();
     correct.pop();
     correct.unshift(2);
     const correctUnshiftReturnValue = correct.unshift(1);
@@ -288,7 +292,7 @@ const Unshift = () => {
 
 const Shift = () => {
   describe("Before shift()\n\tlet myLinkedList = new LinkedList(2);\n\tmyLinkedList.push(1);", () => {
-    let correct = new LinkedList(2);
+    let correct = new CorrectLinkedList(2);
     correct.push(1);
 
     let myLinkedList = new LinkedList(2);
@@ -312,7 +316,7 @@ const Shift = () => {
   });
 
   describe("After first shift()\n\tlet myLinkedList = new LinkedList(2);\n\tmyLinkedList.push(1);\n\tconst shiftReturnValue = myLinkedList.shift();", () => {
-    let correct = new LinkedList(2);
+    let correct = new CorrectLinkedList(2);
     correct.push(1);
     const correctShiftReturnValue = correct.shift();
 
@@ -346,7 +350,7 @@ const Shift = () => {
   });
 
   describe("After second shift()\n\tlet myLinkedList = new LinkedList(2);\n\tmyLinkedList.push(1);\n\tmyLinkedList.shift();\n\tconst shiftReturnValue = myLinkedList.shift();", () => {
-    let correct = new LinkedList(2);
+    let correct = new CorrectLinkedList(2);
     correct.push(1);
     correct.shift();
     correct.shift();
@@ -381,4 +385,57 @@ const Shift = () => {
   });
 };
 
-export default [Push, Pop, Unshift, Shift];
+const Get = () => {
+  const [index1, index2] = [0, 3];
+  const range = 50;
+  const validIndex = generateRandomIndexBetween(index1, index2);
+  const invalidIndex = generateRandomIndexNotBetween(index1, index2, range);
+
+  let myLinkedList = new LinkedList("Value Zero");
+  myLinkedList.push("Value One");
+  myLinkedList.push("Value Two");
+  myLinkedList.push("Value Three");
+  const returnValueByRandomValidIndex = myLinkedList.get(validIndex);
+  const returnValueByRandomInvalidIndex = myLinkedList.get(invalidIndex);
+
+  let correct = new CorrectLinkedList("Value Zero");
+  correct.push("Value One");
+  correct.push("Value Two");
+  correct.push("Value Three");
+  const correctReturnValueByRandomValidIndex = correct.get(validIndex);
+  const correctReturnValueByRandomInvalidIndex = correct.get(invalidIndex);
+
+  describe(`\n\tlet myLinkedList = new LinkedList("Value Zero");\n\tmyLinkedList.push("Value One");\n\tmyLinkedList.push("Value Two");\n\tmyLinkedList.push("Value Three");\n\tconst returnValueByRandomValidIndex = myLinkedList.get(${validIndex});\n\tconst returnValueByRandomInvalidIndex = myLinkedList.get(${invalidIndex});`, () => {
+    const tests = new Tests({
+      name: "myLinkedList",
+      my: myLinkedList,
+      correct,
+    });
+    const paths = {
+      toBeNull: ["head.next.next.next.next", "tail.next"],
+      toBe: ["head.value", "tail.value", "length"],
+      toEqual: ["head", "tail"],
+    };
+    tests.toBeNull(paths.toBeNull);
+    tests.toBe(paths.toBe);
+    tests.toEqual(paths.toEqual);
+    tests.checkLLInternalStructure();
+    tests.manual = [
+      [
+        "\n\treturnValueByRandomValidIndex",
+        returnValueByRandomValidIndex,
+        "toEqual",
+        correctReturnValueByRandomValidIndex,
+      ],
+      [
+        "\n\treturnValueByRandomInvalidIndex",
+        returnValueByRandomInvalidIndex,
+        "toBe",
+        correctReturnValueByRandomInvalidIndex,
+      ],
+    ];
+    tests.run();
+  });
+};
+
+export default [Push, Pop, Unshift, Shift, Get];
