@@ -574,4 +574,179 @@ const Set = () => {
     tests.run();
   });
 };
-export default [Push, Pop, Unshift, Shift, Get, Set];
+
+const Insert = () => {
+  describe(`Before insert any value (empty)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();`, () => {
+    let myLinkedList = new LinkedList();
+    myLinkedList.pop();
+
+    let correct = new LinkedList();
+    correct.pop();
+
+    const tests = new Tests({
+      name: "myLinkedList",
+      my: myLinkedList,
+      correct,
+    });
+    const paths = {
+      toBeNull: ["head", "tail"],
+      toBe: ["length"],
+    };
+    tests.toBeNull(paths.toBeNull);
+    tests.toBe(paths.toBe);
+    tests.run();
+  });
+
+  describe(`Before insert first value in valid index\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop();`, () => {
+    let myLinkedList = new LinkedList();
+    myLinkedList.pop();
+    const returnInsertValue = myLinkedList.insert(0, 1);
+
+    // let correct = new LinkedList();
+    // correct.pop();
+
+    // const tests = new Tests({
+    //   name: "myLinkedList",
+    //   my: myLinkedList,
+    //   correct,
+    // });
+    // const paths = {
+    //   toBeNull: ["head", "tail"],
+    //   toBe: ["length"],
+    // };
+    // tests.toBeNull(paths.toBeNull);
+    // tests.toBe(paths.toBe);
+    // tests.run();
+  });
+
+  // describe(`let myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tconst insertValue = myLinkedList.insert(0, 1)`, () => {
+  //   let myLinkedList = new LinkedList()
+  //   myLinkedList.pop()
+  //   const insertValue = myLinkedList.insert(0, 1)
+
+  //   const tests = [
+  //   ...checkLLInternalStructure(myLinkedList),
+  //   [
+  //     '\n\tmyLinkedList.head', myLinkedList.head, 'toEqual', {
+  //       value: 1,
+  //       next: null
+  //     }
+  //   ],
+  //   [
+  //     'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+  //       value: 1,
+  //       next: null
+  //     }
+  //   ],
+  //   ['\n\tmyLinkedList.head.value', myLinkedList.head.value, 'toBe', 1],
+  //   ['\n\tmyLinkedList.head.next', myLinkedList.head.next, 'toBeNull', null],
+  //   ['\n\tmyLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 1],
+  //   ['\n\tmyLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+  //   ['\n\tmyLinkedList.length', myLinkedList.length, 'toBe', 1],
+  //   ['\n\tmyLinkedList.head === myLinkedList.tail', myLinkedList.head === myLinkedList.tail, 'toBe', true],
+  //   ['\n\tinsertValue === myLinkedList', insertValue === myLinkedList, 'toBe', true]
+  // ]
+
+  //   executeTestCases(tests)
+  // })
+
+  // describe(`let myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tmyLinkedList.insert(0, 1)\n\tconst insertValue = myLinkedList.insert(0, 'New value in the beginning')`, () => {
+  //   let myLinkedList = new LinkedList()
+  //   myLinkedList.pop()
+  //   myLinkedList.insert(0, 1)
+  //   const insertValue = myLinkedList.insert(0, 'New value in the beginning')
+
+  //   const tests = [
+  //   ...checkLLInternalStructure(myLinkedList),
+  //   [
+  //     '\n\tmyLinkedList.head', myLinkedList.head, 'toEqual', {
+  //       value: 'New value in the beginning',
+  //       next: {
+  //         value: 1,
+  //         next: null
+  //       }
+  //     }
+  //   ],
+  //   [
+  //     '\n\tmyLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
+  //       value: 1,
+  //       next: null
+  //     }
+  //   ],
+  //   [
+  //     'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+  //       value: 1,
+  //       next: null
+  //     }
+  //   ],
+  //   ['\n\tmyLinkedList.head.value', myLinkedList.head.value, 'toBe', 'New value in the beginning'],
+  //   ['\n\tmyLinkedList.head.next.value', myLinkedList.head.next.value, 'toBe', 1],
+  //   ['\n\tmyLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 1],
+  //   ['\n\tmyLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+  //   ['\n\tmyLinkedList.head.next.next', myLinkedList.head.next.next, 'toBeNull', null],
+  //   ['\n\tmyLinkedList.head.next === myLinkedList.tail', myLinkedList.head.next === myLinkedList.tail, 'toBe', true],
+  //   ['\n\tinsertValue === myLinkedList', insertValue === myLinkedList, 'toBe', true],
+  //   ['\n\tmyLinkedList.length', myLinkedList.length, 'toBe', 2],
+  // ];
+
+  //   executeTestCases(tests)
+  // });
+
+  // describe(`let myLinkedList = new LinkedList();\n\tmyLinkedList.pop();\n\tmyLinkedList.insert(0, 1)\n\tmyLinkedList.insert(0, 'New value in the beginning')\n\tconst insertValue = myLinkedList.insert(1, 'New value in the middle')`, () => {
+  //   let myLinkedList = new LinkedList()
+  //   myLinkedList.pop()
+  //   myLinkedList.insert(0, 1)
+  //   myLinkedList.insert(0, 'New value in the beginning')
+  //   const insertValue = myLinkedList.insert(1, 'New value in the middle')
+
+  //   const tests =  [
+  //   ...checkLLInternalStructure(myLinkedList),
+  //   [
+  //     '\n\tmyLinkedList.head', myLinkedList.head, 'toEqual', {
+  //       value: 'New value in the beginning',
+  //       next: {
+  //         value: 'New value in the middle',
+  //         next: {
+  //           value: 1,
+  //           next: null
+  //         }
+  //       }
+  //     }
+  //   ],
+  //   [
+  //     '\n\tmyLinkedList.head.next', myLinkedList.head.next, 'toEqual', {
+  //       value: 'New value in the middle',
+  //       next: {
+  //         value: 1,
+  //         next: null
+  //       }
+  //     }
+  //   ],
+  //   [
+  //     'myLinkedList.tail', myLinkedList.tail, 'toEqual', {
+  //       value: 1,
+  //       next: null
+  //     }
+  //   ],
+  //   ['\n\tmyLinkedList.head.value', myLinkedList.head.value, 'toBe', 'New value in the beginning'],
+  //   ['\n\tmyLinkedList.head.next.value', myLinkedList.head.next.value, 'toBe', 'New value in the middle'],
+  //   ['\n\tmyLinkedList.tail.value', myLinkedList.tail.value, 'toBe', 1],
+  //   ['\n\tmyLinkedList.tail.next', myLinkedList.tail.next, 'toBeNull', null],
+  //   ['\n\tmyLinkedList.head.next.next', myLinkedList.head.next.next, 'toEqual', {
+  //     value: 1,
+  //     next: null
+  //   }],
+  //   ['\n\tmyLinkedList.head.next.next.next', myLinkedList.head.next.next.next, 'toBeNull', null],
+  //   ['\n\tmyLinkedList.head.next.next === myLinkedList.tail', myLinkedList.head.next.next === myLinkedList.tail, 'toBe', true],
+  //   ['\n\tinsertValue', insertValue, 'toBe', true],
+  //   ['\n\tmyLinkedList.length', myLinkedList.length, 'toBe', 3],
+  // ];
+
+  //   executeTestCases(tests)
+  // });
+
+  // // Out of range tests
+  // [-30, -1, 3, 999].forEach(index => invalidIndexTestsForInsert(LinkedList, index))
+};
+
+export default [Push, Pop, Unshift, Shift, Get, Set, Insert];
