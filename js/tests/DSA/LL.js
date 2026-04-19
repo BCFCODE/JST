@@ -2,10 +2,7 @@ import { describe } from "vitest";
 import { LinkedList } from "../../DSA/LL";
 import { CorrectLinkedList } from "./correct/LL";
 import { Tests } from "../../utils";
-import {
-  generateRandomIndexBetween,
-  generateRandomIndexNotBetween,
-} from "../../utils/generateRandomIndexes";
+import Random from "../../utils/Random";
 
 const Push = () => {
   describe("\n\tBefore push(value)\n\tlet myLinkedList = new LinkedList();\n\tmyLinkedList.pop(); (this.length = 0)", () => {
@@ -386,14 +383,17 @@ const Shift = () => {
 };
 
 const Get = () => {
+  const randomIndex = new Random();
+  randomIndex.rangeLimit = 20;
+
   const [index1, index2] = [0, 3];
-  const range = 50;
-  const validIndex = generateRandomIndexBetween(index1, index2);
-  const invalidIndex = generateRandomIndexNotBetween(index1, index2, range);
+
+  const validIndex = randomIndex.between(index1, index2);
+  const invalidIndex = randomIndex.notBetween(index1, index2);
 
   let myLinkedList = new LinkedList("Value Zero");
   myLinkedList.push("Value One");
-  myLinkedList.push("Value Two");
+  myLinkedList.push("Value Two");  
   myLinkedList.push("Value Three");
   const returnValueByRandomValidIndex = myLinkedList.get(validIndex);
   const returnValueByRandomInvalidIndex = myLinkedList.get(invalidIndex);
@@ -419,7 +419,7 @@ const Get = () => {
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
-    tests.checkLLInternalStructure();
+    tests.checkLLInternalStructure(); 
     tests.manual = [
       [
         "\n\treturnValueByRandomValidIndex",
