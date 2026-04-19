@@ -437,5 +437,5 @@ const Get = () => {
     tests.run();
   });
 };
-
+ 
 export default [Push, Pop, Unshift, Shift, Get];

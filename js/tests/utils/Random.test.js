@@ -1,6 +1,32 @@
 import { it, describe, expect } from "vitest";
 import Random from "../../utils/Random";
 
+const runValidationTests = (random, n1, n2) => {
+  const invalidN1 = random.greaterThan(n2);
+  const invalidN2 = random.lessThan(n1);
+
+  it(`\n\trandom.between(${invalidN1}, ${n2}); >> should throw new Error("n2: ${n2}, must be greater than n1: ${invalidN1}")`, () => {
+    const result = () => random.between(invalidN1, n2);
+    expect(result).toThrowError(
+      `n1: ${invalidN1}, must be less than n2: ${n2}`,
+    );
+  });
+
+  it(`\n\trandom.between(${n1}, ${invalidN2}); >> should throw new Error("n1: ${n1}, must be less than n2: ${invalidN2}")`, () => {
+    const result = () => random.between(n1, invalidN2);
+    expect(result).toThrowError(
+      `n1: ${n1}, must be less than n2: ${invalidN2}`,
+    );
+  });
+
+  it(`\n\trandom.between(${invalidN1}, ${invalidN1}); >> should throw new Error("n2: ${invalidN1}, must be greater than n1: ${invalidN1}")`, () => {
+    const result = () => random.between(invalidN1, invalidN1);
+    expect(result).toThrowError(
+      `n1: ${invalidN1}, must be less than n2: ${invalidN1}`,
+    );
+  });
+};
+
 describe(`Random Class`, () => {
   describe(`lessThan() method`, () => {
     const random = new Random();
@@ -48,43 +74,55 @@ describe(`Random Class`, () => {
     });
   });
 
+  const random = new Random();
+
+  const validN1 = 0;
+  const validN2 = random.greaterThan(validN1);
+
+  const validNumbers = Array.from({ length: validN2 + 1 }, (_, k) => k);
+
   describe(`between() method`, () => {
-    const random = new Random();
-
-    const n1 = 0;
-    const n2 = random.greaterThan(n1);
-
-    const validNumbers = Array.from({ length: n2 + 1 }, (_, k) => k);
-
-    it(`\n\trandom.between(${n1}, ${n2}); >> should return random number between ${n1} and ${n2}`, () => {
-      const result = random.between(n1, n2);
+    it(`\n\trandom.between(${validN1}, ${validN2}); >> should return random number between ${validN1} and ${validN2}`, () => {
+      const result = random.between(validN1, validN2);
       expect(result).toBeDefined();
       expect(result).toBeTypeOf("number");
       expect(validNumbers).contain(result);
     });
 
-    const invalidN1 = random.greaterThan(n2);
-    const invalidN2 = random.lessThan(n1);
+    runValidationTests(random, validN1, validN2);
+  });
 
-    it(`\n\trandom.between(${invalidN1}, ${n2}); >> should throw new Error("n2: ${n2}, must be greater than n1: ${invalidN1}")`, () => {
-      const result = () => random.between(invalidN1, n2);
-      expect(result).toThrowError(
-        `n1: ${invalidN1}, must be less than n2: ${n2}`,
-      );
+  describe(`notBetween() method`, () => {
+    it(`\n\trandom.notBetween(${validN1}, ${validN2}); >> should return random number notBetween ${validN1} and ${validN2}`, () => {
+      const result = random.notBetween(validN1, validN2);
+      expect(result).toBeDefined();
+      expect(result).toBeTypeOf("number");
+      expect(validNumbers).not.contain(result);
     });
 
-    it(`\n\trandom.between(${n1}, ${invalidN2}); >> should throw new Error("n1: ${n1}, must be less than n2: ${invalidN2}")`, () => {
-      const result = () => random.between(n1, invalidN2);
-      expect(result).toThrowError(
-        `n1: ${n1}, must be less than n2: ${invalidN2}`,
-      );
+    runValidationTests(random, validN1, validN2);
+  });
+
+  describe(`rangeLimit`, () => {
+    const result = random.rangeLimit;
+
+    describe(`check default value`, () => {
+      it(`\n\trandom.rangeLimit should be defined and to be type of number (default value: ${random.rangeLimit})`, () => {
+        expect(result).toBeDefined();
+        expect(result).toBeTypeOf("number");
+      });
     });
 
-    it(`\n\trandom.between(${invalidN1}, ${invalidN1}); >> should throw new Error("n2: ${invalidN1}, must be greater than n1: ${invalidN1}")`, () => {
-      const result = () => random.between(invalidN1, invalidN1);
-      expect(result).toThrowError(
-        `n1: ${invalidN1}, must be less than n2: ${invalidN1}`,
-      );
-    }); 
+    describe(`change default value`, () => {
+      const randomNumberGreaterThanZero = random.greaterThan(0);
+      const randomNumberLessThanZero = random.lessThan(0);
+      it(`\n\trandom.rangeLimit = ${randomNumberGreaterThanZero} should change value of rangeLimit to value of ${randomNumberGreaterThanZero}`, () => {
+        random.rangeLimit = randomNumberGreaterThanZero;
+        const result = random.rangeLimit;
+        expect(result).toBe(randomNumberGreaterThanZero);
+        expect(result).toBeDefined();
+        expect(result).toBeTypeOf("number");
+      });
+    });
   });
 });
