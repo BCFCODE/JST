@@ -2,8 +2,8 @@ class Random {
   #rangeLimit = 50;
 
   #validation = (n1, n2) => {
-    if (n1 >= n2) throw new Error(`n1: ${n1}, must be less than ${n2}`);
-    if (n2 <= n1) throw new Error(`n2: ${n2}, must be greater than ${n1}`);
+    if (n1 > n2 || n2 < n1 || n1 === n2)
+      throw new Error(`n1: ${n1}, must be less than n2: ${n2}`);
   };
 
   #randomArrayIndex = (arrayLength) => {
@@ -43,7 +43,6 @@ class Random {
   get rangeLimit() {
     return this.#rangeLimit;
   }
-
 }
 
 export default Random;

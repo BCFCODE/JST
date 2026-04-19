@@ -63,6 +63,28 @@ describe(`Random Class`, () => {
       expect(validNumbers).contain(result);
     });
 
-    // TODO : Implement validation tests
+    const invalidN1 = random.greaterThan(n2);
+    const invalidN2 = random.lessThan(n1);
+
+    it(`\n\trandom.between(${invalidN1}, ${n2}); >> should throw new Error("n2: ${n2}, must be greater than n1: ${invalidN1}")`, () => {
+      const result = () => random.between(invalidN1, n2);
+      expect(result).toThrowError(
+        `n1: ${invalidN1}, must be less than n2: ${n2}`,
+      );
+    });
+
+    it(`\n\trandom.between(${n1}, ${invalidN2}); >> should throw new Error("n1: ${n1}, must be less than n2: ${invalidN2}")`, () => {
+      const result = () => random.between(n1, invalidN2);
+      expect(result).toThrowError(
+        `n1: ${n1}, must be less than n2: ${invalidN2}`,
+      );
+    });
+
+    it(`\n\trandom.between(${invalidN1}, ${invalidN1}); >> should throw new Error("n2: ${invalidN1}, must be greater than n1: ${invalidN1}")`, () => {
+      const result = () => random.between(invalidN1, invalidN1);
+      expect(result).toThrowError(
+        `n1: ${invalidN1}, must be less than n2: ${invalidN1}`,
+      );
+    }); 
   });
-});  
+});
