@@ -29,13 +29,13 @@ class Random {
 
     const arr = [this.lessThan(n1), this.greaterThan(n2)];
     const randomArrayIndex = this.#randomArrayIndex(arr.length);
-
+ 
     const chosenRandomlyBetweenLessOrGreaterThan = arr[randomArrayIndex];
     return chosenRandomlyBetweenLessOrGreaterThan;
   };
-
+  
   set rangeLimit(rangeLimit) {
-    if (rangeLimit <= 0)
+    if (rangeLimit <= 0) 
       throw new Error(`rangeLimit: ${rangeLimit}, must be greater than 0`);
     this.#rangeLimit = rangeLimit;
   }
