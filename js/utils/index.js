@@ -1,26 +1,46 @@
-import checkBSTInternalStructure from "./checkInternalStructures/checkBSTInternalStructure";
-import checkDLLInternalStructure from "./checkInternalStructures/checkDLLInternalStructure";
-import checkGRInternalStructure from "./checkInternalStructures/checkGRInternalStructure";
-import checkHTInternalStructure from "./checkInternalStructures/checkHTInternalStructure";
-import checkLLInternalStructure from "./checkInternalStructures/checkLLInternalStructure";
-import checkQueueInternalStructure from "./checkInternalStructures/checkQueueInternalStructure";
-import checkStackInternalStructure from "./checkInternalStructures/checkStackInternalStructure";
+import Tests from "./Tests";
 
-import formatArgsForDisplay from "./tests/formatArgsForDisplay";
-import hasPropertyTests from "./tests/hasPropertyTests";
-import toBeNullTests from "./tests/toBeNullTests";
-import toBeTests from "./tests/toBeTests";
-import toBeUndefined from "./tests/toBeUndefined";
-import toEqualTests from "./tests/toEqualTests";
+import {
+  formatArgsForDisplay,
+  getNestedProperty,
+  hasPropertyTests,
+  toBeNullTests,
+  toBeTests,
+  toBeUndefined,
+  toEqualTests,
+  setTarget,
+  TargetPaths,
+} from "./tests/helper";
 
-import executeTestCases from "./executeTestCases";
-import getNestedProperty from "./getNestedProperty";
-import J from "./J";
+import executeTestCases from "./tests/executeTestCases";
+
+import {
+  checkBSTInternalStructure,
+  checkDLLInternalStructure,
+  checkGRInternalStructure,
+  checkHTInternalStructure,
+  checkLLInternalStructure,
+  checkQueueInternalStructure,
+  checkStackInternalStructure,
+} from "./tests/checkInternalStructure";
 
 export {
-  checkBSTInternalStructure, checkDLLInternalStructure, checkGRInternalStructure, checkHTInternalStructure, checkLLInternalStructure,
+  Tests,
+  checkBSTInternalStructure,
+  checkDLLInternalStructure,
+  checkGRInternalStructure,
+  checkHTInternalStructure,
+  checkLLInternalStructure,
   checkQueueInternalStructure,
-  checkStackInternalStructure, executeTestCases, formatArgsForDisplay, getNestedProperty, hasPropertyTests, J, toBeNullTests, toBeTests,
-  toBeUndefined, toEqualTests
+  checkStackInternalStructure,
+  setTarget,
+  executeTestCases,
+  formatArgsForDisplay,
+  getNestedProperty,
+  hasPropertyTests,
+  toBeNullTests,
+  toBeTests,
+  toBeUndefined,
+  toEqualTests,
+  TargetPaths,
 };
-
