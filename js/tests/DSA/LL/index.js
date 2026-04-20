@@ -1,10 +1,11 @@
-import Get from "./Get";
-import Insert from "./Insert";
-import Pop from "./Pop";
 import Push from "./Push";
-import Remove from "./Remove";
-import Set from "./Set";
-import Shift from "./Shift";
+import Pop from "./Pop";
 import Unshift from "./Unshift";
+import Shift from "./Shift";
+import Get from "./Get";
+import Set from "./Set";
+import Insert from "./Insert";
+import Remove from "./Remove";
+import Reverse from "./Reverse";
 
-export default [Push, Pop, Unshift, Shift, Get, Set, Insert, Remove];
+export default [Push, Pop, Unshift, Shift, Get, Set, Insert, Remove, Reverse];
