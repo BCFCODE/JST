@@ -1,4 +1,4 @@
-class Node {
+class CorrectBSTNode {
   constructor(value) {
     this.value = value;
     this.left = null;
@@ -6,13 +6,13 @@ class Node {
   }
 }
 
-class BST {
+class CorrectBST {
   constructor() {
     this.root = null;
   }
 
   insert(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectBSTNode(value);
     if (this.root === null) {
       this.root = newNode;
       return this;
@@ -65,7 +65,7 @@ class BST {
   }
 
   #rInsert(value, currentNode = this.root) {
-    if (currentNode === null) return new Node(value);
+    if (currentNode === null) return new CorrectBSTNode(value);
 
     if (value < currentNode.value) {
       currentNode.left = this.#rInsert(value, currentNode.left);
@@ -77,7 +77,7 @@ class BST {
   }
 
   rInsert(value) {
-    if (this.root === null) this.root = new Node(value);
+    if (this.root === null) this.root = new CorrectBSTNode(value);
     this.#rInsert(value);
   }
 
@@ -163,4 +163,4 @@ class BST {
   }
 }
 
-export { BST, Node };
+export { CorrectBST , CorrectBSTNode  };

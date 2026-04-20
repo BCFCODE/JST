@@ -95,19 +95,19 @@ class Tests {
     ].flatMap((test) => this.#hasPropertyTests(test));
   };
 
-  checkDLLInternalStructure = (myDoublyLinkedList) => {
+  checkDLLInternalStructure = () => {
     const nodeProperties = ["value", "prev", "next"];
 
     return [
       {
         name: "myDoublyLinkedList",
-        obj: myDoublyLinkedList,
+        obj: this.my,
         paths: ["head", "tail"],
         properties: nodeProperties,
       },
       {
         name: "myDoublyLinkedList",
-        obj: myDoublyLinkedList,
+        obj: this.my,
         properties: ["head", "tail", "length"],
       },
     ].flatMap((test) => this.#hasPropertyTests(test));

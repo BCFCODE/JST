@@ -6,7 +6,7 @@ class CorrectDLLNode {
   }
 }
 
-class CorrectDoublyLinkedList {
+class DoublyLinkedList {
   constructor(value) {
     const newNode = new CorrectDLLNode(value);
     this.head = newNode;
@@ -126,4 +126,4 @@ class CorrectDoublyLinkedList {
   }
 }
 
-export { CorrectDoublyLinkedList, CorrectDLLNode };
+export { DoublyLinkedList, CorrectDLLNode };

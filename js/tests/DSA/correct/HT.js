@@ -1,4 +1,4 @@
-class HashTable {
+class CorrectHashTable {
   constructor(size = 7) {
     this.dataMap = new Array(size);
   }
@@ -45,4 +45,4 @@ class HashTable {
   }
 }
 
-export default HashTable;
+export { CorrectHashTable };

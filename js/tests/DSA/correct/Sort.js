@@ -1,4 +1,4 @@
-class Sort {
+class CorrectSort {
   bubbleSort(array) {
     for (let i = array.length - 1; i > 0; i--) {
       for (let j = 0; j < i; j++) {
@@ -103,4 +103,4 @@ class Sort {
   }
 }
 
-export { Sort };
+export { CorrectSort };

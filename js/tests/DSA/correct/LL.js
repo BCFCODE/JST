@@ -1,4 +1,4 @@
-class Node {
+class CorrectLLNode {
   constructor(value) {
     this.value = value;
     this.next = null;
@@ -7,14 +7,14 @@ class Node {
 
 class CorrectLinkedList {
   constructor(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectLLNode(value);
     this.head = newNode;
     this.tail = this.head;
     this.length = 1;
   }
 
   push(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectLLNode(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -45,7 +45,7 @@ class CorrectLinkedList {
   }
 
   unshift(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectLLNode(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -94,7 +94,7 @@ class CorrectLinkedList {
     if (index === this.length) return this.push(value);
     if (index < 0 || index > this.length) return false;
 
-    const newNode = new Node(value);
+    const newNode = new CorrectLLNode(value);
     const temp = this.get(index - 1);
 
     newNode.next = temp.next;
