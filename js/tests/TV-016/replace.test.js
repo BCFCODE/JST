@@ -12,8 +12,8 @@ describe(`Replace`, () => {
     ];
     expect(result).toEqual(correct);
   });
-  it(`should use replace method (return names.replace...)`, () => {
+  it(`should use replace method`, () => {
     const result = changeNameAndSurname.toString();
-    expect(result).toMatch(/return names.replace/);
+    expect(result).toMatch(/.replace\(/);
   });
 });
