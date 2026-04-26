@@ -10,6 +10,5 @@ export const names = [
 ];
 
 export function changeNameAndSurname(names) {
-  
+  return names.map((name) => name.replace(/(\w+), (\w+)/, "$2 $1"));
 }
-
