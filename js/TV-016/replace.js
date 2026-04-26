@@ -10,5 +10,8 @@ export const names = [
 ];
 
 export function changeNameAndSurname(names) {
-
+  return names.replace
 }
+
+    
+
