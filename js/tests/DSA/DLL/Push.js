@@ -7,8 +7,6 @@ import Random from "../../../utils/Random";
 const random = new Random();
 
 export default function Push() {
-  const length = 1;
-
   const oldValue = "Old Value";
   const newValue = "New Value";
 
@@ -35,6 +33,14 @@ export default function Push() {
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
+    tests.manual = [
+      [
+        "\n\tpushReturnValue",
+        pushReturnValue,
+        "toEqual",
+        correctReturnPushValue,
+      ],
+    ];
     tests.run();
   });
 
@@ -59,13 +65,10 @@ export default function Push() {
         "tail.value",
         "length",
       ],
-    //   toEqual: ["head", "tail"],
     };
     tests.checkDLLInternalStructure();
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
-    // tests.toEqual(paths.toEqual);
-    // Continue from here
     tests.run();
   });
 }
