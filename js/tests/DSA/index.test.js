@@ -4,7 +4,7 @@ import DLL from "./DLL";
 
 const DataStructures = { LL, DLL };
 
-describe("DSA (Data Structures & Algorithms)", () => {
+describe("DSA (Data Structures & Algorithms)", () => {    
   for (const DataStructure in DataStructures) {
     describe(`\n\t${DataStructure}`, () => {
       const TESTS = DataStructures[DataStructure];

@@ -5,5 +5,6 @@ import Shift from "./Shift";
 import Get from "./Get";
 import Set from "./Set";
 import Insert from "./Insert";
+import Remove from "./Remove";
 
-export default [Push, Pop, Unshift, Shift, Get, Set, Insert];
+export default [Push, Pop, Unshift, Shift, Get, Set, Insert, Remove];
