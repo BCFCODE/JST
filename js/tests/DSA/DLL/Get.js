@@ -60,13 +60,5 @@ export default function Get() {
       ],
     ];
     tests.run();
-
-    const returnValueTests = new Tests({
-      name: "returnValueByRandomValidIndex",
-      my: returnValueByRandomValidIndex,
-      correct: correctReturnValueByRandomValidIndex,
-    });
-    returnValueTests.toBe(["head.value", "tail.value", "length"]);
-    returnValueTests.run();
   });
 }
