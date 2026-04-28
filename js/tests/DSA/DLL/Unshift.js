@@ -33,7 +33,7 @@ export default function Unshift() {
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
     tests.toBeNull(paths.toBeNull);
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tunshiftReturnValue",
         unshiftReturnValue,

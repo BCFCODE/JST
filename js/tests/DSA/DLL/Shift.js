@@ -30,7 +30,7 @@ export default function Shift() {
     };
     tests.toBe(paths.toBe);
     tests.toBeNull(paths.toBeNull);
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tshiftReturnValue",
         shiftReturnValue,
@@ -59,7 +59,7 @@ export default function Shift() {
     };
     tests.toBe(paths.toBe);
     tests.toBeNull(paths.toBeNull);
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tshiftReturnValue",
         shiftReturnValue,
@@ -70,35 +70,35 @@ export default function Shift() {
     tests.run();
   });
 
-//   describe(`After using shift on a NONE-EMPTY doubly linked list (length > 1)\n\tconst myDoublyLinkedList = new DoublyLinkedList(${val1});\n\tmyDoublyLinkedList.push(${val2})\n\tconst shiftReturnValue = myDoublyLinkedList.shift();`, () => {
-//     const myDoublyLinkedList = new DoublyLinkedList(val1);
-//     myDoublyLinkedList.push(val2);
-//     const shiftReturnValue = myDoublyLinkedList.shift();
+  describe(`After using shift on a NONE-EMPTY doubly linked list (length > 1)\n\tconst myDoublyLinkedList = new DoublyLinkedList(${val1});\n\tmyDoublyLinkedList.push(${val2})\n\tconst shiftReturnValue = myDoublyLinkedList.shift();`, () => {
+    const myDoublyLinkedList = new DoublyLinkedList(val1);
+    myDoublyLinkedList.push(val2);
+    const shiftReturnValue = myDoublyLinkedList.shift();
 
-//     const correct = new CorrectDoublyLinkedList(val1);
-//     correct.push(val2);
-//     const correctShiftReturnValue = correct.shift();
+    const correct = new CorrectDoublyLinkedList(val1);
+    correct.push(val2);
+    const correctShiftReturnValue = correct.shift();
 
-//     const tests = new Tests({
-//       name: "myDoublyLinkedList",
-//       my: myDoublyLinkedList,
-//       correct,
-//     });
-//     const paths = {
-//       toBe: ["length", "head.value", "tail.value"],
-//       toBeNull: ["head.prev", "tail.next"],
-//     };
-//     tests.checkDLLInternalStructure();
-//     tests.toBe(paths.toBe);
-//     tests.toBeNull(paths.toBeNull);
-//     tests.manual = [
-//       [
-//         "\n\tshiftReturnValue",
-//         shiftReturnValue,
-//         "toEqual",
-//         correctShiftReturnValue,
-//       ],
-//     ];
-//     tests.run();
-//   });
+    const tests = new Tests({
+      name: "myDoublyLinkedList",
+      my: myDoublyLinkedList,
+      correct,
+    });
+    const paths = {
+      toBe: ["length", "head.value", "tail.value"],
+      toBeNull: ["head.prev", "tail.next"],
+    };
+    tests.checkDLLInternalStructure();
+    tests.toBe(paths.toBe);
+    tests.toBeNull(paths.toBeNull);
+    tests.extra = [
+      [
+        "\n\tshiftReturnValue",
+        shiftReturnValue,
+        "toEqual",
+        correctShiftReturnValue,
+      ],
+    ];
+    tests.run();
+  });
 }

@@ -43,7 +43,7 @@ export default function Get() {
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
     tests.checkLLInternalStructure();
-    tests.manual = [
+    tests.extra = [
       [
         "\n\treturnValueByRandomValidIndex",
         returnValueByRandomValidIndex,

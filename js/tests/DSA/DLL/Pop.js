@@ -32,7 +32,7 @@ export default function Pop() {
     };
     tests.toBe(paths.toBe);
     tests.toBeNull(paths.toBeNull);
-    tests.manual = [
+    tests.extra = [
       ["\n\tpopReturnValue", popReturnValue, "toBe", correctPopReturnValue],
     ];
     tests.run();
@@ -56,7 +56,7 @@ export default function Pop() {
       };
       tests.toBe(paths.toBe);
       tests.toBeNull(paths.toBeNull);
-      tests.manual = [
+      tests.extra = [
         [
           "\n\tpopReturnValue",
           popReturnValue,
@@ -86,7 +86,7 @@ export default function Pop() {
       };
       tests.toBe(paths.toBe);
       tests.toBeNull(paths.toBeNull);
-      tests.manual = [
+      tests.extra = [
         [
           "\n\tpopReturnValue",
           popReturnValue,
@@ -124,7 +124,7 @@ export default function Pop() {
       };
       tests.toBe(paths.toBe);
       tests.toBeNull(paths.toBeNull);
-      tests.manual = [
+      tests.extra = [
         [
           "\n\tpopReturnValue",
           popReturnValue,

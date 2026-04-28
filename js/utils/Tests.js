@@ -189,7 +189,7 @@ class Tests {
     ].flatMap((test) => this.#hasPropertyTests(test));
   };
 
-  set manual(tests) {
+  set extra(tests) {
     tests.forEach((test) => this.#tests.push(test));
   }
 

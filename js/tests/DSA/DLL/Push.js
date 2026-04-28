@@ -33,7 +33,7 @@ export default function Push() {
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tpushReturnValue",
         pushReturnValue,
