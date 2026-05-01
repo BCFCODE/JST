@@ -29,7 +29,7 @@ export default function Insert() {
     correct.push(val4);
     const correctInsertReturnValue = correct.insert(randomValidIndex, newValue);
 
-    const tests = new Tests({
+    const tests = new Tests({  
       name: "myDoublyLinkedList",
       my: myDoublyLinkedList,
       correct, 
