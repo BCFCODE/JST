@@ -17,7 +17,7 @@ export default function Push() {
 
   let myStack = new Stack(val1);
   myStack.pop();
-
+  
   describe(`After push ${val2} to an empty Stack\n\tlet myStack = new Stack(${val1});\n\tmyStack.pop();\n\tconst pushReturnValue = myStack.push(${val2})`, () => {
     const pushReturnValue = myStack.push(val2);
     const correctPushReturnValue = correct.push(val2);
