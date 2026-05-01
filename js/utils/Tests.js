@@ -64,6 +64,8 @@ class Tests {
     this.toBeUndefinedPaths = paths;
   }
 
+  #pushTests = (tests) => this.#pushTests(tests);
+
   checkLLInternalStructure = () => {
     const nodeProperties = ["value", "next"];
 
@@ -81,24 +83,13 @@ class Tests {
       },
     ].flatMap((test) => this.#hasPropertyTests(test));
 
-    tests.forEach((test) => this.#tests.push(test));
-  };
-
-  checkBSTInternalStructure = (Node) => {
-    return [
-      {
-        name: "newNode",
-        obj: new Node(),
-        paths: [],
-        properties: ["value", "left", "right"],
-      },
-    ].flatMap((test) => this.#hasPropertyTests(test));
+    this.#pushTests(tests);
   };
 
   checkDLLInternalStructure = () => {
     const nodeProperties = ["value", "prev", "next"];
 
-    return [
+    const tests = [
       {
         name: "myDoublyLinkedList",
         obj: this.my,
@@ -111,19 +102,55 @@ class Tests {
         properties: ["head", "tail", "length"],
       },
     ].flatMap((test) => this.#hasPropertyTests(test));
+
+    this.#pushTests(tests);
   };
 
-  checkGRInternalStructure = (myGraph) => [
-    [
-      `\n\tmyGraph.hasOwnProperty('adjacencyList')`,
-      myGraph.hasOwnProperty("adjacencyList"),
-      "toBe",
-      true,
-    ],
-  ];
+  checkStackInternalStructure = (myStack) => {
+    const tests = [
+      {
+        name: "myStack",
+        obj: this.my,
+        paths: ["top"],
+        properties: ["value", "next"],
+      },
+      {
+        name: "myStack",
+        obj: this.my,
+        properties: ["top", "length"],
+      },
+    ].flatMap((test) => this.#hasPropertyTests(test));
 
-  checkHTInternalStructure = (myHashTable) =>
-    [
+    this.#pushTests(tests);
+  };
+
+  checkBSTInternalStructure = (Node) => {
+    const tests = [
+      {
+        name: "newNode",
+        obj: new Node(),
+        paths: [],
+        properties: ["value", "left", "right"],
+      },
+    ].flatMap((test) => this.#hasPropertyTests(test));
+
+    this.#pushTests(tests);
+  };
+
+  checkGRInternalStructure = (myGraph) => {
+    const tests = [
+      [
+        `\n\tmyGraph.hasOwnProperty('adjacencyList')`,
+        myGraph.hasOwnProperty("adjacencyList"),
+        "toBe",
+        true,
+      ],
+    ];
+
+    this.#pushTests();
+  };
+  checkHTInternalStructure = (myHashTable) => {
+    const tests = [
       [
         [
           "\n\tArray.isArray(myHashTable.dataMap)",
@@ -153,15 +180,16 @@ class Tests {
       ].flatMap((test) => this.#hasPropertyTests(test)),
     ].flat();
 
-  checkQueueInternalStructure = (myQueue) => {
-    const nodeProperties = ["value", "next"];
+    this.#pushTests(tests);
+  };
 
-    return [
+  checkQueueInternalStructure = (myQueue) => {
+    const tests = [
       {
         name: "myQueue",
         obj: myQueue,
         paths: ["first", "last"],
-        properties: nodeProperties,
+        properties: ["value", "next"],
       },
       {
         name: "myQueue",
@@ -169,28 +197,12 @@ class Tests {
         properties: ["first", "last", "length"],
       },
     ].flatMap((test) => this.#hasPropertyTests(test));
-  };
 
-  checkStackInternalStructure = (myStack) => {
-    const nodeProperties = ["value", "next"];
-
-    return [
-      {
-        name: "myStack",
-        obj: myStack,
-        paths: ["top"],
-        properties: nodeProperties,
-      },
-      {
-        name: "myStack",
-        obj: myStack,
-        properties: ["top", "length"],
-      },
-    ].flatMap((test) => this.#hasPropertyTests(test));
+    this.#pushTests(tests);
   };
 
   set extra(tests) {
-    tests.forEach((test) => this.#tests.push(test));
+    this.#pushTests(tests);
   }
 
   run = () => {

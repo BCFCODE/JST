@@ -57,7 +57,7 @@ export default function Shift() {
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
     tests.checkLLInternalStructure();
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tshiftReturnValue",
         shiftReturnValue,
@@ -92,7 +92,7 @@ export default function Shift() {
     };
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tshiftReturnValue",
         shiftReturnValue,

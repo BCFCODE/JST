@@ -1,10 +1,11 @@
 import { describe } from "vitest";
 import LL from "./LL";
 import DLL from "./DLL";
+import Stack from "./Stack";
 
-const DataStructures = { LL, DLL };
+const DataStructures = { LL, DLL, Stack };
 
-describe("DSA (Data Structures & Algorithms)", () => {    
+describe("DSA (Data Structures & Algorithms)", () => {
   for (const DataStructure in DataStructures) {
     describe(`\n\t${DataStructure}`, () => {
       const TESTS = DataStructures[DataStructure];

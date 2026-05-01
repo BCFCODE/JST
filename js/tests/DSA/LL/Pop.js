@@ -54,7 +54,7 @@ export default function Pop() {
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
     tests.checkLLInternalStructure();
-    tests.manual = [
+    tests.extra = [
       [`\n\tpopReturnValue`, popReturnValue, "toEqual", correctPopReturnValue],
     ];
     tests.run();
@@ -82,7 +82,7 @@ export default function Pop() {
     };
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
-    tests.manual = [
+    tests.extra = [
       [`\n\tpopReturnValue`, popReturnValue, "toEqual", correctPopReturnValue],
     ];
     tests.run();
@@ -112,7 +112,7 @@ export default function Pop() {
     };
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
-    tests.manual = [
+    tests.extra = [
       [`\n\tpopReturnValue`, popReturnValue, "toBe", correctPopReturnValue],
     ];
     tests.run();

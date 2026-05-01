@@ -84,7 +84,7 @@ export default function Set() {
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
-    tests.manual = [
+    tests.extra = [
       [
         `\n\tconst setReturnValue = myLinkedList.set(${randomValidIndex}, "${newValue}");\n\tsetReturnValue`,
         setReturnValue,
@@ -129,7 +129,7 @@ export default function Set() {
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
-    tests.manual = [
+    tests.extra = [
       [
         `\n\tconst setReturnValue = myLinkedList.set(${randomInvalidIndex}, "${newValue}");\n\tsetReturnValue`,
         setReturnValue,

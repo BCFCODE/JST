@@ -51,7 +51,7 @@ export default function Unshift() {
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
     tests.checkLLInternalStructure();
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tunshiftReturnValue === correctUnshiftReturnValue",
         unshiftReturnValue,
@@ -87,7 +87,7 @@ export default function Unshift() {
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
     tests.checkLLInternalStructure();
-    tests.manual = [
+    tests.extra = [
       [
         "\n\tunshiftReturnValue === correctUnshiftReturnValue",
         unshiftReturnValue,

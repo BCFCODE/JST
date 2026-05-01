@@ -60,7 +60,7 @@ export default function Remove() {
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
-    tests.manual = [
+    tests.extra = [
       [
         `\n\treturnRemoveValue`,
         returnRemoveValue,
@@ -113,7 +113,7 @@ export default function Remove() {
     tests.toBeNull(paths.toBeNull);
     tests.toBe(paths.toBe);
     tests.toEqual(paths.toEqual);
-    tests.manual = [
+    tests.extra = [
       [
         `\n\treturnRemoveValue`,
         returnRemoveValue,

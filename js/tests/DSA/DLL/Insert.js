@@ -17,7 +17,7 @@ export default function Insert() {
   const newValue = "New Value";        
 
   describe(`After insert "${newValue}" to valid index\n\tlet myDoublyLinkedList = new DoublyLinkedList(${val1});\n\tmyDoublyLinkedList.push(${val2});\n\tmyDoublyLinkedList.push(${val3});\n\tmyDoublyLinkedList.push(${val4});\n\tmyDoublyLinkedList.insert(${randomValidIndex}, "${newValue}")`, () => {
-    let myDoublyLinkedList = new DoublyLinkedList(val1);
+    let myDoublyLinkedList = new DoublyLinkedList(val1);  
     myDoublyLinkedList.push(val2);
     myDoublyLinkedList.push(val3);
     myDoublyLinkedList.push(val4);
