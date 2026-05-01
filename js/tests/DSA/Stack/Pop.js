@@ -87,5 +87,5 @@ export default function Pop() {
       ["\n\tpopReturnValue", popReturnValue, "toEqual", correctPopReturnValue],
     ];
     tests.run();
-  });
+  }); 
 }
