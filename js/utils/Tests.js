@@ -124,6 +124,24 @@ class Tests {
     this.#pushTests(tests);
   };
 
+  checkQueueInternalStructure = (myQueue) => {
+    const tests = [
+      {
+        name: "myQueue",
+        obj: this.my,
+        paths: ["first", "last"],
+        properties: ["value", "next"],
+      },
+      {
+        name: "myQueue",
+        obj: this.my,
+        properties: ["first", "last", "length"],
+      },
+    ].flatMap((test) => this.#hasPropertyTests(test));
+
+    this.#pushTests(tests);
+  };
+
   checkBSTInternalStructure = (Node) => {
     const tests = [
       {
@@ -179,24 +197,6 @@ class Tests {
         },
       ].flatMap((test) => this.#hasPropertyTests(test)),
     ].flat();
-
-    this.#pushTests(tests);
-  };
-
-  checkQueueInternalStructure = (myQueue) => {
-    const tests = [
-      {
-        name: "myQueue",
-        obj: myQueue,
-        paths: ["first", "last"],
-        properties: ["value", "next"],
-      },
-      {
-        name: "myQueue",
-        obj: myQueue,
-        properties: ["first", "last", "length"],
-      },
-    ].flatMap((test) => this.#hasPropertyTests(test));
 
     this.#pushTests(tests);
   };

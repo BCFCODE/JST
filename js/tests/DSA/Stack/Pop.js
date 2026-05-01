@@ -86,6 +86,6 @@ export default function Pop() {
     tests.extra = [
       ["\n\tpopReturnValue", popReturnValue, "toEqual", correctPopReturnValue],
     ];
-    tests.run();
+    tests.run(); 
   }); 
 }
