@@ -64,7 +64,7 @@ class Tests {
     this.toBeUndefinedPaths = paths;
   }
 
-  #pushTests = (tests) => this.#pushTests(tests);
+  #pushTests = (tests) => tests.forEach((test) => this.#tests.push(test));
 
   checkLLInternalStructure = () => {
     const nodeProperties = ["value", "next"];
