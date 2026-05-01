@@ -38,12 +38,12 @@ export default function Push() {
     tests.toEqual(paths.toEqual);
     tests.extra = [
       [
-        "\n\tpushReturnValue === correctPushReturnValue",
+        "\n\tpushReturnValue",
         pushReturnValue,
         "toEqual",
         correctPushReturnValue,
       ],
-    ];
+    ]; 
     tests.run();
   });
 
@@ -56,7 +56,7 @@ export default function Push() {
       my: myStack,
       correct,
     });
-    const paths = { 
+    const paths = {
       toBeNull: ["top.next.next"],
       toBe: ["top.value", "top.next.value", "length"],
       toEqual: ["top", "top.next"],
@@ -67,7 +67,7 @@ export default function Push() {
     tests.toEqual(paths.toEqual);
     tests.extra = [
       [
-        "\n\tpushReturnValue === correctPushReturnValue",
+        "\n\tpushReturnValue",
         pushReturnValue,
         "toEqual",
         correctPushReturnValue,
@@ -75,4 +75,4 @@ export default function Push() {
     ];
     tests.run();
   });
-} 
+}
