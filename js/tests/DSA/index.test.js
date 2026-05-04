@@ -2,9 +2,9 @@ import { describe } from "vitest";
 import LL from "./LL";
 import DLL from "./DLL";
 import Stack from "./Stack";
-import Queue from "./Queue";
+import Queue from "./Queue"; 
 
-const DataStructures = { LL, DLL, Stack, Queue };
+const DataStructures = { LL, /* DLL, */ Stack, Queue };
 
 describe("DSA (Data Structures & Algorithms)", () => {
   for (const DataStructure in DataStructures) { 

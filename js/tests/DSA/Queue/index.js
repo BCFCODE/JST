@@ -1,3 +1,5 @@
 import Enqueue from "./Enqueue";
+import Dequeue from "./Dequeue";
 
-export default [Enqueue];
+export default [Enqueue, Dequeue];
+ 
