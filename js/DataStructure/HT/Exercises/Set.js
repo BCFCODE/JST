@@ -18,7 +18,7 @@ class HashTable {
     }
     this.dataMap[index].push([key, value])
     return this
-  }
+  } 
 }
 
 export default HashTable
