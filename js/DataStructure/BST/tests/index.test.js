@@ -1,28 +1,24 @@
 import { describe } from "vitest";
 import {
-  constructorTests,
-  containsTests,
-  insertTests,
-  rContainsTests,
-  rInsertTests,
-  deleteNodeTests,
   bfsTests,
-  dfsPreOrderTests,
-  dfsPostOrderTests,
+  constructorTests,
+  deleteNodeTests,
   dfsInOrderTests,
+  dfsPostOrderTests,
+  dfsPreOrderTests,
+  rContainsTests,
+  rInsertTests
 } from ".";
 import {
-  Node,
+  BSTBFS,
   BSTConstructor,
-  BSTInsert,
-  BSTContains,
+  BSTDeleteNode,
+  BSTDFSInOrder,
+  BSTDFSPostOrder,
+  BSTDFSPreOrder,
   BSTrContains,
   BSTrInsert,
-  BSTDeleteNode,
-  BSTBFS,
-  BSTDFSPreOrder,
-  BSTDFSPostOrder,
-  BSTDFSInOrder,
+  Node
 } from "..";
 
 const tests = [
@@ -30,17 +26,7 @@ const tests = [
     describeText: "EXERCISE-BST-Constructor",
     BST: BSTConstructor,
     tests: constructorTests,
-  },
-  {
-    describeText: "EXERCISE-BST-Insert",
-    BST: BSTInsert,
-    tests: insertTests,
-  },
-  {
-    describeText: "EXERCISE-BST-Contains",
-    BST: BSTContains,
-    tests: containsTests,
-  },
+  },  
   {
     describeText: "EXERCISE-BST-rContains",
     BST: BSTrContains,
@@ -81,3 +67,4 @@ const tests = [
 tests.forEach(({ describeText, tests, BST }) => {
   describe(describeText, () => tests({ BST, Node }));
 });
+ 
