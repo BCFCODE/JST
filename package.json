@@ -9,11 +9,17 @@
     "start": "echo 'Starting JS Training project...' && open html/index.html",
     "build": "echo 'Build process not defined for this project yet!'"
   },
-  "keywords": ["javascript", "training", "stack", "vanilla-js", "learning"],
+  "keywords": [
+    "javascript",
+    "training",
+    "stack",
+    "vanilla-js",
+    "learning"
+  ],
   "author": "Morteza Bakhshandeh @BCFCODE",
   "license": "MIT",
   "devDependencies": {
-    "vitest": "^3.0.4"
+    "vitest": "^4.1.5"
   },
   "repository": {
     "type": "git",
