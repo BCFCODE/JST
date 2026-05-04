@@ -142,11 +142,11 @@ class Tests {
     this.#pushTests(tests);
   };
 
-  checkBSTInternalStructure = (Node) => {
+  checkBSTInternalStructure = () => {
     const tests = [
       {
         name: "newNode",
-        obj: new Node(),
+        obj: this.my.root,
         paths: [],
         properties: ["value", "left", "right"],
       },

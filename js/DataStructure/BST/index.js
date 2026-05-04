@@ -5,7 +5,7 @@ import BSTrContains from "./rContains";
 import BSTrInsert from "./rInsert";
 import BSTDeleteNode from "./deleteNode";
 import BSTBFS from "./BFS";
-import BSTDFSPreOrder from "./DFSPreOrder";
+import BSTDFSPreOrder from "./DFSPreOrder"; 
 import BSTDFSPostOrder from "./DFSPostOrder";
 import BSTDFSInOrder from "./DFSInOrder";
 
