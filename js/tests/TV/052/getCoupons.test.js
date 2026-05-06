@@ -1,5 +1,5 @@
-import { it, expect, describe } from 'vitest'
-import { getCoupons } from "../../TV-052/src/core";
+import { it, expect, describe } from "vitest";
+import { getCoupons } from "../../../TV/052/src/core";
 
 describe(`getCoupons()`, () => {
   const result = getCoupons();
