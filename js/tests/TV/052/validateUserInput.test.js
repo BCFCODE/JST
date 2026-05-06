@@ -1,5 +1,5 @@
 import { it, expect, describe } from "vitest";
-import { validateUserInput } from "../../TV/052/src/core";
+import { validateUserInput } from "../../../TV/052/src/core";
 
 describe("Exercise: Positive and negative testing", () => {
   describe("\n\tPositive tests", () => {

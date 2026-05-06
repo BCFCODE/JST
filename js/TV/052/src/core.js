@@ -45,7 +45,7 @@ export function validateUserInput(username, age) {
 export function isPriceInRange(price, min, max) {
   return price >= min && price <= max;
 }
-
+ 
 // Exercise: Boundary testing
 export function isValidUsername(username) {
   const minLength = 5; 

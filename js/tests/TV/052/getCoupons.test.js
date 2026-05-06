@@ -1,10 +1,10 @@
 import { it, expect, describe } from 'vitest'
-import { getCoupons } from '../../TV/052/src/core';
+import { getCoupons } from '../../../TV/052/src/core';
 
 describe(`getCoupons()`, () => {
   const result = getCoupons();
   it("should return an array", () => {
-    expect(Array.isArray(result)).toBe(true);
+    expect(Array.isArray(result)).toBe(true); 
   });
   it(`should return an array that is not empty`, () => {
     expect(result.length).toBeGreaterThan(0);
