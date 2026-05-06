@@ -1,5 +1,5 @@
 import { it, expect, describe } from "vitest";
-import { validateUserInput } from "../../TV-052/src/core";
+import { validateUserInput } from "../../TV/052/src/core";
 
 describe("Exercise: Positive and negative testing", () => {
   describe("\n\tPositive tests", () => {
@@ -7,7 +7,7 @@ describe("Exercise: Positive and negative testing", () => {
     const result = validateUserInput(validUser.name, validUser.age);
     it(`validateUserInput("${validUser.name}", ${validUser.age});\n\t>> should return 'Validation successful'`, () => {
       expect(result).toBe("Validation successful");
-    });
+    }); 
   });
   describe("\n\tNegative tests", () => {
     const tests = [
@@ -25,7 +25,7 @@ describe("Exercise: Positive and negative testing", () => {
       },
       {
         username: "Morteza",
-        age: 'Thirty Six',
+        age: "Thirty Six",
         message: "Type of age should be number",
         expected: { method: "toBe", value: "Invalid age" },
       },
@@ -37,30 +37,34 @@ describe("Exercise: Positive and negative testing", () => {
       },
       {
         username: true,
-        age: '12343',
-        message: "Type of username should be 'string', and type of age should be 'number'",
+        age: "12343",
+        message:
+          "Type of username should be 'string', and type of age should be 'number'",
         expected: { method: "toBe", value: "Invalid username, Invalid age" },
       },
       {
-        username: 'M',
-        age: '12343',
-        message: "Length of the username should be greater or equal to 3, and type of age should be 'number'",
+        username: "M",
+        age: "12343",
+        message:
+          "Length of the username should be greater or equal to 3, and type of age should be 'number'",
         expected: { method: "toBe", value: "Invalid username, Invalid age" },
       },
       {
-        username: 'M',
-        age: '12343',
-        message: "Length of the username should be greater or equal to 3, and age must me greater or equal to 18",
+        username: "M",
+        age: "12343",
+        message:
+          "Length of the username should be greater or equal to 3, and age must me greater or equal to 18",
         expected: { method: "toBe", value: "Invalid username, Invalid age" },
       },
       {
         username: true,
         age: 6,
-        message: "Type of username should be 'string', and age must me greater or equal to 18",
+        message:
+          "Type of username should be 'string', and age must me greater or equal to 18",
         expected: { method: "toBe", value: "Invalid username, Invalid age" },
       },
     ];
-    tests.forEach(({username, age, message, expected}) => {
+    tests.forEach(({ username, age, message, expected }) => {
       it(`validateUserInput("${username}", ${age});\n\t>> ${message}`, () => {
         const result = validateUserInput(username, age);
         expect(result)[expected.method](expected.value);
