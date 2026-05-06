@@ -130,15 +130,13 @@ class DoublyLinkedList {
     }
     return false;
   }
-
 }
 
-
 function test() {
-  let myDLL = new DoublyLinkedList(0)
-  myDLL.push(1)
-  myDLL.push(2)
-  myDLL.push(3)
+  let myDLL = new DoublyLinkedList(0);
+  myDLL.push(1);
+  myDLL.push(2);
+  myDLL.push(3);
 
   console.log("DLL before set():");
   myDLL.printList();
@@ -149,9 +147,7 @@ function test() {
   myDLL.printList();
 }
 
-
 test();
-
 
 /*
     EXPECTED OUTPUT:
@@ -170,5 +166,4 @@ test();
 
 */
 
-
-export default DoublyLinkedList
+export default DoublyLinkedList;

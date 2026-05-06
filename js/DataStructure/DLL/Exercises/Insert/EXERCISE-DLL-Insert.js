@@ -112,7 +112,6 @@ class DoublyLinkedList {
     this.length++;
     return true;
   }
-
 }
 
-export default DoublyLinkedList
+export default DoublyLinkedList;

@@ -3,7 +3,7 @@ import { executeTestCases, toBeNullTests, toBeTests } from "../../../utils";
 import CorrectBST from "./Correct";
 
 const buildTestsForDeletingNonExistentNode = ({ myTree }) => {
-  let correct = new CorrectBST();
+  const correct = new CorrectBST();
   correct.rInsert(47);
   correct.rInsert(21);
   correct.deleteNode(18);
@@ -25,7 +25,7 @@ const buildTestsForDeletingNonExistentNode = ({ myTree }) => {
 };
 
 const buildTestsForDeletingLeafNodeWithoutChildren = ({ myTree }) => {
-  let correct = new CorrectBST();
+  const correct = new CorrectBST();
   correct.rInsert(47);
   correct.rInsert(21);
   correct.deleteNode(21);
@@ -47,7 +47,7 @@ const buildTestsForDeletingLeafNodeWithoutChildren = ({ myTree }) => {
 };
 
 const buildTestsForDeletingNodeWithOnlyRightChild = ({ myTree }) => {
-  let correct = new CorrectBST();
+  const correct = new CorrectBST();
   correct.rInsert(47);
   correct.rInsert(21);
   correct.rInsert(22);
@@ -70,7 +70,7 @@ const buildTestsForDeletingNodeWithOnlyRightChild = ({ myTree }) => {
 };
 
 const buildTestsForDeletingNodeWithOnlyLeftChild = ({ myTree }) => {
-  let correct = new CorrectBST();
+  const correct = new CorrectBST();
   correct.rInsert(47);
   correct.rInsert(21);
   correct.rInsert(20);
@@ -97,7 +97,7 @@ const buildTestsForMinValueHelperFunction = ({
   actualMinValueAtRoot,
   actualMinValueAtRightSubtree,
 }) => {
-  let correct = new CorrectBST();
+  const correct = new CorrectBST();
   correct.rInsert(47);
   correct.rInsert(21);
   correct.rInsert(76);
@@ -156,10 +156,42 @@ const buildTestsForMinValueHelperFunction = ({
   ].flat();
 };
 
+const buildTestsForDeletingNodeWithTwoChild = ({ myTree }) => {
+  const correct = new CorrectBST();
+  correct.rInsert(47);
+  correct.rInsert(24);
+  correct.rInsert(20);
+  correct.rInsert(25);
+  correct.rInsert(24);
+  correct.rInsert(26);
+  correct.deleteNode(24);
+
+  return [
+    toBeTests({
+      name: "myTree",
+      my: myTree,
+      correct,
+      paths: [
+        "root.value",
+        "root.left.value",
+        "root.left.left.value",
+        "root.left.right.value",
+        "root.left.right.right.value",
+      ],
+    }),
+    toBeNullTests({
+      name: "myTree",
+      my: myTree,
+      correct,
+      paths: ["root.right", "root.left.right.left"],
+    }),
+  ].flat();
+};
+
 const deleteNodeTests = ({ BST }) => {
   describe(`deleteNode`, () => {
-    describe(`\n\tDeleting a non-existent node in the tree >>\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.deleteNode(18)`, () => {
-      let myTree = new BST();
+    describe(`\n\tDeleting a non-existent node in the tree >>\n\tconst myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.deleteNode(18)`, () => {
+      const myTree = new BST();
       myTree.rInsert(47);
       myTree.rInsert(21);
       myTree.deleteNode(18);
@@ -169,8 +201,8 @@ const deleteNodeTests = ({ BST }) => {
       executeTestCases(tests);
     });
 
-    describe(`\n\tStep 1: Deleting a leaf node (no left or right children) >>\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.deleteNode(21)`, () => {
-      let myTree = new BST();
+    describe(`\n\tStep 1: Deleting a leaf node (no left or right children) >>\n\tconst myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.deleteNode(21)`, () => {
+      const myTree = new BST();
       myTree.rInsert(47);
       myTree.rInsert(21);
       myTree.deleteNode(21);
@@ -180,8 +212,8 @@ const deleteNodeTests = ({ BST }) => {
       executeTestCases(tests);
     });
 
-    describe(`\n\tStep 2: Deleting a node with no left child but a right child >>\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(22)\n\tmyTree.deleteNode(21)`, () => {
-      let myTree = new BST();
+    describe(`\n\tStep 2: Deleting a node with no left child but a right child >>\n\tconst myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(22)\n\tmyTree.deleteNode(21)`, () => {
+      const myTree = new BST();
       myTree.rInsert(47);
       myTree.rInsert(21);
       myTree.rInsert(22);
@@ -192,8 +224,8 @@ const deleteNodeTests = ({ BST }) => {
       executeTestCases(tests);
     });
 
-    describe(`\n\tStep 3: Deleting a node with no right child but a left child >>\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(20)\n\tmyTree.deleteNode(21)`, () => {
-      let myTree = new BST();
+    describe(`\n\tStep 3: Deleting a node with no right child but a left child >>\n\tconst myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(20)\n\tmyTree.deleteNode(21)`, () => {
+      const myTree = new BST();
       myTree.rInsert(47);
       myTree.rInsert(21);
       myTree.rInsert(20);
@@ -204,8 +236,8 @@ const deleteNodeTests = ({ BST }) => {
       executeTestCases(tests);
     });
 
-    describe(`\n\tStep 4: Implementing the minValue Helper Function >>\n\tlet myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(76)\n\tmyTree.rInsert(18)\n\tmyTree.rInsert(27)\n\tmyTree.rInsert(52)\n\tmyTree.rInsert(82)`, () => {
-      let myTree = new BST();
+    describe(`\n\tStep 4: Implementing the minValue Helper Function >>\n\tconst myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(21)\n\tmyTree.rInsert(76)\n\tmyTree.rInsert(18)\n\tmyTree.rInsert(27)\n\tmyTree.rInsert(52)\n\tmyTree.rInsert(82)`, () => {
+      const myTree = new BST();
       myTree.rInsert(47);
       myTree.rInsert(21);
       myTree.rInsert(76);
@@ -222,6 +254,21 @@ const deleteNodeTests = ({ BST }) => {
         actualMinValueAtRoot,
         actualMinValueAtRightSubtree,
       });
+
+      executeTestCases(tests);
+    });
+
+    describe(`\n\tStep 5: Deleting a node that has a child on the left and the right >>\n\tconst myTree = new BST()\n\tmyTree.rInsert(47)\n\tmyTree.rInsert(24)\n\tmyTree.rInsert(20)\n\tmyTree.rInsert(25)\n\tmyTree.rInsert(24)\n\tmyTree.rInsert(26)\n\tmyTree.deleteNode(24)`, () => {
+      const myTree = new BST();
+      myTree.rInsert(47);
+      myTree.rInsert(24);
+      myTree.rInsert(20);
+      myTree.rInsert(25);
+      myTree.rInsert(24);
+      myTree.rInsert(26);
+      myTree.deleteNode(24);
+
+      const tests = buildTestsForDeletingNodeWithTwoChild({ myTree });
 
       executeTestCases(tests);
     });

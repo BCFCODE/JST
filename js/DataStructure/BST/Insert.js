@@ -1,41 +1,41 @@
 class Node {
   constructor(value) {
-    this.value = value
-    this.left = null
-    this.right = null
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 }
 
 class BST {
   constructor() {
-    this.root = null
+    this.root = null;
   }
 
   insert(value) {
     const newNode = new Node(value);
     if (this.root === null) {
-      this.root = newNode
-      return this
+      this.root = newNode;
+      return this;
     }
-    let temp = this.root
+    let temp = this.root;
     while (true) {
-      if (newNode === temp) return undefined
-      if (newNode.value === temp.value) return undefined
+      if (newNode === temp) return undefined;
+      if (newNode.value === temp.value) return undefined;
       if (newNode.value < temp.value) {
         if (temp.left === null) {
-          temp.left = newNode
-          return this
+          temp.left = newNode;
+          return this;
         }
-        temp = temp.left
+        temp = temp.left;
       } else {
         if (temp.right === null) {
-          temp.right = newNode
-          return this
+          temp.right = newNode;
+          return this;
         }
-        temp = temp.right
+        temp = temp.right;
       }
     }
   }
 }
 
-export default BST
+export default BST;

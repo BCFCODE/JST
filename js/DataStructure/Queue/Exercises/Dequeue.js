@@ -1,16 +1,16 @@
 class Node {
   constructor(value) {
-    this.value = value
-    this.next = null
+    this.value = value;
+    this.next = null;
   }
 }
 
 export class Queue {
   constructor(value) {
-    const newNode = new Node(value)
-    this.first = newNode
-    this.last = newNode
-    this.length = 1
+    const newNode = new Node(value);
+    this.first = newNode;
+    this.last = newNode;
+    this.length = 1;
   }
 
   enqueue(value) {
@@ -23,23 +23,20 @@ export class Queue {
       this.last = newNode;
     }
     this.length++;
-    return this
+    return this;
   }
 
   dequeue() {
-    if (this.length === 0) return undefined
-    const temp = this.first
+    if (this.length === 0) return undefined;
+    const temp = this.first;
     if (this.length === 1) {
-      this.first = null
-      this.last = null
+      this.first = null;
+      this.last = null;
     } else {
-      this.first = this.first.next
-      temp.next = null
+      this.first = this.first.next;
+      temp.next = null;
     }
-    this.length--
-    return temp
+    this.length--;
+    return temp;
   }
-
 }
-
-

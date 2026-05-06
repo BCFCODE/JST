@@ -1,46 +1,49 @@
 export class Heap {
-  #heap = []
+  #heap = [];
 
   getHeap() {
-    return [...this.#heap]
+    return [...this.#heap];
   }
 
   #leftChild(index) {
-    return 2 * index + 1
+    return 2 * index + 1;
   }
 
   #rightChild(index) {
-    return 2 * index + 2
+    return 2 * index + 2;
   }
 
   #parent(index) {
-    return Math.floor((index - 1) / 2)
+    return Math.floor((index - 1) / 2);
   }
 
   #swap(index1, index2) {
-    [this.#heap[index1], this.#heap[index2]] = [this.#heap[index2], this.#heap[index1]]
+    [this.#heap[index1], this.#heap[index2]] = [
+      this.#heap[index2],
+      this.#heap[index1],
+    ];
   }
 
   #sinkDown(index) {
-    let maxIndex = index
-    const size = this.#heap.length
+    let maxIndex = index;
+    const size = this.#heap.length;
     while (true) {
-      const leftIndex = this.#leftChild(index)
-      const rightIndex = this.#rightChild(index)
+      const leftIndex = this.#leftChild(index);
+      const rightIndex = this.#rightChild(index);
 
       if (leftIndex < size && this.#heap[leftIndex] > this.#heap[maxIndex]) {
-        maxIndex = leftIndex
+        maxIndex = leftIndex;
       }
 
       if (rightIndex < size && this.#heap[rightIndex] > this.#heap[maxIndex]) {
-        maxIndex = rightIndex
+        maxIndex = rightIndex;
       }
 
       if (maxIndex !== index) {
-        this.#swap(index, maxIndex)
-        index = maxIndex
+        this.#swap(index, maxIndex);
+        index = maxIndex;
       } else {
-        return
+        return;
       }
     }
   }
@@ -48,7 +51,10 @@ export class Heap {
   insert(value) {
     this.#heap.push(value);
     let current = this.#heap.length - 1;
-    while (current > 0 && this.#heap[current] > this.#heap[this.#parent(current)]) {
+    while (
+      current > 0 &&
+      this.#heap[current] > this.#heap[this.#parent(current)]
+    ) {
       this.#swap(current, this.#parent(current));
       current = this.#parent(current);
     }
@@ -56,17 +62,17 @@ export class Heap {
 
   remove() {
     if (this.#heap.length === 0) {
-      return null
+      return null;
     }
 
     if (this.#heap.length === 1) {
-      return this.#heap.pop()
+      return this.#heap.pop();
     }
 
-    const maxValue = this.#heap[0]
-    this.#heap[0] = this.#heap.pop()
-    this.#sinkDown(0)
+    const maxValue = this.#heap[0];
+    this.#heap[0] = this.#heap.pop();
+    this.#sinkDown(0);
 
-    return maxValue
+    return maxValue;
   }
 }

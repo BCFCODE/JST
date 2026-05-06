@@ -1,15 +1,15 @@
 class Graph {
   constructor() {
-    this.adjacencyList = {}
+    this.adjacencyList = {};
   }
 
   addVertex(vertex) {
     if (!this.adjacencyList[vertex]) {
-      this.adjacencyList[vertex] = []
-      return true
+      this.adjacencyList[vertex] = [];
+      return true;
     }
-    return false
+    return false;
   }
 }
 
-export default Graph
+export default Graph;

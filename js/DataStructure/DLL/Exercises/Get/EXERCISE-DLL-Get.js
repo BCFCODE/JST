@@ -121,9 +121,7 @@ class DoublyLinkedList {
     }
     return temp;
   }
-
 }
-
 
 function test() {
   let myDLL = new DoublyLinkedList(0);
@@ -134,9 +132,7 @@ function test() {
   console.log(myDLL.get(3).value);
 }
 
-
 test();
-
 
 /*
   EXPECTED OUTPUT:
@@ -145,4 +141,4 @@ test();
 
 */
 
-export default DoublyLinkedList
+export default DoublyLinkedList;

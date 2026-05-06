@@ -3,7 +3,7 @@ class Node {
     this.value = value;
     this.next = null;
     this.prev = null;
-  }
+  } 
 }
 
 class DoublyLinkedList {
@@ -105,13 +105,11 @@ class DoublyLinkedList {
     this.length--;
     return temp;
   }
-
 }
 
-
 function test() {
-  let myDLL = new DoublyLinkedList(2)
-  myDLL.push(1)
+  let myDLL = new DoublyLinkedList(2);
+  myDLL.push(1);
 
   // (2) Items in LL - Returns 2 Node
   if (myDLL.length !== 0) {
@@ -135,9 +133,7 @@ function test() {
   }
 }
 
-
 test();
-
 
 /*
   EXPECTED OUTPUT:
@@ -148,4 +144,4 @@ test();
 
 */
 
-export default DoublyLinkedList
+export default DoublyLinkedList;

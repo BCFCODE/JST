@@ -61,9 +61,7 @@ class DoublyLinkedList {
     this.length++;
     return this;
   }
-
 }
-
 
 function test() {
   let myDLL = new DoublyLinkedList(1);
@@ -77,9 +75,7 @@ function test() {
   myDLL.printList();
 }
 
-
 test();
-
 
 /*
       EXPECTED OUTPUT:
@@ -94,4 +90,4 @@ test();
 
 */
 
-export default DoublyLinkedList
+export default DoublyLinkedList;
