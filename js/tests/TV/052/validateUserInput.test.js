@@ -7,7 +7,7 @@ describe("Exercise: Positive and negative testing", () => {
     const result = validateUserInput(validUser.name, validUser.age);
     it(`validateUserInput("${validUser.name}", ${validUser.age});\n\t>> should return 'Validation successful'`, () => {
       expect(result).toBe("Validation successful");
-    });
+    }); 
   });
   describe("\n\tNegative tests", () => {
     const tests = [
