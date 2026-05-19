@@ -21,7 +21,7 @@ class Random {
   between = (n1, n2) => {
     this.#validation(n1, n2);
 
-    return Math.floor(Math.random() * (n2 - n1 + 1));
+    return n1 + Math.floor(Math.random() * (n2 - n1 + 1));
   };
 
   notBetween = (n1, n2) => {
