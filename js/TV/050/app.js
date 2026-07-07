@@ -1,17 +1,12 @@
 import Store from "./services/Store.js";
 import API from "./services/API.js";
+import { loadData } from "./services/Menu.js";
 
 window.app = {};
 app.store = Store;
 
-window.addEventListener("DOMContentLoaded", () => {
-  /*   
-    const nav = document.querySelector("nav");
-    nav.innerHTML = `
-          <h1>Hello I am nav!</h1>
-      `;
-    console.log(nav); 
-  */
+window.addEventListener("DOMContentLoaded", async () => {
+  loadData();
 });
 /* 
   const $ = () => document.querySelector.call(this, arguments);
