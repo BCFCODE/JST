@@ -18,7 +18,7 @@ export default function Reverse() {
     myLinkedList.push(val3);
     myLinkedList.push(val4);
 
-    let correct = new LinkedList(val1);
+    let correct = new CorrectLinkedList(val1);
     correct.push(val2);
     correct.push(val3);
     correct.push(val4);
@@ -54,7 +54,7 @@ export default function Reverse() {
     myLinkedList.push(val4);
     const returnReverseValue = myLinkedList.reverse();
 
-    let correct = new LinkedList(val1);
+    let correct = new CorrectLinkedList(val1);
     correct.push(val2);
     correct.push(val3);
     correct.push(val4);

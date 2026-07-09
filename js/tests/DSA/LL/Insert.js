@@ -57,7 +57,7 @@ export default function Insert() {
     myLinkedList.push(val4);
     const returnInsertValue = myLinkedList.insert(randomValidIndex, newValue);
 
-    let correct = new LinkedList(val1);
+    let correct = new CorrectLinkedList(val1);
     correct.push(val2);
     correct.push(val3);
     correct.push(val4);
@@ -110,7 +110,7 @@ export default function Insert() {
     myLinkedList.push(val4);
     const returnInsertValue = myLinkedList.insert(randomInvalidIndex, newValue);
 
-    let correct = new LinkedList(val1);
+    let correct = new CorrectLinkedList(val1);
     correct.push(val2);
     correct.push(val3);
     correct.push(val4);
