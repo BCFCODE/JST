@@ -1,19 +1,19 @@
-class Node {
+class CorrectStackNode {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
-class Stack {
+class CorrectStack {
   constructor(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectStackNode(value);
     this.top = newNode;
     this.length = 1;
   }
 
   push(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectStackNode(value);
     if (this.length === 0) {
       this.top = newNode;
     } else {
@@ -36,4 +36,4 @@ class Stack {
   }
 }
 
-export { Node, Stack };
+export { CorrectStackNode, CorrectStack };

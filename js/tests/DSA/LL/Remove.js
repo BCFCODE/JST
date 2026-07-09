@@ -24,7 +24,7 @@ export default function Remove() {
     myLinkedList.push(val5);
     const returnRemoveValue = myLinkedList.remove(randomInvalidIndex);
 
-    let correct = new LinkedList(val1);
+    let correct = new CorrectLinkedList(val1);
     correct.push(val2);
     correct.push(val3);
     correct.push(val4);
@@ -79,7 +79,7 @@ export default function Remove() {
     myLinkedList.push(val5);
     const returnRemoveValue = myLinkedList.remove(randomValidIndex);
 
-    let correct = new LinkedList(val1);
+    let correct = new CorrectLinkedList(val1);
     correct.push(val2);
     correct.push(val3);
     correct.push(val4);

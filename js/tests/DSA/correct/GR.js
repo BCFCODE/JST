@@ -1,4 +1,4 @@
-class Graph {
+class CorrectGraph {
   constructor() {
     this.adjacencyList = {};
   }
@@ -44,4 +44,4 @@ class Graph {
   }
 }
 
-export { Graph };
+export { CorrectGraph };

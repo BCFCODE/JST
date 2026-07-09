@@ -1,4 +1,4 @@
-class Heap {
+class CorrectHeap {
   #heap = [];
 
   getHeap() {
@@ -77,4 +77,4 @@ class Heap {
   }
 }
 
-export { Heap };
+export { CorrectHeap };

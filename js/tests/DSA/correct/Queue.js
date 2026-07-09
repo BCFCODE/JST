@@ -1,20 +1,20 @@
-class Node {
+class CorrectQueueNode {
   constructor(value) {
     this.value = value;
     this.next = null;
   }
 }
 
-class Queue {
+class CorrectQueue {
   constructor(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectQueueNode(value);
     this.first = newNode;
     this.last = newNode;
     this.length = 1;
   }
 
   enqueue(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectQueueNode(value);
     if (this.length === 0) {
       this.first = newNode;
       this.last = newNode;
@@ -41,4 +41,4 @@ class Queue {
   }
 }
 
-export { Queue, Node };
+export { CorrectQueue, CorrectQueueNode };

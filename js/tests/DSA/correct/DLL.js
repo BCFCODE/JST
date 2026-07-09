@@ -1,4 +1,4 @@
-class Node {
+class CorrectDLLNode {
   constructor(value) {
     this.value = value;
     this.next = null;
@@ -6,16 +6,16 @@ class Node {
   }
 }
 
-class DoublyLinkedList {
+class CorrectDoublyLinkedList {
   constructor(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectDLLNode(value);
     this.head = newNode;
     this.tail = this.head;
     this.length = 1;
   }
 
   push(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectDLLNode(value);
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
@@ -44,7 +44,7 @@ class DoublyLinkedList {
   }
 
   unshift(value) {
-    const newNode = new Node(value);
+    const newNode = new CorrectDLLNode(value);
     if (this.length === 0) {
       this.head = newNode;
       this.tail = newNode;
@@ -101,7 +101,7 @@ class DoublyLinkedList {
     if (index === 0) return this.unshift(value);
     if (index === this.length) return this.push(value);
     if (index < 0 || index > this.length) return false;
-    const newNode = new Node(value);
+    const newNode = new CorrectDLLNode(value);
     const before = this.get(index - 1);
     const after = before.next;
     before.next = newNode;
@@ -126,4 +126,4 @@ class DoublyLinkedList {
   }
 }
 
-export { DoublyLinkedList, Node };
+export { CorrectDoublyLinkedList, CorrectDLLNode };
