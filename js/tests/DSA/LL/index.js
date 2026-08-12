@@ -8,4 +8,4 @@ import Insert from "./Insert";
 import Remove from "./Remove";
 import Reverse from "./Reverse";
 
-export default [Push, Pop, Unshift, Shift, Get, Set, Insert, Remove, Reverse];
+export default [/* Push, Pop, Unshift, Shift, */ Get, /* Set, Insert, Remove, Reverse */];
