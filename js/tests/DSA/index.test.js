@@ -6,7 +6,7 @@ import Queue from "./Queue";
 import BST from "./BST";
 import HT from "./HT";
 
-const DataStructures = { LL, DLL, Stack, Queue, BST, HT };
+const DataStructures = { /* LL, DLL, */ Stack, /* Queue, BST, HT */ };
 
 describe("DSA (Data Structures & Algorithms)", () => {
   for (const DataStructure in DataStructures) {

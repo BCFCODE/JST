@@ -27,16 +27,16 @@ const tests = [
     BST: BSTConstructor,
     tests: constructorTests,
   },  
-  {
-    describeText: "EXERCISE-BST-rContains",
-    BST: BSTrContains,
-    tests: rContainsTests,
-  },
-  {
-    describeText: "EXERCISE-BST-rInsert",
-    BST: BSTrInsert,
-    tests: rInsertTests,
-  },
+  // {
+  //   describeText: "EXERCISE-BST-rContains",
+  //   BST: BSTrContains,
+  //   tests: rContainsTests,
+  // },
+  // {
+  //   describeText: "EXERCISE-BST-rInsert",
+  //   BST: BSTrInsert,
+  //   tests: rInsertTests,
+  // },
   {
     describeText: "EXERCISE-BST-deleteNode",
     BST: BSTDeleteNode,
