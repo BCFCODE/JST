@@ -7,17 +7,18 @@ import Random from "../../../utils/Random";
 const random = new Random();
 
 export default function Keys() {
-  const dataMapSize = random.between(5, 7);
+  const dataMapSize = random.between(1, 7);
 
   const myHashTable = new HashTable(dataMapSize);
-  const correct = new HashTable(dataMapSize);
+  const correct = new CorrectHashTable(dataMapSize);
 
   const keyValues = [
     ["bolts", 1400],
+    ["bolts", 200],
+    ["bolts", 170],
     ["washers", 50],
-    ["bolts", 1400],
-    ["washers", 50],
-    ["lumber", 70],
+    ["washers", 1900],
+    ["lumber", 900],
   ];
 
   keyValues.forEach(([key, value]) => {
@@ -25,22 +26,23 @@ export default function Keys() {
     correct.set(key, value);
   });
 
-  const validKeys = keyValues.map(([key]) => key);
-  const invalidKeys = ["washers", "lumber"];
+  const dataMapStr = `[${myHashTable.dataMap.map((data) => JSON.stringify(data).replace(/,/g, ", ")).join`, `}]`;
 
-  describe(`dataMap = [${myHashTable.dataMap.map((data) => `[${data.join`, `}]`).join`, `}]`, () => {
+  describe(`const myHashTable = new HashTable(${dataMapSize}); \n\tmyHashTable.dataMap >> ${dataMapStr}`, () => {
     describe(`\n\tconst returnValue = myHashTable.keys()`, () => {
       const returnValue = myHashTable.keys();
-      const correctReturnValue = correct.keys(); 
+      const correctReturnValue = correct.keys();
 
       const tests = new Tests({
         name: "myHashTable",
         my: myHashTable,
         correct,
       });
+
       tests.extra = [
         ["\n\treturnValue", returnValue, "toEqual", correctReturnValue],
       ];
+
       tests.run();
     });
   });

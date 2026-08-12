@@ -10,7 +10,7 @@ export default function Get() {
   const dataMapSize = random.between(5, 10);
 
   const myHashTable = new HashTable(dataMapSize);
-  const correct = new HashTable(dataMapSize);
+  const correct = new CorrectHashTable(dataMapSize);
 
   const keyValues = [
     ["bolts", 1400],
