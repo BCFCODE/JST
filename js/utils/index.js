@@ -1,36 +1,46 @@
-import checkDLLInternalStructure from "./checkInternalStructures/checkDLLInternalStructure";
-import checkLLInternalStructure from "./checkInternalStructures/checkLLInternalStructure";
-import checkQueueInternalStructure from "./checkInternalStructures/checkQueueInternalStructure";
-import checkStackInternalStructure from "./checkInternalStructures/checkStackInternalStructure";
-import checkBSTInternalStructure from "./checkInternalStructures/checkBSTInternalStructure";
-import checkHTInternalStructure from "./checkInternalStructures/checkHTInternalStructure";
+import Tests from "./Tests";
 
-import hasPropertyTests from "./tests/hasPropertyTests";
-import toBeNullTests from "./tests/toBeNullTests";
-import toEqualTests from "./tests/toEqualTests";
-import toBeTests from "./tests/toBeTests";
-import toBeUndefined from "./tests/toBeUndefined";
+import {
+  formatArgsForDisplay,
+  getNestedProperty,
+  hasPropertyTests,
+  toBeNullTests,
+  toBeTests,
+  toBeUndefined,
+  toEqualTests,
+  setTarget,
+  TargetPaths,
+} from "./tests/helper";
 
-import executeTestCases from "./executeTestCases";
-import getNestedProperty from "./getNestedProperty";
-import J from "./J";
+import executeTestCases from "./tests/executeTestCases";
 
-export {
+import {
+  checkBSTInternalStructure,
   checkDLLInternalStructure,
+  checkGRInternalStructure,
+  checkHTInternalStructure,
   checkLLInternalStructure,
   checkQueueInternalStructure,
   checkStackInternalStructure,
-  checkBSTInternalStructure,
-  checkHTInternalStructure,
+} from "./tests/checkInternalStructure";
 
+export {
+  Tests,
+  checkBSTInternalStructure,
+  checkDLLInternalStructure,
+  checkGRInternalStructure,
+  checkHTInternalStructure,
+  checkLLInternalStructure,
+  checkQueueInternalStructure,
+  checkStackInternalStructure,
+  setTarget,
+  executeTestCases,
+  formatArgsForDisplay,
+  getNestedProperty,
   hasPropertyTests,
   toBeNullTests,
-  toEqualTests,
   toBeTests,
   toBeUndefined,
-
-  executeTestCases,
-  getNestedProperty,
-  J
+  toEqualTests,
+  TargetPaths,
 };
-

@@ -1,0 +1,35 @@
+# License Agreement
+
+Copyright (c) 2025 [Morteza Bakhshandeh/BCFCODE]. All rights reserved.
+
+## Terms of Use
+
+This software, including all associated code, documentation, and related materials (collectively, the "Software"), is the proprietary property of [Morteza Bakhshandeh/BCFCODE]. The Software is protected by copyright laws and international treaties.
+
+### Grant of License
+Permission is hereby granted to use the Software solely for personal, non-commercial purposes, subject to the restrictions outlined below. This license does not permit any form of copying, modification, distribution, or creation of derivative works without explicit written consent from [Morteza Bakhshandeh/BCFCODE].
+
+### Restrictions
+You **may not**:
+- Copy, reproduce, or replicate the Software, in whole or in part, for any purpose, including but not limited to sharing, distributing, or incorporating into other works.
+- Modify, adapt, translate, or create derivative works based on the Software.
+- Distribute, share, or make the Software available to third parties, whether for free or for a fee.
+- Use the Software for commercial purposes, including but not limited to incorporation into educational materials, videos, or other content without prior written permission.
+- Reverse engineer, decompile, disassemble, or attempt to derive the source code of the Software.
+- Remove or alter any copyright notices, trademarks, or other proprietary markings included in the Software.
+
+### Intellectual Property
+All intellectual property rights, including copyrights, in the Software remain with [Morteza Bakhshandeh/BCFCODE]. Unauthorized copying or use of the Software, including in educational videos or other media, is strictly prohibited and may result in legal action.
+
+### No Warranty
+The Software is provided "as is" without any warranties, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. [Morteza Bakhshandeh/BCFCODE] shall not be liable for any damages arising from the use or inability to use the Software.
+
+### Termination
+This license is effective until terminated. Your rights under this license will terminate automatically without notice if you fail to comply with any of its terms. Upon termination, you must cease all use of the Software and destroy any copies in your possession.
+
+### Contact
+For inquiries regarding permissions, including requests to use the Software in educational videos or other media, please contact [Your Contact Information].
+
+---
+
+**Note**: Unauthorized copying, distribution, or use of this Software in any form, including in educational videos or other content, is strictly prohibited and may result in legal consequences. All rights not expressly granted herein are reserved by [Morteza Bakhshandeh/BCFCODE].
